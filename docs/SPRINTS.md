@@ -78,60 +78,69 @@
 ## Roles por completar
 | Rol | Responsable |
 |---|---|
-| Product Owner | Pendiente |
-| Scrum Master / facilitador | Pendiente |
-| Líder de arquitectura | Pendiente |
-| Equipo de diseño | Pendiente |
+| Product Owner | Ariana |
+| Scrum Master / facilitador | Ana |
+| Líder de arquitectura | Lau |
+| Equipo de diseño | Lau, Ana y Ariana |
 
 > Este documento registra la **planificación**, no constituye evidencia de que los cuatro sprints ya se ejecutaron.
 
 
-## Planificación de roles, tiempo y presupuesto (propuesta ajustable)
+## Roles, tiempo y presupuesto del equipo
 
-> **Importante:** el enunciado exige registrar responsables y cuatro sprints de dos semanas, pero no establece número de integrantes, tarifa horaria ni presupuesto. Los valores siguientes son una **estimación académica ilustrativa**, no gastos ejecutados ni fechas acordadas por el equipo. Sustituir cuando se confirme la composición del grupo.
+**Equipo (3 personas):** Lau, Ana y Ariana. La asignación siguiente es la propuesta de organización del deber; las tres colaboran en el diseño y realizan revisión cruzada.
 
-### Roles y responsabilidades
-| Rol | Función en los sprints | Asignación nominal |
+| Integrante | Rol principal | Responsabilidad |
 |---|---|---|
-| Product Owner | Priorizar historias, definir alcance MVP y aceptar incrementos | Por confirmar |
-| Scrum Master / facilitador | Organizar planificación, review y retrospectiva, registrar bloqueos | Por confirmar |
-| Líder de arquitectura | Revisar límites de servicio, propiedad de datos, C4, UML y ADR | Por confirmar |
-| Equipo de diseño | Preparar backlog, diagramas, matriz, mockups, informe y presentación | Por confirmar |
+| **Lau** | Líder del proyecto y líder de arquitectura | Coordina decisiones, define límites y datos propietarios, revisa C4/UML y ADR |
+| **Ana** | Scrum Master / facilitadora | Organiza tablero, backlog, seguimiento, revisión/retrospectiva y trazabilidad |
+| **Ariana** | Product Owner | Define visión, alcance MVP y criterios de aceptación; coordina prototipo del dashboard y presentación |
 
-**Distribución orientativa si son 3 personas:** integrante A = Product Owner + artefactos de producto; integrante B = Scrum Master + seguimiento/trazabilidad; integrante C = líder de arquitectura + revisión técnica. Los tres colaboran en el diseño y revisan trabajo de otro integrante. No confundir los roles con personas adicionales.
+### Tiempo: calendario vs. trabajo efectivo
+**Se conservan los 4 sprints de 2 semanas indicados en el deber (8 semanas de calendario).** Esto no significa trabajar a tiempo completo: el esfuerzo previsto es **54 horas-persona entre las tres**, aproximadamente **18 horas por persona en todo el trabajo** (promedio 2 h 15 min semanales por persona). Son estimaciones ajustables, no tiempos ya ejecutados.
 
-### Calendario y capacidad estimada
-- **Duración total:** 8 semanas, 4 sprints × 2 semanas.
-- **Escenario de cálculo:** 3 personas × 6 horas por semana cada una = 18 horas de equipo/semana, o **36 horas de equipo por sprint**.
-- **Capacidad total:** 144 horas-persona. Incluye planificación, elaboración, revisión y retrospectiva.
-- **Fechas de inicio y fin:** por definir con el equipo (no se presume que los sprints ya comenzaron).
+| Sprint | Plazo formal | Responsable de coordinación | Trabajo previsto | Esfuerzo total del equipo |
+|---|---|---|---|---:|
+| **1** | Semanas 1–2 | Ariana (producto) + Ana (seguimiento) | Visión, épicas, MVP, backlog y riesgos iniciales | **9 h-persona** |
+| **2** | Semanas 3–4 | Lau (arquitectura) | Diagramas C4/UML, límites, propietarios de datos, ADR | **18 h-persona** |
+| **3** | Semanas 5–6 | Lau (diseño) + Ana (registro) | Matriz de interacciones, patrones, SOLID, calidad | **15 h-persona** |
+| **4** | Semanas 7–8 | Ariana (presentación) + Ana (trazabilidad) | Dashboard, versionamiento, informe y exposición | **12 h-persona** |
+| **Total** | **8 semanas formales** | Equipo completo | | **54 h-persona** |
 
-| Sprint | Semanas relativas | Resultado | Horas-persona estimadas | Costo de trabajo estimado (USD) |
-|---|---|---|---:|---:|
-| Sprint 1 | 1–2 | Visión, MVP, backlog, límites iniciales | 36 | 288 |
-| Sprint 2 | 3–4 | C4, UML, propiedad de datos, ADR | 36 | 288 |
-| Sprint 3 | 5–6 | Interacciones, patrones, SOLID, calidad | 36 | 288 |
-| Sprint 4 | 7–8 | Dashboard, trazabilidad, informe y presentación | 36 | 288 |
-| **Total base** | **8 semanas** | | **144** | **1.152** |
+**Tiempos aproximados por actividad:** Sprint 1: issues #1 2 h, #2 2 h, #3 2 h, #4 3 h; Sprint 2: #5 4 h, #6 3 h, #7 4 h, #8 4 h, #9 3 h; Sprint 3: #10 3 h, #11 4 h, #12 3 h, #13 3 h, #14 2 h; Sprint 4: #15 3 h, #16 2 h, #17 2 h, #18 3 h, #19 2 h. **Son horas-persona sumadas, no duración de cada sprint.**
 
-### Presupuesto referencial
-Se usa una **tarifa ficticia de valoración del tiempo de USD 8 por hora-persona**, exclusivamente para estimar el esfuerzo del proyecto académico. No implica pagos al equipo.
+### Presupuesto monetario (USD)
+| Concepto | Costo previsto |
+|---|---:|
+| GitHub (plan gratuito) | **$0** |
+| Diagramas y documentación con herramientas gratuitas | **$0** |
+| Trabajo académico de los integrantes (no remunerado) | **$0** |
+| Suscripción de IA paga, opcional, máximo una mensualidad | **Hasta $20** |
+| **Presupuesto máximo previsto** | **$20** |
 
-| Concepto | Fórmula | Valor estimado (USD) |
-|---|---|---:|
-| Trabajo del equipo | 3 × 6 horas/semana × 8 semanas × USD 8/h | 1.152,00 |
-| GitHub + diagramas y documentación gratuitos | Supuesto: uso de herramientas sin costo | 0,00 |
-| Contingencia por cambios y correcciones | 10 % del costo base | 115,20 |
-| **Presupuesto referencial total** | | **1.267,20** |
+**Escenario sin suscripción nueva:** $0. **Escenario con suscripción:** hasta $20, si no existen impuestos, comisiones o cargos adicionales; comprobar el total facturado antes de pagar. La estimación **no** incluye laptops, internet u otras herramientas que el equipo ya posee. No se debe tratar como gasto ejecutado.
 
-**Costo monetario esperado:** USD 0 si el equipo no recibe remuneración y usa herramientas gratuitas. El valor USD 1.267,20 representa tiempo valorizado más contingencia, no dinero que necesariamente se gaste.
+### Asignación principal y horas estimadas por historia
+| Issue | Tema | Responsable principal | Esfuerzo equipo |
+|---|---|---|---:|
+| #1 | Visión, interesados y MVP | Ariana | 2 h |
+| #2 | Épicas e historias | Ariana | 2 h |
+| #3 | Backlog y responsabilidades | Ana | 2 h |
+| #4 | Límites iniciales y riesgos | Lau | 3 h |
+| #5 | C4 y límites de servicio | Lau | 4 h |
+| #6 | Propiedad de datos | Lau | 3 h |
+| #7 | Recepción y reposición UML | Ana | 4 h |
+| #8 | Reserva FEFO y despacho UML | Ariana | 4 h |
+| #9 | ADR iniciales | Lau | 3 h |
+| #10 | Matriz de interacciones | Ana | 3 h |
+| #11 | Patrones y justificación | Lau | 4 h |
+| #12 | Evidencia SOLID | Ariana | 3 h |
+| #13 | Requisitos de calidad | Lau | 3 h |
+| #14 | Revisión de diagramas y ADR | Ana | 2 h |
+| #15 | Dashboard interno/externo | Ariana | 3 h |
+| #16 | Versionamiento y trazabilidad | Ana | 2 h |
+| #17 | Revisión integral | Lau | 2 h |
+| #18 | Presentación de flujo | Ariana | 3 h |
+| #19 | Informe final y cierre | Ana | 2 h |
 
-**Fórmula para adaptar el cálculo:** presupuesto = (número de integrantes × horas semanales por integrante × 8 × tarifa por hora) × 1,10 + costos adicionales reales.
-
-### Dedicación propuesta por persona en cada sprint (6 h/semana)
-- Planificación y seguimiento: 2 h por sprint.
-- Elaboración de historias, diagramas o documentos: 8 h por sprint.
-- Revisión cruzada y ajustes: 1 h por sprint.
-- Revisión del sprint y retrospectiva: 1 h por sprint.
-
-**Por confirmar antes de iniciar:** integrantes, roles definitivos, disponibilidad semanal, fecha de inicio, presupuesto real y acuerdos de revisión. Las estimaciones no reemplazan el registro efectivo de horas y resultados.
+Los responsables son dueños de cada entrega, no ejecutores únicos. **No se documentarán revisiones/retrospectivas ficticias**; se rellenarán al cierre real de cada sprint. Las fechas concretas se acuerdan con el equipo.
