@@ -1,6 +1,6 @@
 # Plan de sprints — Smart Inventory
 
-**Materia:** Diseño de Sistemas · **Duración:** 4 sprints de 2 semanas · **Estado:** planificación inicial, sin ejecución reportada.
+**Materia:** Diseño de Sistemas · **Duración:** 4 sprints de 2 semanas · **Estado:** planificación general; artefactos documentales de Sprint 1 preparados para revisión (sin aprobación formal ni cierre).
 
 ## Reglas de seguimiento
 - Backlog: [Issues](https://github.com/asmunozv/Deber2/issues). Las tareas se identifican por el prefijo de sprint.
@@ -23,13 +23,18 @@
 
 **Historias seleccionadas:** [#1](https://github.com/asmunozv/Deber2/issues/1), [#2](https://github.com/asmunozv/Deber2/issues/2), [#3](https://github.com/asmunozv/Deber2/issues/3), [#4](https://github.com/asmunozv/Deber2/issues/4).
 
-**Incremento revisable esperado:** visión de producto, backlog priorizado, tablero y primera propuesta de límites/riesgos.
+**Incremento documental redactado (pendiente de revisión):**
+- [Visión, interesados y MVP](sprint-1/01-VISION-Y-MVP.md).
+- [Épicas, historias de usuario y criterios](sprint-1/02-EPICAS-E-HISTORIAS.md).
+- [Backlog priorizado, dependencias y roles](sprint-1/03-BACKLOG-Y-ROLES.md).
+- [Límites candidatos, riesgos y decisiones abiertas](sprint-1/04-LIMITES-Y-RIESGOS.md).
+- [Lista de validación, registro para review y retrospectiva](sprint-1/05-REVISION-Y-RETROSPECTIVA.md).
 
-**Responsables:** por asignar. **Fechas:** por definir.
+**Responsables:** roles funcionales propuestos; nombres del equipo por asignar. **Fechas:** por definir.  
+**Estado de las issues #1–#4:** artefactos elaborados en rama de revisión; pendientes revisión por otra persona, acuerdos reales y criterios de cierre. No cerrarlas por el solo hecho de redactar documentos.
 
-**Revisión (completar al finalizar):** fecha: ___; entregables verificados: ___; acuerdos/retroalimentación: ___.
-
-**Retrospectiva (completar al finalizar):** funcionó: ___; mejorar: ___; acción siguiente: ___.
+**Revisión:** fecha real pendiente; integrantes y comentarios pendientes; aceptación pendiente.  
+**Retrospectiva:** pendiente de reunión y acta real. El documento de control indica los campos por completar.
 
 ## Sprint 2 — Arquitectura y flujos (2 semanas)
 **Objetivo:** justificar límites y propiedad de datos, modelar C4 y flujos UML, registrar ADR iniciales.
