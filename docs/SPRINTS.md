@@ -84,3 +84,54 @@
 | Equipo de diseño | Pendiente |
 
 > Este documento registra la **planificación**, no constituye evidencia de que los cuatro sprints ya se ejecutaron.
+
+
+## Planificación de roles, tiempo y presupuesto (propuesta ajustable)
+
+> **Importante:** el enunciado exige registrar responsables y cuatro sprints de dos semanas, pero no establece número de integrantes, tarifa horaria ni presupuesto. Los valores siguientes son una **estimación académica ilustrativa**, no gastos ejecutados ni fechas acordadas por el equipo. Sustituir cuando se confirme la composición del grupo.
+
+### Roles y responsabilidades
+| Rol | Función en los sprints | Asignación nominal |
+|---|---|---|
+| Product Owner | Priorizar historias, definir alcance MVP y aceptar incrementos | Por confirmar |
+| Scrum Master / facilitador | Organizar planificación, review y retrospectiva, registrar bloqueos | Por confirmar |
+| Líder de arquitectura | Revisar límites de servicio, propiedad de datos, C4, UML y ADR | Por confirmar |
+| Equipo de diseño | Preparar backlog, diagramas, matriz, mockups, informe y presentación | Por confirmar |
+
+**Distribución orientativa si son 3 personas:** integrante A = Product Owner + artefactos de producto; integrante B = Scrum Master + seguimiento/trazabilidad; integrante C = líder de arquitectura + revisión técnica. Los tres colaboran en el diseño y revisan trabajo de otro integrante. No confundir los roles con personas adicionales.
+
+### Calendario y capacidad estimada
+- **Duración total:** 8 semanas, 4 sprints × 2 semanas.
+- **Escenario de cálculo:** 3 personas × 6 horas por semana cada una = 18 horas de equipo/semana, o **36 horas de equipo por sprint**.
+- **Capacidad total:** 144 horas-persona. Incluye planificación, elaboración, revisión y retrospectiva.
+- **Fechas de inicio y fin:** por definir con el equipo (no se presume que los sprints ya comenzaron).
+
+| Sprint | Semanas relativas | Resultado | Horas-persona estimadas | Costo de trabajo estimado (USD) |
+|---|---|---|---:|---:|
+| Sprint 1 | 1–2 | Visión, MVP, backlog, límites iniciales | 36 | 288 |
+| Sprint 2 | 3–4 | C4, UML, propiedad de datos, ADR | 36 | 288 |
+| Sprint 3 | 5–6 | Interacciones, patrones, SOLID, calidad | 36 | 288 |
+| Sprint 4 | 7–8 | Dashboard, trazabilidad, informe y presentación | 36 | 288 |
+| **Total base** | **8 semanas** | | **144** | **1.152** |
+
+### Presupuesto referencial
+Se usa una **tarifa ficticia de valoración del tiempo de USD 8 por hora-persona**, exclusivamente para estimar el esfuerzo del proyecto académico. No implica pagos al equipo.
+
+| Concepto | Fórmula | Valor estimado (USD) |
+|---|---|---:|
+| Trabajo del equipo | 3 × 6 horas/semana × 8 semanas × USD 8/h | 1.152,00 |
+| GitHub + diagramas y documentación gratuitos | Supuesto: uso de herramientas sin costo | 0,00 |
+| Contingencia por cambios y correcciones | 10 % del costo base | 115,20 |
+| **Presupuesto referencial total** | | **1.267,20** |
+
+**Costo monetario esperado:** USD 0 si el equipo no recibe remuneración y usa herramientas gratuitas. El valor USD 1.267,20 representa tiempo valorizado más contingencia, no dinero que necesariamente se gaste.
+
+**Fórmula para adaptar el cálculo:** presupuesto = (número de integrantes × horas semanales por integrante × 8 × tarifa por hora) × 1,10 + costos adicionales reales.
+
+### Dedicación propuesta por persona en cada sprint (6 h/semana)
+- Planificación y seguimiento: 2 h por sprint.
+- Elaboración de historias, diagramas o documentos: 8 h por sprint.
+- Revisión cruzada y ajustes: 1 h por sprint.
+- Revisión del sprint y retrospectiva: 1 h por sprint.
+
+**Por confirmar antes de iniciar:** integrantes, roles definitivos, disponibilidad semanal, fecha de inicio, presupuesto real y acuerdos de revisión. Las estimaciones no reemplazan el registro efectivo de horas y resultados.
