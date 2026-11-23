@@ -1,0 +1,71 @@
+flowchart TB
+    %% ============================================================
+    %% C4 — Nivel 2: Contenedores (Smart Inventory)
+    %% Síncrono  -> flecha continua  (consulta/comando inmediato)
+    %% Asíncrono -> flecha punteada  (evento de negocio vía broker)
+    %% ============================================================
+
+    subgraph SYS["Smart Inventory — contenedores"]
+        direction TB
+
+        APP["Capa de aplicación<br/>(orquesta consultas y acciones del dashboard)"]
+
+        subgraph NEG["Capacidades de negocio (propietarias de sus datos)"]
+            CAT["Catálogo<br/>y ubicaciones"]
+            INV["Inventario<br/>(stock, lotes, movimientos)"]
+            REP["Reposición<br/>y compras"]
+            FUL["Fulfillment<br/>y pedidos"]
+            FLT["Flota<br/>y operación"]
+        end
+
+        subgraph LEC["Lectura y análisis"]
+            DAS["Dashboard"]
+            ANA["Analítica"]
+            PROY[("Proyección<br/>de lectura")]
+            LAKE[("Lakehouse")]
+        end
+
+        BROKER{{"Broker de eventos"}}
+    end
+
+    DBCAT[("BD<br/>Catálogo")]
+    DBINV[("BD<br/>Inventario")]
+    DBREP[("BD<br/>Reposición")]
+    DBFUL[("BD<br/>Fulfillment")]
+    DBFLT[("BD<br/>Flota")]
+
+    %% Capa de aplicación -> capacidades (síncrono)
+    APP -->|"consulta / comando inmediato"| CAT
+    APP -->|"consulta / comando inmediato"| INV
+    APP -->|"consulta / comando inmediato"| REP
+    APP -->|"consulta / comando inmediato"| FUL
+    APP -->|"consulta / comando inmediato"| FLT
+
+    %% Interacciones síncronas entre capacidades
+    INV -->|"valida SKU y lote"| CAT
+    FUL -->|"reserva / salida de unidades"| INV
+    REP -->|"consulta disponibilidad"| INV
+    FUL -->|"asigna recurso logístico"| FLT
+
+    %% Bases de datos (propiedad lógica)
+    CAT --- DBCAT
+    INV --- DBINV
+    REP --- DBREP
+    FUL --- DBFUL
+    FLT --- DBFLT
+
+    %% Eventos de negocio (asíncronos, vía broker)
+    INV -. "hecho: stock actualizado" .-> BROKER
+    FUL -. "hecho: pedido / reserva / despacho" .-> BROKER
+    REP -. "hecho: sugerencia / orden de compra" .-> BROKER
+    FLT -. "hecho: telemetría / progreso" .-> BROKER
+
+    BROKER -.->|"proyecta lecturas"| PROY
+    BROKER -.->|"carga histórico"| LAKE
+
+    %% Consumo de lectura
+    DAS -->|"consulta vista optimizada"| PROY
+    ANA -->|"consulta histórico"| LAKE
+
+    %% Acciones desde el dashboard pasan por la capa de aplicación
+    DAS -->|"aprobar sugerencia / reservar"| APP
