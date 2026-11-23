@@ -1,0 +1,33 @@
+sequenceDiagram
+    %% ============================================================
+    %% Flujo C (F5) — Despacho y flota
+    %% ============================================================
+    actor DESP as Operador de despacho
+    participant APP as Capa de aplicación
+    participant FUL as Fulfillment
+    participant INV as Inventario
+    participant FLT as Flota
+    participant BROKER as Broker
+    participant PROY as Proyección de lectura
+
+    DESP->>APP: preparar pedido reservado
+    APP->>FUL: crear tarea de preparación (picking)
+    FUL->>FUL: estado pedido "en preparación"
+
+    DESP->>APP: confirmar despacho
+    APP->>FUL: comando de despacho
+    FUL->>INV: confirmar salida de unidades reservadas
+    INV->>INV: descontar físico y liberar compromiso (transacción local)
+    INV-->>FUL: salida confirmada (sin doble descuento)
+    FUL->>FUL: estado pedido "listo para despacho"
+
+    FUL->>FLT: solicitar asignación de recurso (AMR / vehículo)
+    FLT->>FLT: asignar recurso disponible y calcular ruta
+    FLT-->>FUL: recurso asignado
+    FUL->>FUL: estado pedido "en ruta"
+
+    FUL-)BROKER: publicar "despacho actualizado"
+    FLT-)BROKER: publicar "progreso logístico"
+    BROKER-)PROY: refrescar flujo de pedidos y planta
+
+    Note over FLT,BROKER: Flota comunica progreso (preparado, en ruta, entregado)<br/>sin alterar el stock ya descontado.

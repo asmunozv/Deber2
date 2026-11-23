@@ -1,0 +1,31 @@
+sequenceDiagram
+    %% ============================================================
+    %% Flujo C (F4) — Reserva con criterio FEFO
+    %% ============================================================
+    actor FULP as Coordinador de pedidos
+    participant APP as Capa de aplicación
+    participant FUL as Fulfillment
+    participant INV as Inventario
+    participant BROKER as Broker
+    participant PROY as Proyección de lectura
+
+    FULP->>APP: crear pedido (SKU, cantidad)
+    APP->>FUL: comando de creación de pedido
+    FUL->>FUL: crear pedido (estado "en reserva")
+
+    FUL->>INV: solicitar reserva FEFO (pedido, SKU, cantidad)
+    INV->>INV: seleccionar lotes elegibles (FEFO: menor vencimiento)
+    alt disponibilidad suficiente
+        INV->>INV: comprometer unidades en lotes (transacción local)
+        INV-->>FUL: reserva confirmada (lotes asignados)
+        FUL->>FUL: estado pedido "reservado"
+        FUL-)BROKER: publicar "reserva confirmada"
+        BROKER-)PROY: refrescar disponibilidad proyectada
+        FUL-->>APP: pedido reservado
+        APP-->>FULP: confirmación
+    else disponibilidad insuficiente
+        INV-->>FUL: reserva rechazada (sin asignación parcial)
+        FUL->>FUL: estado pedido "sin stock"
+        FUL-->>APP: rechazo
+        APP-->>FULP: aviso de no disponibilidad
+    end
