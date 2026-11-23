@@ -16,7 +16,7 @@
 - [x] Hay backlog ordenado con dependencias y sprint de profundización.
 - [x] Se proponen roles Scrum y arquitectura y sus responsabilidades.
 - [x] Se proponen límites candidatos, alternativas y registro inicial de riesgos.
-- [ ] Integrantes del equipo asignan nombres y aceptan roles/tareas.
+- [ ] Integrantes del equipo confirman la aceptación de roles/tareas y quedan registrados como assignees en las issues.
 - [ ] Al menos otro integrante revisa cada artefacto y deja evidencia verificable.
 - [ ] Equipo confirma o modifica supuestos críticos (FEFO, parciales, lote no perecible, frescura).
 - [ ] Se celebra y registra una review del sprint.
@@ -45,9 +45,9 @@ Registrar únicamente después de la conversación real:
 ## 5. Registro de revisión cruzada
 | Artefacto | Autor real | Revisor diferente del autor | Fecha | Enlace a evidencia | Aprobado / cambios |
 |---|---|---|---|---|---|
-| Visión/MVP | Por registrar | Por registrar | — | — | Pendiente |
-| Épicas/historias | Por registrar | Por registrar | — | — | Pendiente |
-| Backlog/roles | Por registrar | Por registrar | — | — | Pendiente |
-| Límites/riesgos | Por registrar | Por registrar | — | — | Pendiente |
+| Visión/MVP | Ariana Muñoz | Por registrar | — | — | Pendiente |
+| Épicas/historias | Ariana Muñoz | Por registrar | — | — | Pendiente |
+| Backlog/roles | Ana Paula López | Por registrar | — | — | Pendiente |
+| Límites/riesgos | Laura Reyes | Por registrar | — | — | Pendiente |
 
 **Regla de cierre:** los documentos son un incremento **preparado para revisión**, no prueba de reuniones, aprobaciones o implementación. Tras recibir revisión humana y fusionar cambios, completar este registro y actualizar las cuatro issues con enlaces a evidencias.

@@ -1,0 +1,32 @@
+flowchart TB
+    %% ============================================================
+    %% Diagrama de actividad — Flujo vertical integral
+    %% recepción → stock → alerta → reposición (+ reserva/despacho)
+    %% ============================================================
+
+    start([Inicio]) --> reg[Registrar SKU en Catálogo]
+    reg --> rec[Registrar recepción con lote, cantidad y ubicación]
+    rec --> val{¿SKU y lote válidos?}
+    val -- No --> rec
+    val -- Sí --> upd[Inventario: actualizar saldo + movimiento en transacción]
+    upd --> pub[Publicar evento de stock vía Outbox]
+
+    pub --> dispo[Calcular disponibilidad por SKU/lote]
+    dispo --> umb{¿Disponible bajo el umbral?}
+    umb -- Sí --> sug[Reposición: generar sugerencia]
+    sug --> apr[Planificador: aprobar sugerencia]
+    apr --> oc[Crear orden de compra]
+    oc --> rec
+
+    umb -- No --> ped{¿Existe pedido a reservar?}
+    ped -- Sí --> res[Inventario: reservar lotes por FEFO]
+    res --> prep[Fulfillment: preparar pedido]
+    prep --> des[Confirmar despacho: salida de stock]
+    des --> flt[Flota: asignar vehículo/AMR y ruta]
+    flt --> ent[Registrar entrega]
+    ent --> fin([Fin])
+    ped -- No --> fin
+
+    pub --> proy[Proyección de lectura + Lakehouse]
+    proy --> dash[Dashboard: indicadores, alertas y flujo]
+    dash --> fin

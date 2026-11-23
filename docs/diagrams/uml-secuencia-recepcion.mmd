@@ -1,0 +1,25 @@
+sequenceDiagram
+    %% ============================================================
+    %% Flujo A (F1) — Recepción y actualización de existencias
+    %% ============================================================
+    actor OPR as Operador de recepción
+    participant APP as Capa de aplicación
+    participant INV as Inventario
+    participant CAT as Catálogo
+    participant BROKER as Broker
+    participant PROY as Proyección de lectura
+    participant LAKE as Lakehouse
+
+    OPR->>APP: registrar recepción (SKU, lote, cantidad, ubicación, vencimiento)
+    APP->>INV: comando de recepción
+    INV->>CAT: validar SKU y política de lote
+    CAT-->>INV: SKU válido + atributos de lote
+    INV->>INV: validar lote, cantidad positiva y ubicación
+    INV->>INV: registrar movimiento y saldo (transacción local)
+    INV->>INV: escribir evento en Outbox (misma transacción)
+    INV-->>APP: recepción confirmada
+    APP-->>OPR: resultado
+
+    INV-)BROKER: publicar "stock actualizado"
+    BROKER-)PROY: refrescar indicadores
+    BROKER-)LAKE: conservar histórico
