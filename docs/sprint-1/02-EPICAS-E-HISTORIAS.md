@@ -1,6 +1,9 @@
 # Sprint 1 — Épicas e historias de usuario
 
-**Issue:** [#2](https://github.com/asmunozv/Deber2/issues/2) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Aprobación de negocio:** 21/11/2026
+> **Estado verificado (auditoría 23/11/2026):** archivo de diseño disponible. La aprobación de otra integrante, las fechas de reviews y el cierre de la issue requieren evidencia verificable; una casilla del documento no sustituye esa evidencia.
+
+
+**Issue:** [#2](https://github.com/asmunozv/Deber2/issues/2) · **Versión:** 1.0 · **Estado:** artefacto redactado; validación documental pendiente
 
 ## Convenciones
 - Cada historia utiliza **Como / quiero / para** y criterios de aceptación observables en situaciones de negocio: **Dado / cuando / entonces**.
