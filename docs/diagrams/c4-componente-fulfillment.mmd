@@ -6,7 +6,7 @@ flowchart TB
     subgraph FUL["Contenedor: Fulfillment"]
         direction TB
 
-        API["API / puerto de entrada<br/>(pedidos, reservas, despacho)"]
+        PORT["Puerto de entrada<br/>(casos de uso: pedidos, reservas, despacho)"]
 
         PED["Gestión de pedidos<br/>(estado del pedido)"]
         PREP["Preparación<br/>(tareas de picking)"]
@@ -24,9 +24,9 @@ flowchart TB
     INV["Inventario<br/>(reserva / salida)"]
     FLT["Flota<br/>(asignación logística)"]
 
-    API --> PED
-    API --> PREP
-    API --> DES
+    PORT --> PED
+    PORT --> PREP
+    PORT --> DES
 
     PED --> DOM
     PREP --> DOM
