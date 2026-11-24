@@ -29,7 +29,8 @@
 - [ ] **Revisión humana:** Lau, Ana y Ariana deben revisar artefactos de otra persona y comentar con nombre, fecha, hallazgos y aprobación real. Un PR fusionado no prueba por sí solo una review.
 - [ ] **Fechas:** indicar inicio y fin efectivos si hubo cuatro ciclos de dos semanas; de lo contrario describirlos como planificación, no como sprints ejecutados.
 - [ ] **Issues:** verificar criterios, comentarios, responsables y cerrar solo las que de verdad cumplan DoD. Los nombres de usuario GitHub de Lau y Ana no están confirmados; la asignación es textual.
-- [ ] **Exportaciones:** guardar en docs/diagrams/exports las imágenes SVG/PNG de los diagramas que se inserten en el informe. Guía: [Mermaid](diagrams/README.md).
+- [x] **Exportador disponible:** [abrir o descargar visor Mermaid](diagrams/exportar.html) para generar SVG/PNG a partir de los 12 archivos fuente.
+- [ ] **Exportaciones definitivas:** guardar en docs/diagrams/exports las imágenes SVG/PNG que efectivamente se inserten en el informe; las descargas del visor no se suben automáticamente a GitHub. Guía: [Mermaid](diagrams/README.md).
 - [ ] **Versiones:** comprobar la existencia de etiquetas Git antes de decir que se crearon.
 - [ ] **Informe Word:** verificar portada, autores, diagrama C4, UML, legibilidad y paginación. Se confirmó que el archivo existe, no su renderizado visual.
 - [ ] **Presentación:** abrir y ensayar presentacion.html, con énfasis en recepción → stock → alerta → reposición.
