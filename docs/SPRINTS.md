@@ -66,7 +66,7 @@ No se contabiliza como gasto real mientras no se pague. Impuestos o cargos adici
 | **3** | [Interacciones](sprint-3/10-MATRIZ-INTERACCIONES.md), [patrones](sprint-3/11-PATRONES.md), [SOLID](sprint-3/12-SOLID.md), [calidad](sprint-3/13-REQUISITOS-CALIDAD.md), [revisión](sprint-3/14-REVISION-DIAGRAMAS-ADR.md) | Comentarios de revisión cruzada en #11, #12 y #13; #10 y #14 pendientes |
 | **4** | [Dashboard](sprint-4/15-DASHBOARD.md), [versionamiento](sprint-4/16-VERSIONAMIENTO.md), [revisión final](sprint-4/17-REVISION-INTEGRAL.md), [presentación](sprint-4/18-PRESENTACION.md), [informe](sprint-4/19-INFORME-FINAL.md) | Comentarios de revisión cruzada en #15, #17 y #18; #16 y #19 pendientes; ensayo y cierre documental pendientes |
 
-**Estado de trabajo:** 14 issues aparecen cerradas y 5 abiertas en GitHub al 24/11/2026. El estado cerrado no sustituye los criterios de aceptación: #1 y #2 están cerradas sin un comentario cruzado identificable. No declarar los sprints formalmente cerrados mientras falten revisiones, actas o retrospectivas.
+**Estado de trabajo:** 12 issues aparecen cerradas y 7 abiertas en GitHub al 24/11/2026 (#1, #2, #7, #10, #14, #16 y #19). El estado cerrado no sustituye los criterios de aceptación: #1 y #2 están cerradas sin un comentario cruzado identificable. No declarar los sprints formalmente cerrados mientras falten revisiones, actas o retrospectivas.
 
 ## Definición de terminado (DoD)
 
@@ -83,7 +83,7 @@ No se contabiliza como gasto real mientras no se pague. Impuestos o cargos adici
 
 | Responsable de la tarea | Issues | Revisor/a observado/a | Estado documental |
 |---|---|---|---|
-| Ariana | #1, #2 | Pendiente (no se identificó comentario de aprobación de otra persona) | Issues cerradas; regularizar revisión |
+| Ariana | #1, #2 | Pendiente (no se identificó comentario de aprobación de otra persona) | Issues reabiertas para revisión cruzada |
 | Ana / Lau | #3, #4 | Ariana | Comentarios de revisión registrados |
 | Lau | #5, #6, #9, #11, #13, #17 | Ariana | Comentarios de revisión registrados; ADR aún propuestos |
 | Ariana | #8, #12, #15, #18 | Lau | Comentarios de revisión registrados |
