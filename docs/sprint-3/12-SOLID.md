@@ -91,6 +91,6 @@ Los puertos de entrada/salida del dominio están representados en [`c4-component
 
 - [x] Los cinco principios con evidencia en pseudocódigo y vínculo al diagrama.
 - [x] Cada principio indica el cambio futuro que facilita.
-- [ ] Revisión por otro integrante.
+- [x] Revisión cruzada registrada: comentario de aprobación de Lau en la issue #12 (fecha visible en GitHub).
 
 **Relaciones:** [Patrones](11-PATRONES.md) · [C4](../sprint-2/05-C4-ARQUITECTURA.md).
