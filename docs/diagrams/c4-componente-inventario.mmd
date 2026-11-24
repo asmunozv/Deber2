@@ -6,7 +6,7 @@ flowchart TB
     subgraph INV["Contenedor: Inventario"]
         direction TB
 
-        API["API / puerto de entrada<br/>(consulta, reserva, ajuste)"]
+        PORT["Puerto de entrada<br/>(casos de uso: consulta, reserva, ajuste)"]
 
         REC["Gestión de recepciones"]
         MOV["Gestión de movimientos<br/>(salidas, transferencias, ajustes)"]
@@ -23,10 +23,10 @@ flowchart TB
     DB[("BD<br/>Inventario")]
 
     %% Puertos de entrada
-    API --> REC
-    API --> MOV
-    API --> RES
-    API --> DISP
+    PORT --> REC
+    PORT --> MOV
+    PORT --> RES
+    PORT --> DISP
 
     %% Todos los casos de uso pasan por el dominio
     REC --> DOM
