@@ -68,6 +68,6 @@ Se justifican **siete patrones** (la consigna exige al menos cuatro). Para cada 
 - [x] Al menos cuatro patrones justificados (se documentan siete).
 - [x] Problema, ubicación, beneficios, costos y límites por patrón.
 - [x] Vínculo con diagramas y ADR.
-- [ ] Revisión por otro integrante.
+- [x] Revisión cruzada registrada: comentario de Ariana en la issue #11 (fecha visible en GitHub).
 
 **Relaciones:** [SOLID](12-SOLID.md) · [Requisitos de calidad](13-REQUISITOS-CALIDAD.md) · [C4](../sprint-2/05-C4-ARQUITECTURA.md).
