@@ -20,4 +20,12 @@ El **broker** carga los hechos de negocio en un **Lakehouse**, que conserva la i
 **Costos / riesgos:**
 - Infraestructura y gobierno de datos adicionales (fuera del alcance técnico de esta materia).
 
+## Alternativas consideradas
+
+| Alternativa | Motivo para no elegirla |
+|---|---|
+| Consultar directamente bases transaccionales | Compite con operaciones y mezcla cargas analíticas con operativas |
+| Mantener solo reportes manuales | No facilita análisis histórico recurrente ni trazabilidad |
+| Replicar cada tabla operativa sin modelo histórico | No resuelve por sí solo gobierno, retención y transformación analítica |
+
 **Vínculos:** Issue [#9](https://github.com/asmunozv/Deber2/issues/9) · [C4](../sprint-2/05-C4-ARQUITECTURA.md)
