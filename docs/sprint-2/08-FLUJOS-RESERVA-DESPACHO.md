@@ -1,6 +1,9 @@
 # Sprint 2 — Flujos de reserva FEFO y despacho (UML)
 
-**Issue:** [#8](https://github.com/asmunozv/Deber2/issues/8) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Product Owner (Ariana Muñoz)
+> **Estado verificado (auditoría 23/11/2026):** archivo de diseño disponible. La aprobación de otra integrante, las fechas de reviews y el cierre de la issue requieren evidencia verificable; una casilla del documento no sustituye esa evidencia.
+
+
+**Issue:** [#8](https://github.com/asmunozv/Deber2/issues/8) · **Versión:** 1.0 · **Estado:** artefacto redactado; validación documental pendiente
 
 Cubre los flujos **F4 (reserva FEFO)** y **F5 (despacho/flota)** del enunciado (Flujo C).
 

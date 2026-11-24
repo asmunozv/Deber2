@@ -1,7 +1,7 @@
 # ADR-0004 — Interacciones síncronas vs. asíncronas + Outbox
 
-**Estado:** Aceptado
-**Fecha:** 22 de noviembre de 2026
+**Estado:** Propuesto (aceptación pendiente de evidencia de revisión del equipo)
+**Fecha consignada en borrador:** 22 de noviembre de 2026 (validación pendiente)
 
 ## Contexto
 

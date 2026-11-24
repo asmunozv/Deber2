@@ -1,6 +1,9 @@
 # Sprint 2 — Registro de decisiones de arquitectura (ADR)
 
-**Issue:** [#9](https://github.com/asmunozv/Deber2/issues/9) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
+> **Estado verificado (auditoría 23/11/2026):** archivo de diseño disponible. La aprobación de otra integrante, las fechas de reviews y el cierre de la issue requieren evidencia verificable; una casilla del documento no sustituye esa evidencia.
+
+
+**Issue:** [#9](https://github.com/asmunozv/Deber2/issues/9) · **Versión:** 1.0 · **Estado:** artefacto redactado; validación documental pendiente
 
 ## Índice de ADR
 
@@ -20,7 +23,7 @@ Cada decisión registra: **contexto**, **decisión**, **consecuencias** (positiv
 
 ## Estado y trazabilidad
 
-- Los ADR tienen estado **Aceptado**, ratificados el 22/11/2026 tras revisión cruzada.
+- Los ADR están redactados con decisiones propuestas; su aceptación/fecha de ratificación debe contrastarse con evidencia de revisión del equipo.
 - Cada ADR enlaza la issue, el diagrama y el documento que afecta.
 - Un cambio de arquitectura posterior debe generar un **nuevo ADR** (o la actualización versionada del existente), no una edición silenciosa.
 
@@ -30,6 +33,6 @@ Cada decisión registra: **contexto**, **decisión**, **consecuencias** (positiv
 - [x] Trazabilidad a riesgos, decisiones abiertas y flujos.
 - [x] Estado "Aceptado" con fecha real registrada.
 - [x] Revisión por otro integrante.
-- [x] Ratificación y fecha real registradas en cada ADR.
+- [ ] Ratificación de decisiones y fecha real confirmadas por el equipo con evidencia.
 
 **Relaciones:** [C4](05-C4-ARQUITECTURA.md) · [Propiedad de datos](06-PROPIEDAD-DE-DATOS.md) · [Flujos](07-FLUJOS-RECEPCION-REPOSICION.md) · [Reserva/despacho](08-FLUJOS-RESERVA-DESPACHO.md).

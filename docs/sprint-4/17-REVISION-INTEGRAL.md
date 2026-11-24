@@ -1,38 +1,34 @@
-# Sprint 4 — Revisión integral de coherencia
+# Sprint 4 — Control de revisión integral
 
-**Issue:** [#17](https://github.com/asmunozv/Deber2/issues/17) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada el 24/11/2026) · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
+**Issue:** [#17](https://github.com/asmunozv/Deber2/issues/17) · **Estado:** revisión documental preliminar; validación del equipo pendiente.
 
-## 1. Verificación de coherencia de extremo a extremo
+## Lista de coherencia
 
-| Verificación | Resultado esperado | Estado |
+| Comprobación | Evidencia existente | Estado |
 |---|---|---|
-| Visión → épicas → historias → backlog | Identificadores estables CAT..ANA y flujos F1..F7 consistentes | [x] Revisado |
-| Historias → diagramas C4/UML | Cada flujo tiene su diagrama; nombres coinciden | [x] Revisado |
-| Diagramas → propiedad de datos | Fuente autorizada única por dato | [x] Revisado |
-| Diagramas → matriz de interacciones | Origen/destino coinciden con los diagramas | [x] Revisado |
-| Decisiones → ADR | Preguntas D01–D06 respondidas en ADR | [x] Revisado |
-| Patrones/SOLID → diagramas | Evidencia visible en componente y pseudocódigo | [x] Revisado |
-| Requisitos de calidad → ADR/patrones | Q-* referenciados y medibles | [x] Revisado |
-| Dashboard → flujo vertical | El prototipo refleja lectura, alertas y flujo | [x] Revisado |
+| Visión → backlog | Documentos [sprint-1](../sprint-1/) | Documentado |
+| Límites y propiedad de datos → C4 | [C4](../sprint-2/05-C4-ARQUITECTURA.md), [datos](../sprint-2/06-PROPIEDAD-DE-DATOS.md) | Documentado; revisión cruzada pendiente |
+| Flujos → matriz de interacciones | [UML](../diagrams/), [matriz](../sprint-3/10-MATRIZ-INTERACCIONES.md) | Documentado; revisión cruzada pendiente |
+| Patrones → SOLID | [Patrones](../sprint-3/11-PATRONES.md), [SOLID](../sprint-3/12-SOLID.md) | Documentado |
+| Calidad → ADR | [Calidad](../sprint-3/13-REQUISITOS-CALIDAD.md), [ADR](../adr/) | Documentado |
+| Dashboard → flujo vertical | [Dashboard](../dashboard/index.html), [guion](18-PRESENTACION.md) | Documentado |
 
-## 2. Recorrido vertical de negocio (verificación)
+## Flujo que debe poder explicar el equipo
 
-`registrar SKU → recibir lote → consultar stock → detectar umbral → reservar FEFO → confirmar despacho → asignar flota → consultar tablero`
+1. Catálogo identifica el SKU y las ubicaciones.
+2. Inventario registra recepción, lote, movimiento y saldo en transacción local; registra salida Outbox.
+3. El evento alimenta la proyección para dashboard/analítica; Reposición evalúa mínimos.
+4. Reposición genera sugerencia; responsable la aprueba y se crea orden de compra, sin alterar stock hasta la recepción.
+5. Fulfillment solicita reserva; Inventario asigna lotes elegibles FEFO sin sobre-reserva.
+6. Inventario confirma salida; Fulfillment y Flota gestionan preparación/despacho; dashboard lee estado derivado.
 
-- [x] El recorrido no queda interrumpido por falta de un flujo.
-- [x] Ningún paso modifica datos de un servicio que no es su propietario.
-- [x] Los estados (pedido, reserva, orden) permiten completar el recorrido.
+## Acta final pendiente
 
-## 3. Hallazgos y acciones (revisión del 24/11/2026)
+Fecha de reunión ___ · Asistentes ___ · Resultado ___ · Correcciones ___ · Enlaces a revisión de los PR/issues ___.
 
-| # | Hallazgo | Acción | Responsable | Estado |
-|---|---|---|---|---|
-| 1 | Sin hallazgos críticos; coherencia de extremo a extremo verificada | Mantener versiones de diagramas y ADR | Equipo | Cerrado |
+- [x] Artefactos principales presentes.
+- [ ] Revisión humana cruzada verificable.
+- [ ] Hallazgos y cambios cerrados.
+- [ ] Presentación ensayada por el equipo.
 
-## 4. Criterios de aceptación de #17
-
-- [x] Listas de verificación documentadas y recorrido trazable.
-- [x] Revisión integral por el equipo (no solo por el autor).
-- [x] Hallazgos corregidos y versionados antes de cerrar.
-
-**Relaciones:** [Versionamiento](16-VERSIONAMIENTO.md) · [Presentación](18-PRESENTACION.md) · [Informe final](19-INFORME-FINAL.md).
+**Nota de auditoría:** el registro previo declaró una revisión el 24/11/2026. Debe sustituirse por evidencia de una revisión real si ocurre; no se asume aprobada.

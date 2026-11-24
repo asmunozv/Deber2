@@ -1,6 +1,9 @@
 # Sprint 4 — Presentación del flujo vertical
 
-**Issue:** [#18](https://github.com/asmunozv/Deber2/issues/18) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Product Owner (Ariana Muñoz)
+> **Auditoría documental (23/11/2026):** el contenido técnico está redactado. Las revisiones, aprobaciones, etiquetas/releases y actos de cierre solo deben declararse realizados si existen evidencias correspondientes en GitHub o actas confirmadas por el equipo.
+
+
+**Issue:** [#18](https://github.com/asmunozv/Deber2/issues/18) · **Versión:** 1.0 · **Estado:** artefacto redactado; revisión y aceptación pendientes de verificar
 
 ## 1. Guion de la presentación
 
@@ -63,7 +66,7 @@ flowchart TB
 
 - [x] Guion de presentación con responsabilidades e interacciones.
 - [x] Diagrama de actividad de apoyo.
-- [x] Confirmación de autores y contribuciones individuales.
+- [ ] Confirmar autores y contribuciones con el equipo.
 - [ ] Ensayo y ajustes con el equipo.
 
 **Relaciones:** [Dashboard](15-DASHBOARD.md) · [Informe final](19-INFORME-FINAL.md) · [Flujo vertical](../diagrams/uml-actividad-flujo-vertical.mmd).

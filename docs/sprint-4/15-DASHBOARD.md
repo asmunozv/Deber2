@@ -1,6 +1,9 @@
 # Sprint 4 — Propuesta visual del dashboard
 
-**Issue:** [#15](https://github.com/asmunozv/Deber2/issues/15) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Product Owner (Ariana Muñoz)
+> **Auditoría documental (23/11/2026):** el contenido técnico está redactado. Las revisiones, aprobaciones, etiquetas/releases y actos de cierre solo deben declararse realizados si existen evidencias correspondientes en GitHub o actas confirmadas por el equipo.
+
+
+**Issue:** [#15](https://github.com/asmunozv/Deber2/issues/15) · **Versión:** 1.0 · **Estado:** artefacto redactado; revisión y aceptación pendientes de verificar
 
 ## 1. Objetivo de la vista
 

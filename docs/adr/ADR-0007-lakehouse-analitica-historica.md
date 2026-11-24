@@ -1,7 +1,7 @@
 # ADR-0007 — Lakehouse para analítica histórica
 
-**Estado:** Aceptado
-**Fecha:** 22 de noviembre de 2026
+**Estado:** Propuesto (aceptación pendiente de evidencia de revisión del equipo)
+**Fecha consignada en borrador:** 22 de noviembre de 2026 (validación pendiente)
 
 ## Contexto
 

@@ -1,50 +1,35 @@
-# Sprint 4 — Informe final y cierre
+# Sprint 4 — Informe final y control de entrega
 
-**Issue:** [#19](https://github.com/asmunozv/Deber2/issues/19) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Scrum Master (Ana Paula López)
+**Issue:** [#19](https://github.com/asmunozv/Deber2/issues/19) · **Estado documental:** borrador redactado; verificación final de entrega pendiente.
 
-## 1. Resumen ejecutivo
+## Resumen ejecutivo
 
-Smart Inventory se diseñó como una **plataforma empresarial integrada** que puede evolucionar hacia microservicios, con **siete capacidades de negocio** propietarias de sus datos (Catálogo, Inventario, Reposición, Fulfillment, Flota, Dashboard, Analítica), coordinadas mediante **interacciones síncronas** (consultas y comandos inmediatos) y **mensajería asíncrona** (hechos de negocio vía broker con Outbox). El dashboard y la analítica se sirven de una **proyección de lectura** y un **Lakehouse**, sin ser fuentes de verdad.
+Smart Inventory propone una plataforma con límites claros para Catálogo, Inventario, Reposición y compras, Fulfillment, Flota, Dashboard y Analítica. Inventario posee el saldo y los lotes, mientras el dashboard consulta datos derivados mediante proyección de lectura. La interacción síncrona soporta operaciones críticas, y el flujo de eventos con Outbox alimenta actualización de vistas y análisis histórico.
 
-## 2. Contenido de la entrega
+## Índice de evidencias
 
-| Entregable (consigna §11) | Dónde está |
+| Requisito de consigna | Evidencia en repositorio |
 |---|---|
-| Repositorio con README, backlog e historial | Este repositorio + GitHub Issues (por configurar) |
-| Visión, interesados, MVP, épicas e historias | [`docs/sprint-1/`](../sprint-1/) |
-| Registro de cuatro sprints | [`docs/SPRINTS.md`](../SPRINTS.md) |
-| Documento de arquitectura (límites, datos, C4, UML, calidad, ADR) | [`docs/sprint-2/`](../sprint-2/) y [`docs/adr/`](../adr/) |
-| Matriz de interacciones | [`docs/sprint-3/10-MATRIZ-INTERACCIONES.md`](../sprint-3/10-MATRIZ-INTERACCIONES.md) |
-| Informe de patrones y SOLID | [`11-PATRONES.md`](../sprint-3/11-PATRONES.md) y [`12-SOLID.md`](../sprint-3/12-SOLID.md) |
-| Requisitos de calidad | [`13-REQUISITOS-CALIDAD.md`](../sprint-3/13-REQUISITOS-CALIDAD.md) |
-| Política de versionamiento | [`16-VERSIONAMIENTO.md`](16-VERSIONAMIENTO.md) |
-| Propuesta visual del dashboard | [`dashboard/index.html`](../dashboard/index.html) y [`15-DASHBOARD.md`](15-DASHBOARD.md) |
-| Presentación del flujo vertical | [`18-PRESENTACION.md`](18-PRESENTACION.md) |
-| Diagramas fuente (C4/UML) | [`docs/diagrams/`](../diagrams/) |
+| README, backlog, historial | [README](../../README.md), [Issues](https://github.com/asmunozv/Deber2/issues), historial Git |
+| Visión, MVP, épicas e historias | [Sprint 1](../sprint-1/) |
+| Cuatro sprints, roles, tiempo y presupuesto | [Plan de sprints](../SPRINTS.md) |
+| Arquitectura C4/UML y propiedad de datos | [Sprint 2](../sprint-2/), [fuentes](../diagrams/) |
+| Matriz de interacciones | [Matriz](../sprint-3/10-MATRIZ-INTERACCIONES.md) |
+| Patrones y SOLID | [Patrones](../sprint-3/11-PATRONES.md), [SOLID](../sprint-3/12-SOLID.md) |
+| Calidad | [Requisitos](../sprint-3/13-REQUISITOS-CALIDAD.md) |
+| Versionamiento y ADR | [Política](16-VERSIONAMIENTO.md), [ADR](../adr/) |
+| Prototipo de dashboard | [HTML](../dashboard/index.html), [descripción](15-DASHBOARD.md) |
+| Presentación | [HTML](../../presentacion.html), [guion](18-PRESENTACION.md) |
+| Informe Word | [INFORME-SmartInventory.docx](../../INFORME-SmartInventory.docx) |
 
-## 3. Mapa de artefactos por sprint
+## Verificación final (no suponer cumplimiento)
 
-| Sprint | Issues | Artefactos |
-|---|---|---|
-| 1 | #1–#4 | Visión, épicas, backlog, límites y riesgos |
-| 2 | #5–#9 | C4, propiedad de datos, UML, ADR |
-| 3 | #10–#14 | Interacciones, patrones, SOLID, calidad, revisión |
-| 4 | #15–#19 | Dashboard, versionamiento, revisión integral, presentación, informe |
+- [x] Se localizaron archivos principales y fuentes C4/UML.
+- [ ] Revisión del contenido y formato visual de Word contra la rúbrica.
+- [ ] Exportaciones de diagramas utilizadas en el informe adjuntas al repositorio.
+- [ ] Roles y fechas reconciliados con el estado real de cada issue.
+- [ ] Revisiones/retrospectivas respaldadas con evidencia verificable.
+- [ ] Ensayo y revisión final de presentación.
+- [ ] Enlace al repositorio y Word o PDF entregados en la plataforma.
 
-## 4. Estado de cierre
-
-| Criterio | Estado |
-|---|---|
-| Revisión por otro integrante de cada artefacto | Cumplido |
-| Ratificación de ADR con fecha real (22/11/2026) | Cumplido |
-| Asignación real de responsables en issues | Cumplido |
-| Review y retrospectiva de cada sprint (21–24/11/2026) | Cumplido |
-| Etiquetas de versión `vX.Y` por sprint | Cumplido |
-
-## 5. Criterios de aceptación de #19
-
-- [x] Informe que integra todos los entregables con trazabilidad.
-- [x] Estado de cierre registrado.
-- [x] Revisión final del equipo y cierre con evidencia.
-
-**Relaciones:** [Dashboard](15-DASHBOARD.md) · [Versionamiento](16-VERSIONAMIENTO.md) · [Revisión integral](17-REVISION-INTEGRAL.md) · [Presentación](18-PRESENTACION.md).
+Ver pendientes exactos en [CONTROL-ENTREGA.md](../CONTROL-ENTREGA.md). **No declarar sprints completados ni releases confirmados sin evidencia.**

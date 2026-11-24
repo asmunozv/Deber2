@@ -1,6 +1,9 @@
 # Sprint 1 — Backlog priorizado, dependencias y roles
 
-**Issue:** [#3](https://github.com/asmunozv/Deber2/issues/3) · **Versión:** 1.0 · **Estado:** priorización aprobada · **Responsables nominales:** Ariana Muñoz (PO), Ana Paula López (Scrum Master), Laura Reyes (arquitectura)
+> **Estado verificado (auditoría 23/11/2026):** archivo de diseño disponible. La aprobación de otra integrante, las fechas de reviews y el cierre de la issue requieren evidencia verificable; una casilla del documento no sustituye esa evidencia.
+
+
+**Issue:** [#3](https://github.com/asmunozv/Deber2/issues/3) · **Versión:** 1.0 · **Estado:** artefacto redactado; validación documental pendiente
 
 ## 1. Criterios de priorización
 Se propone ordenar historias por: **(1)** riesgo para la consistencia de existencias y despachos, **(2)** necesidad para completar el recorrido vertical, **(3)** dependencias de otros módulos y **(4)** valor informativo para operación.
@@ -9,7 +12,7 @@ Se propone ordenar historias por: **(1)** riesgo para la consistencia de existen
 - **P1 / importante:** diseño complementario que puede postergarse sin perder coherencia en el flujo inicial.
 - **P2 / evolución:** capacidades analíticas y exploratorias que no bloquean los flujos centrales.
 - **Sprint previsto:** momento de **profundización del artefacto de diseño**, no fecha en que se construye software. **Todas las historias se formulan en Sprint 1**.
-- **Responsable funcional:** rol propuesto para validar la historia; **ninguna persona ha sido designada**.
+- **Responsable funcional:** rol propuesto para validar la historia; **las responsabilidades académicas están designadas a Lau, Ana y Ariana; el campo GitHub assignees puede requerir sus usuarios respectivos**.
 
 ## 2. Backlog ordenado (historias de producto)
 | Orden | Historia | Prioridad | Dependencia principal | Rol validador propuesto | Diseño detallado previsto | MVP |
@@ -44,15 +47,15 @@ Rama de control: `INV-02 → REP-01 → DAS-01` y `FUL-02 → DAS-01`.
 ## 3. Backlog académico (GitHub Issues)
 | Sprint | Issues | Entregable definido | Estado verificable en esta rama |
 |---|---|---|---|
-| S1 | [#1](https://github.com/asmunozv/Deber2/issues/1) | Visión, actores y MVP | Terminado |
-| S1 | [#2](https://github.com/asmunozv/Deber2/issues/2) | 7 épicas, 14 historias y criterios | Terminado |
-| S1 | [#3](https://github.com/asmunozv/Deber2/issues/3) | Backlog, dependencias, roles y tablero | Terminado |
-| S1 | [#4](https://github.com/asmunozv/Deber2/issues/4) | Límites, riesgos, supuestos y decisiones | Terminado |
-| S2 | [#5–#9](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+2%22) | C4, datos, UML, ADR | Terminado |
-| S3 | [#10–#14](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+3%22) | Interacciones, patrones, SOLID y calidad | Terminado |
-| S4 | [#15–#19](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+4%22) | Trazabilidad, prototipo e informe | Terminado |
+| S1 | [#1](https://github.com/asmunozv/Deber2/issues/1) | Visión, actores y MVP | Entregable redactado; cierre pendiente |
+| S1 | [#2](https://github.com/asmunozv/Deber2/issues/2) | 7 épicas, 14 historias y criterios | Entregable redactado; cierre pendiente |
+| S1 | [#3](https://github.com/asmunozv/Deber2/issues/3) | Backlog, dependencias, roles y tablero | Entregable redactado; cierre pendiente |
+| S1 | [#4](https://github.com/asmunozv/Deber2/issues/4) | Límites, riesgos, supuestos y decisiones | Entregable redactado; cierre pendiente |
+| S2 | [#5–#9](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+2%22) | C4, datos, UML, ADR | Entregable redactado; cierre pendiente |
+| S3 | [#10–#14](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+3%22) | Interacciones, patrones, SOLID y calidad | Entregable redactado; cierre pendiente |
+| S4 | [#15–#19](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+4%22) | Trazabilidad, prototipo e informe | Entregable redactado; cierre pendiente |
 
-Las 19 issues quedaron **terminadas** con revisión cruzada, review y retrospectiva registradas en los documentos de control de cada sprint.
+Las 19 issues tienen entregables documentales; su cierre real y revisión se comprobarán individualmente en GitHub.
 
 ## 4. Roles Scrum y de arquitectura
 | Rol | Responsabilidad concreta | Persona asignada | Cómo se confirma |
@@ -63,14 +66,14 @@ Las 19 issues quedaron **terminadas** con revisión cruzada, review y retrospect
 | Equipo de diseño | Redactar y revisar historias, diagramas y decisiones | **Laura Reyes, Ariana Muñoz y Ana Paula López** | Asignaciones registradas por historia |
 | Revisor cruzado | Verificar calidad de un entregable que no redactó | Rotativo (Laura ↔ Ariana ↔ Ana) | Comentario/review con autor, fecha y observaciones |
 
-**Regla:** un rol no es una persona. El responsable funcional de cada historia en la tabla no implica asignar a un integrante real. Los nombres ya están registrados (Ariana Muñoz, Ana Paula López, Laura Reyes); los assignees están asignados y la revisión cruzada quedó documentada en [05-REVISION-Y-RETROSPECTIVA.md](05-REVISION-Y-RETROSPECTIVA.md).
+**Regla:** un rol no es una persona. El responsable funcional de cada historia en la tabla no implica asignar a un integrante real. Los nombres ya están registrados (Ariana Muñoz, Ana Paula López, Laura Reyes); la asignación nominal está documentada; la revisión cruzada debe corroborarse con evidencia externa en [05-REVISION-Y-RETROSPECTIVA.md](05-REVISION-Y-RETROSPECTIVA.md).
 
 ## 5. Tablero de seguimiento para el Sprint 1
 | Columna | Qué significa | Elementos |
 |---|---|---|
 | Pendiente de validación | Artefactos redactados, no revisados por otra persona | Ninguno |
 | En progreso | Ajustes de acuerdo con comentarios documentados | Ninguno |
-| Terminado | Cumple criterios, revisión cruzada, enlace a evidencia y cierre del issue | #1, #2, #3, #4 |
+| En validación | Se dispone de entregables y enlaces, falta comprobar revisión cruzada y cierre real | #1, #2, #3, #4 |
 
 **Política para mover un issue a Terminado:** el documento está disponible en la rama principal, los criterios están comprobados, otra persona lo revisó, existe evidencia de aceptación y se registra la review/retro correspondiente. Las columnas anteriores son una vista documental inicial; **no** se afirma que exista un tablero de GitHub Projects configurado.
 

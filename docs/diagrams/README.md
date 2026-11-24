@@ -24,6 +24,10 @@ Diagramas de arquitectura y procesos en formato **Mermaid (`.mmd`)**. Son texto 
 | Estado | [`uml-estados-orden-compra.mmd`](uml-estados-orden-compra.mmd) | Máquina de estados de la orden de compra |
 | Actividad | [`uml-actividad-flujo-vertical.mmd`](uml-actividad-flujo-vertical.mmd) | Recorrido integral recepción → stock → alerta → reposición |
 
+## Exportador visual de los 12 diagramas
+
+Se agregó [exportar.html](exportar.html), un visor de los archivos fuente Mermaid de este repositorio. Para utilizarlo, descarga el HTML, ábrelo en un navegador con conexión a Internet (Mermaid se carga desde un CDN), selecciona el diagrama y pulsa **Exportar SVG** o **Exportar PNG**. Guarda las imágenes que utilices en el informe en una carpeta `docs/diagrams/exports/` del repositorio. El exportador **no** sube automáticamente los archivos exportados a GitHub.
+
 ## Cómo exportar a imagen
 
 - **Mermaid CLI:** `npx -y @mermaid-js/mermaid-cli -i c4-contenedores.mmd -o c4-contenedores.png`
