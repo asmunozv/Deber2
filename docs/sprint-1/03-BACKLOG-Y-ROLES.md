@@ -73,7 +73,7 @@ Las 19 issues tienen entregables documentales; su cierre real y revisión se com
 |---|---|---|
 | Pendiente de validación | Artefactos redactados, no revisados por otra persona | Ninguno |
 | En progreso | Ajustes de acuerdo con comentarios documentados | Ninguno |
-| Terminado | Cumple criterios, revisión cruzada, enlace a evidencia y cierre del issue | #1, #2, #3, #4 |
+| En validación | Se dispone de entregables y enlaces, falta comprobar revisión cruzada y cierre real | #1, #2, #3, #4 |
 
 **Política para mover un issue a Terminado:** el documento está disponible en la rama principal, los criterios están comprobados, otra persona lo revisó, existe evidencia de aceptación y se registra la review/retro correspondiente. Las columnas anteriores son una vista documental inicial; **no** se afirma que exista un tablero de GitHub Projects configurado.
 
