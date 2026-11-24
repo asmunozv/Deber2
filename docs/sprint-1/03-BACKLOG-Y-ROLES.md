@@ -1,6 +1,6 @@
 # Sprint 1 — Backlog priorizado, dependencias y roles
 
-> **Estado verificado (auditoría 23/11/2026):** archivo de diseño disponible. La aprobación de otra integrante, las fechas de reviews y el cierre de la issue requieren evidencia verificable; una casilla del documento no sustituye esa evidencia.
+> **Estado verificado (auditoría 24/11/2026):** documento disponible. Los usuarios GitHub ya están asignados; los comentarios de revisión cruzada y los cierres deben contrastarse con las issues. El Sprint 1 no se declara cerrado formalmente mientras #1 y #2 no tengan revisión independiente y falte la retrospectiva.
 
 
 **Issue:** [#3](https://github.com/asmunozv/Deber2/issues/3) · **Versión:** 1.0 · **Estado:** artefacto redactado; validación documental pendiente
@@ -12,7 +12,7 @@ Se propone ordenar historias por: **(1)** riesgo para la consistencia de existen
 - **P1 / importante:** diseño complementario que puede postergarse sin perder coherencia en el flujo inicial.
 - **P2 / evolución:** capacidades analíticas y exploratorias que no bloquean los flujos centrales.
 - **Sprint previsto:** momento de **profundización del artefacto de diseño**, no fecha en que se construye software. **Todas las historias se formulan en Sprint 1**.
-- **Responsable funcional:** rol propuesto para validar la historia; **las responsabilidades académicas están designadas a Lau, Ana y Ariana; el campo GitHub assignees puede requerir sus usuarios respectivos**.
+- **Responsable académico:** integrante asignado a la tarea en el backlog; los usuarios GitHub correspondientes ya están asignados en las issues.
 
 ## 2. Backlog ordenado (historias de producto)
 | Orden | Historia | Prioridad | Dependencia principal | Rol validador propuesto | Diseño detallado previsto | MVP |
@@ -47,13 +47,13 @@ Rama de control: `INV-02 → REP-01 → DAS-01` y `FUL-02 → DAS-01`.
 ## 3. Backlog académico (GitHub Issues)
 | Sprint | Issues | Entregable definido | Estado verificable en esta rama |
 |---|---|---|---|
-| S1 | [#1](https://github.com/asmunozv/Deber2/issues/1) | Visión, actores y MVP | Entregable redactado; cierre pendiente |
-| S1 | [#2](https://github.com/asmunozv/Deber2/issues/2) | 7 épicas, 14 historias y criterios | Entregable redactado; cierre pendiente |
-| S1 | [#3](https://github.com/asmunozv/Deber2/issues/3) | Backlog, dependencias, roles y tablero | Entregable redactado; cierre pendiente |
-| S1 | [#4](https://github.com/asmunozv/Deber2/issues/4) | Límites, riesgos, supuestos y decisiones | Entregable redactado; cierre pendiente |
-| S2 | [#5–#9](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+2%22) | C4, datos, UML, ADR | Entregable redactado; cierre pendiente |
-| S3 | [#10–#14](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+3%22) | Interacciones, patrones, SOLID y calidad | Entregable redactado; cierre pendiente |
-| S4 | [#15–#19](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+4%22) | Trazabilidad, prototipo e informe | Entregable redactado; cierre pendiente |
+| S1 | [#1](https://github.com/asmunozv/Deber2/issues/1) | Visión, actores y MVP | Cerrado en GitHub; revisión cruzada pendiente de regularizar |
+| S1 | [#2](https://github.com/asmunozv/Deber2/issues/2) | 7 épicas, 14 historias y criterios | Cerrado en GitHub; revisión cruzada pendiente de regularizar |
+| S1 | [#3](https://github.com/asmunozv/Deber2/issues/3) | Backlog, dependencias, roles y tablero | Cerrado; comentario de revisión de Ariana registrado |
+| S1 | [#4](https://github.com/asmunozv/Deber2/issues/4) | Límites, riesgos, supuestos y decisiones | Cerrado; comentario de revisión de Ariana registrado |
+| S2 | [#5–#9](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+%22Sprint+2%22) | C4, datos, UML, ADR | Entregable redactado; cierre pendiente |
+| S3 | [#10–#14](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+%22Sprint+3%22) | Interacciones, patrones, SOLID y calidad | Entregable redactado; cierre pendiente |
+| S4 | [#15–#19](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+%22Sprint+4%22) | Trazabilidad, prototipo e informe | Entregable redactado; cierre pendiente |
 
 Las 19 issues tienen entregables documentales; su cierre real y revisión se comprobarán individualmente en GitHub.
 
@@ -66,7 +66,7 @@ Las 19 issues tienen entregables documentales; su cierre real y revisión se com
 | Equipo de diseño | Redactar y revisar historias, diagramas y decisiones | **Laura Reyes, Ariana Muñoz y Ana Paula López** | Asignaciones registradas por historia |
 | Revisor cruzado | Verificar calidad de un entregable que no redactó | Rotativo (Laura ↔ Ariana ↔ Ana) | Comentario/review con autor, fecha y observaciones |
 
-**Regla:** un rol no es una persona. El responsable funcional de cada historia en la tabla no implica asignar a un integrante real. Los nombres ya están registrados (Ariana Muñoz, Ana Paula López, Laura Reyes); la asignación nominal está documentada; la revisión cruzada debe corroborarse con evidencia externa en [05-REVISION-Y-RETROSPECTIVA.md](05-REVISION-Y-RETROSPECTIVA.md).
+**Asignación GitHub:** Ariana Muñoz (@asmunozv), Ana Paula López (@anypau) y Laura Reyes / Lau (@crazylilypad0801). Los usuarios están asignados en las issues. La revisión cruzada observada y sus pendientes se detallan en [05-REVISION-Y-RETROSPECTIVA.md](05-REVISION-Y-RETROSPECTIVA.md).
 
 ## 5. Tablero de seguimiento para el Sprint 1
 | Columna | Qué significa | Elementos |
@@ -89,7 +89,7 @@ Las 19 issues tienen entregables documentales; su cierre real y revisión se com
 - [x] Orden de prioridad, dependencias, sprint de diseño y rol funcional documentados.
 - [x] Roles PO, facilitador, arquitectura y equipo definidos en cuanto a responsabilidad.
 - [x] Responsables nominales acordados (Ariana Muñoz, Ana Paula López, Laura Reyes).
-- [x] Revisión cruzada registrada con nombre, fecha y enlace.
-- [x] Validación final y cierre formal del issue.
+- [x] Comentario de revisión cruzada de Ariana registrado en la issue #3 (fecha exacta visible en GitHub).
+- [x] Issue #3 cerrada en GitHub; la retrospectiva del Sprint 1 sigue pendiente.
 
 **Referencias:** [Historias](02-EPICAS-E-HISTORIAS.md) · [Visión](01-VISION-Y-MVP.md) · [Límites y riesgos](04-LIMITES-Y-RIESGOS.md) · [Revisión/retro](05-REVISION-Y-RETROSPECTIVA.md).
