@@ -1,38 +1,38 @@
 # Sprint 2 — Registro de decisiones de arquitectura (ADR)
 
-> **Estado verificado (auditoría 23/11/2026):** archivo de diseño disponible. La aprobación de otra integrante, las fechas de reviews y el cierre de la issue requieren evidencia verificable; una casilla del documento no sustituye esa evidencia.
+> **Estado verificado (24/11/2026):** los siete ADR están redactados como propuestas. No se declaran aceptados ni ratificados hasta que el equipo registre una aprobación explícita y su fecha.
 
-
-**Issue:** [#9](https://github.com/asmunozv/Deber2/issues/9) · **Versión:** 1.0 · **Estado:** artefacto redactado; validación documental pendiente
+**Issue:** [#9](https://github.com/asmunozv/Deber2/issues/9) · **Versión:** 1.1 · **Estado:** propuestas documentadas; ratificación pendiente
 
 ## Índice de ADR
 
 | ID | Decisión | Estado | Respuesta a (riesgo / decisión) |
 |---|---|---|---|
-| [ADR-0001](../adr/ADR-0001-limites-servicio-capacidad-negocio.md) | Siete capacidades de negocio como límites lógicos | Aceptado | D01 |
-| [ADR-0002](../adr/ADR-0002-agrupacion-despliegue-mvp.md) | Despliegue MVP en cuatro unidades de negocio | Aceptado | R07 |
-| [ADR-0003](../adr/ADR-0003-propiedad-datos-fuente-unica.md) | Fuente autorizada única por dato | Aceptado | R04, D02 |
-| [ADR-0004](../adr/ADR-0004-interacciones-sincronas-asincronas-outbox.md) | Síncrono vs. asíncrono + Outbox | Aceptado | Flujos A/B/C |
-| [ADR-0005](../adr/ADR-0005-cqrs-proyeccion-lectura-dashboard.md) | CQRS / proyección de lectura | Aceptado | D06 |
-| [ADR-0006](../adr/ADR-0006-consistencia-reserva-fefo.md) | Consistencia de reserva FEFO en transacción local | Aceptado | R01, D03 |
-| [ADR-0007](../adr/ADR-0007-lakehouse-analitica-historica.md) | Lakehouse para analítica histórica | Aceptado | F7 |
+| [ADR-0001](../adr/ADR-0001-limites-servicio-capacidad-negocio.md) | Siete capacidades de negocio como límites lógicos | Propuesto | D01 |
+| [ADR-0002](../adr/ADR-0002-agrupacion-despliegue-mvp.md) | Despliegue MVP en cuatro unidades de negocio | Propuesto | R07 |
+| [ADR-0003](../adr/ADR-0003-propiedad-datos-fuente-unica.md) | Fuente autorizada única por dato | Propuesto | R04, D02 |
+| [ADR-0004](../adr/ADR-0004-interacciones-sincronas-asincronas-outbox.md) | Síncrono vs. asíncrono + Outbox | Propuesto | Flujos A/B/C |
+| [ADR-0005](../adr/ADR-0005-cqrs-proyeccion-lectura-dashboard.md) | CQRS / proyección de lectura | Propuesto | D06 |
+| [ADR-0006](../adr/ADR-0006-consistencia-reserva-fefo.md) | Consistencia de reserva FEFO en transacción local | Propuesto | R01, D03 |
+| [ADR-0007](../adr/ADR-0007-lakehouse-analitica-historica.md) | Lakehouse para analítica histórica | Propuesto | F7 |
 
 ## Formato de cada ADR
 
-Cada decisión registra: **contexto**, **decisión**, **consecuencias** (positivas y costos/riesgos) y **alternativas consideradas**. La **fecha** se completa en la ratificación real del equipo (ver [16-VERSIONAMIENTO.md](../sprint-4/16-VERSIONAMIENTO.md)).
+Cada decisión registra **contexto**, **decisión**, **consecuencias** (positivas y costos/riesgos) y **alternativas consideradas**. La fecha del 22 de noviembre de 2026 que aparece en los ADR corresponde al borrador y no a una ratificación.
 
 ## Estado y trazabilidad
 
-- Los ADR están redactados con decisiones propuestas; su aceptación/fecha de ratificación debe contrastarse con evidencia de revisión del equipo.
-- Cada ADR enlaza la issue, el diagrama y el documento que afecta.
-- Un cambio de arquitectura posterior debe generar un **nuevo ADR** (o la actualización versionada del existente), no una edición silenciosa.
+- Los ADR permanecen **Propuestos** hasta que el equipo confirme la decisión en una revisión real.
+- Los ADR enlazan issues, diagramas y documentos relacionados.
+- Un cambio de arquitectura posterior debe generar un **nuevo ADR** (o una actualización versionada y justificada), no una edición silenciosa.
+- En la issue #9 existe un intercambio de revisión; la ratificación formal y su fecha siguen pendientes.
 
 ## Criterios de aceptación de #9
 
-- [x] ADR iniciales redactados con contexto, decisión, consecuencias y alternativas.
+- [x] Siete ADR redactados con contexto, decisión y consecuencias; se explicitan alternativas consideradas.
 - [x] Trazabilidad a riesgos, decisiones abiertas y flujos.
-- [x] Estado "Aceptado" con fecha real registrada.
-- [x] Revisión por otro integrante.
-- [ ] Ratificación de decisiones y fecha real confirmadas por el equipo con evidencia.
+- [x] Estado de los ADR correctamente identificado como **Propuesto** mientras no exista ratificación.
+- [x] Comentario de revisión cruzada registrado en la issue #9.
+- [ ] Ratificación explícita de las decisiones y fecha real confirmadas por el equipo.
 
 **Relaciones:** [C4](05-C4-ARQUITECTURA.md) · [Propiedad de datos](06-PROPIEDAD-DE-DATOS.md) · [Flujos](07-FLUJOS-RECEPCION-REPOSICION.md) · [Reserva/despacho](08-FLUJOS-RESERVA-DESPACHO.md).
