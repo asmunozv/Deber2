@@ -128,7 +128,7 @@ Se detallan los dos contenedores con mayor riesgo de consistencia: **Inventario*
 flowchart TB
     subgraph INV["Contenedor: Inventario"]
         direction TB
-        API["API / puerto de entrada<br/>(consulta, reserva, ajuste)"]
+        API["Puerto de entrada<br/>(consulta, reserva, ajuste)"]
         REC["Gestión de recepciones"]
         MOV["Gestión de movimientos<br/>(salidas, transferencias, ajustes)"]
         RES["Reserva FEFO<br/>(compromiso de lotes)"]
@@ -158,7 +158,7 @@ flowchart TB
 flowchart TB
     subgraph FUL["Contenedor: Fulfillment"]
         direction TB
-        API["API / puerto de entrada<br/>(pedidos, reservas, despacho)"]
+        API["Puerto de entrada<br/>(pedidos, reservas, despacho)"]
         PED["Gestión de pedidos<br/>(estado del pedido)"]
         PREP["Preparación<br/>(tareas de picking)"]
         DES["Despacho<br/>(intención de salida y confirmación)"]
