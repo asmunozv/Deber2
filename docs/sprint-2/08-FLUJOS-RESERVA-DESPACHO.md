@@ -136,6 +136,6 @@ stateDiagram-v2
 - [x] Diagrama de secuencia de despacho sin doble descuento.
 - [x] Máquinas de estados de pedido y reserva.
 - [x] Vínculo con RB-03..RB-07 y riesgos R01, R02, R03, R08.
-- [ ] Revisión por otro integrante.
+- [x] Revisión cruzada registrada: comentario de Lau en la issue #8 (fecha visible en GitHub).
 
 **Relaciones:** [C4](05-C4-ARQUITECTURA.md) · [Propiedad de datos](06-PROPIEDAD-DE-DATOS.md) · [Flujos recepción/reposición](07-FLUJOS-RECEPCION-REPOSICION.md) · [ADR](09-ADR.md).
