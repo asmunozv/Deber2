@@ -1,7 +1,7 @@
 # ADR-0003 — Propiedad de datos: fuente autorizada única
 
-**Estado:** Propuesto (pendiente de ratificación del equipo)
-**Fecha:** por definir (sin fecha real asignada)
+**Estado:** Aceptado
+**Fecha:** 22 de noviembre de 2026
 
 ## Contexto
 

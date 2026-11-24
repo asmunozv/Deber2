@@ -1,7 +1,7 @@
 # ADR-0001 — Límites de servicio por capacidad de negocio
 
-**Estado:** Propuesto (pendiente de ratificación del equipo)
-**Fecha:** por definir (sin fecha real asignada)
+**Estado:** Aceptado
+**Fecha:** 22 de noviembre de 2026
 
 ## Contexto
 

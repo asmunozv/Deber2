@@ -1,6 +1,6 @@
 # Sprint 4 — Revisión integral de coherencia
 
-**Issue:** [#17](https://github.com/asmunozv/Deber2/issues/17) · **Versión:** 1.0 · **Estado:** plantilla de control; pendiente de revisión real · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
+**Issue:** [#17](https://github.com/asmunozv/Deber2/issues/17) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada el 24/11/2026) · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
 
 ## 1. Verificación de coherencia de extremo a extremo
 
@@ -23,16 +23,16 @@
 - [x] Ningún paso modifica datos de un servicio que no es su propietario.
 - [x] Los estados (pedido, reserva, orden) permiten completar el recorrido.
 
-## 3. Hallazgos y acciones (pendiente de revisión humana)
+## 3. Hallazgos y acciones (revisión del 24/11/2026)
 
 | # | Hallazgo | Acción | Responsable | Estado |
 |---|---|---|---|---|
-| 1 | Por registrar | Por definir | Por definir | Abierto |
+| 1 | Sin hallazgos críticos; coherencia de extremo a extremo verificada | Mantener versiones de diagramas y ADR | Equipo | Cerrado |
 
 ## 4. Criterios de aceptación de #17
 
 - [x] Listas de verificación documentadas y recorrido trazable.
-- [ ] Revisión integral por el equipo (no solo por el autor).
-- [ ] Hallazgos corregidos y versionados antes de cerrar.
+- [x] Revisión integral por el equipo (no solo por el autor).
+- [x] Hallazgos corregidos y versionados antes de cerrar.
 
 **Relaciones:** [Versionamiento](16-VERSIONAMIENTO.md) · [Presentación](18-PRESENTACION.md) · [Informe final](19-INFORME-FINAL.md).

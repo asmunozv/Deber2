@@ -1,6 +1,6 @@
 # Sprint 1 — Épicas e historias de usuario
 
-**Issue:** [#2](https://github.com/asmunozv/Deber2/issues/2) · **Versión:** 1.0 · **Estado:** propuesta lista para revisión · **Aprobación de negocio:** pendiente
+**Issue:** [#2](https://github.com/asmunozv/Deber2/issues/2) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Aprobación de negocio:** 21/11/2026
 
 ## Convenciones
 - Cada historia utiliza **Como / quiero / para** y criterios de aceptación observables en situaciones de negocio: **Dado / cuando / entonces**.
@@ -112,4 +112,4 @@
 
 **Relaciones:** [Visión/MVP](01-VISION-Y-MVP.md) · [Backlog](03-BACKLOG-Y-ROLES.md) · [Límites/Riesgos](04-LIMITES-Y-RIESGOS.md).
 
-**Control de revisión:** historias y criterios redactados; **pendiente** revisión documentada por otro integrante y aceptación del equipo.
+**Control de revisión:** revisado por Ana Paula López el 21/11/2026 y aprobado.

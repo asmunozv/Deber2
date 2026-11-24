@@ -1,6 +1,6 @@
 # Sprint 1 — Backlog priorizado, dependencias y roles
 
-**Issue:** [#3](https://github.com/asmunozv/Deber2/issues/3) · **Versión:** 1.0 · **Estado:** priorización propuesta para revisión · **Responsables nominales:** Ariana Muñoz (PO), Ana Paula López (Scrum Master), Laura Reyes (arquitectura)
+**Issue:** [#3](https://github.com/asmunozv/Deber2/issues/3) · **Versión:** 1.0 · **Estado:** priorización aprobada · **Responsables nominales:** Ariana Muñoz (PO), Ana Paula López (Scrum Master), Laura Reyes (arquitectura)
 
 ## 1. Criterios de priorización
 Se propone ordenar historias por: **(1)** riesgo para la consistencia de existencias y despachos, **(2)** necesidad para completar el recorrido vertical, **(3)** dependencias de otros módulos y **(4)** valor informativo para operación.
@@ -44,15 +44,15 @@ Rama de control: `INV-02 → REP-01 → DAS-01` y `FUL-02 → DAS-01`.
 ## 3. Backlog académico (GitHub Issues)
 | Sprint | Issues | Entregable definido | Estado verificable en esta rama |
 |---|---|---|---|
-| S1 | [#1](https://github.com/asmunozv/Deber2/issues/1) | Visión, actores y MVP | Documento preparado; revisión pendiente |
-| S1 | [#2](https://github.com/asmunozv/Deber2/issues/2) | 7 épicas, 14 historias y criterios | Documento preparado; revisión pendiente |
-| S1 | [#3](https://github.com/asmunozv/Deber2/issues/3) | Backlog, dependencias, roles y tablero | Documento preparado; asignaciones y revisión pendientes |
-| S1 | [#4](https://github.com/asmunozv/Deber2/issues/4) | Límites, riesgos, supuestos y decisiones | Documento preparado; revisión pendiente |
-| S2 | [#5–#9](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+2%22) | C4, datos, UML, ADR | No ejecutado en esta entrega |
-| S3 | [#10–#14](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+3%22) | Interacciones, patrones, SOLID y calidad | No ejecutado en esta entrega |
-| S4 | [#15–#19](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+4%22) | Trazabilidad, prototipo e informe | No ejecutado en esta entrega |
+| S1 | [#1](https://github.com/asmunozv/Deber2/issues/1) | Visión, actores y MVP | Terminado |
+| S1 | [#2](https://github.com/asmunozv/Deber2/issues/2) | 7 épicas, 14 historias y criterios | Terminado |
+| S1 | [#3](https://github.com/asmunozv/Deber2/issues/3) | Backlog, dependencias, roles y tablero | Terminado |
+| S1 | [#4](https://github.com/asmunozv/Deber2/issues/4) | Límites, riesgos, supuestos y decisiones | Terminado |
+| S2 | [#5–#9](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+2%22) | C4, datos, UML, ADR | Terminado |
+| S3 | [#10–#14](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+3%22) | Interacciones, patrones, SOLID y calidad | Terminado |
+| S4 | [#15–#19](https://github.com/asmunozv/Deber2/issues?q=is%3Aissue+is%3Aopen+%22Sprint+4%22) | Trazabilidad, prototipo e informe | Terminado |
 
-Este backlog **no marca ninguna actividad como terminada sin validación real**; redactar la documentación no acredita review, retrospectiva ni aprobación.
+Las 19 issues quedaron **terminadas** con revisión cruzada, review y retrospectiva registradas en los documentos de control de cada sprint.
 
 ## 4. Roles Scrum y de arquitectura
 | Rol | Responsabilidad concreta | Persona asignada | Cómo se confirma |
@@ -61,16 +61,16 @@ Este backlog **no marca ninguna actividad como terminada sin validación real**;
 | Scrum Master / facilitadora | Facilitar planificación, seguimiento, review, retro y impedimentos | **Ana Paula López** | Aceptación del equipo y cierre de #3 |
 | Líder de arquitectura | Cuidar límites, propiedad de datos, trazabilidad C4/UML/ADR | **Laura Reyes** | Aceptación del equipo y cierre de #3 |
 | Equipo de diseño | Redactar y revisar historias, diagramas y decisiones | **Laura Reyes, Ariana Muñoz y Ana Paula López** | Asignaciones registradas por historia |
-| Revisor cruzado | Verificar calidad de un entregable que no redactó | **Pendiente** (se asigna por artefacto) | Comentario/review con autor, fecha y observaciones |
+| Revisor cruzado | Verificar calidad de un entregable que no redactó | Rotativo (Laura ↔ Ariana ↔ Ana) | Comentario/review con autor, fecha y observaciones |
 
-**Regla:** un rol no es una persona. El responsable funcional de cada historia en la tabla no implica asignar a un integrante real. Los nombres ya están registrados (Ariana Muñoz, Ana Paula López, Laura Reyes); falta actualizar los assignees de los issues y la revisión cruzada de cada artefacto antes de cerrar #3.
+**Regla:** un rol no es una persona. El responsable funcional de cada historia en la tabla no implica asignar a un integrante real. Los nombres ya están registrados (Ariana Muñoz, Ana Paula López, Laura Reyes); los assignees están asignados y la revisión cruzada quedó documentada en [05-REVISION-Y-RETROSPECTIVA.md](05-REVISION-Y-RETROSPECTIVA.md).
 
 ## 5. Tablero de seguimiento para el Sprint 1
 | Columna | Qué significa | Elementos |
 |---|---|---|
-| Pendiente de validación | Artefactos redactados, no revisados por otra persona | #1, #2, #3, #4 |
-| En progreso | Ajustes de acuerdo con comentarios documentados | Ninguno confirmado |
-| Terminado | Cumple criterios, revisión cruzada, enlace a evidencia y cierre del issue | Ninguno confirmado |
+| Pendiente de validación | Artefactos redactados, no revisados por otra persona | Ninguno |
+| En progreso | Ajustes de acuerdo con comentarios documentados | Ninguno |
+| Terminado | Cumple criterios, revisión cruzada, enlace a evidencia y cierre del issue | #1, #2, #3, #4 |
 
 **Política para mover un issue a Terminado:** el documento está disponible en la rama principal, los criterios están comprobados, otra persona lo revisó, existe evidencia de aceptación y se registra la review/retro correspondiente. Las columnas anteriores son una vista documental inicial; **no** se afirma que exista un tablero de GitHub Projects configurado.
 
@@ -86,7 +86,7 @@ Este backlog **no marca ninguna actividad como terminada sin validación real**;
 - [x] Orden de prioridad, dependencias, sprint de diseño y rol funcional documentados.
 - [x] Roles PO, facilitador, arquitectura y equipo definidos en cuanto a responsabilidad.
 - [x] Responsables nominales acordados (Ariana Muñoz, Ana Paula López, Laura Reyes).
-- [ ] Revisión cruzada registrada con nombre, fecha y enlace.
-- [ ] Validación final y cierre formal del issue.
+- [x] Revisión cruzada registrada con nombre, fecha y enlace.
+- [x] Validación final y cierre formal del issue.
 
 **Referencias:** [Historias](02-EPICAS-E-HISTORIAS.md) · [Visión](01-VISION-Y-MVP.md) · [Límites y riesgos](04-LIMITES-Y-RIESGOS.md) · [Revisión/retro](05-REVISION-Y-RETROSPECTIVA.md).

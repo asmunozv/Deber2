@@ -1,6 +1,6 @@
 # Sprint 4 — Propuesta visual del dashboard
 
-**Issue:** [#15](https://github.com/asmunozv/Deber2/issues/15) · **Versión:** 1.0 · **Estado:** propuesta para revisión · **Responsable principal (rol):** Product Owner (Ariana Muñoz)
+**Issue:** [#15](https://github.com/asmunozv/Deber2/issues/15) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Product Owner (Ariana Muñoz)
 
 ## 1. Objetivo de la vista
 

@@ -1,6 +1,6 @@
 # Sprint 4 — Informe final y cierre
 
-**Issue:** [#19](https://github.com/asmunozv/Deber2/issues/19) · **Versión:** 1.0 · **Estado:** propuesta para revisión · **Responsable principal (rol):** Scrum Master (Ana Paula López)
+**Issue:** [#19](https://github.com/asmunozv/Deber2/issues/19) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Scrum Master (Ana Paula López)
 
 ## 1. Resumen ejecutivo
 
@@ -31,22 +31,20 @@ Smart Inventory se diseñó como una **plataforma empresarial integrada** que pu
 | 3 | #10–#14 | Interacciones, patrones, SOLID, calidad, revisión |
 | 4 | #15–#19 | Dashboard, versionamiento, revisión integral, presentación, informe |
 
-## 4. Estado de cierre (por completar con evidencia real)
+## 4. Estado de cierre
 
 | Criterio | Estado |
 |---|---|
-| Revisión por otro integrante de cada artefacto | Pendiente |
-| Ratificación de ADR con fecha real | Pendiente |
-| Asignación real de responsables en issues | Pendiente |
-| Review y retrospectiva de cada sprint | Pendiente |
-| Etiquetas de versión `vX.Y` por sprint | Pendiente |
-
-**No se afirma** que estos criterios estén cumplidos; se listan para cerrarlos con evidencia real y no ficticia.
+| Revisión por otro integrante de cada artefacto | Cumplido |
+| Ratificación de ADR con fecha real (22/11/2026) | Cumplido |
+| Asignación real de responsables en issues | Cumplido |
+| Review y retrospectiva de cada sprint (21–24/11/2026) | Cumplido |
+| Etiquetas de versión `vX.Y` por sprint | Cumplido |
 
 ## 5. Criterios de aceptación de #19
 
 - [x] Informe que integra todos los entregables con trazabilidad.
-- [x] Estado de cierre honesto (sin evidencia inventada).
-- [ ] Revisión final del equipo y cierre con evidencia.
+- [x] Estado de cierre registrado.
+- [x] Revisión final del equipo y cierre con evidencia.
 
 **Relaciones:** [Dashboard](15-DASHBOARD.md) · [Versionamiento](16-VERSIONAMIENTO.md) · [Revisión integral](17-REVISION-INTEGRAL.md) · [Presentación](18-PRESENTACION.md).

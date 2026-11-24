@@ -1,6 +1,6 @@
 # Sprint 2 — Arquitectura C4 y límites de servicio
 
-**Issue:** [#5](https://github.com/asmunozv/Deber2/issues/5) · **Versión:** 1.0 · **Estado:** propuesta para revisión · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
+**Issue:** [#5](https://github.com/asmunozv/Deber2/issues/5) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
 
 ## 1. Decisión de arquitectura de referencia
 

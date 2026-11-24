@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Inventory — Presentación (Diseño de Sistemas)</title>
+<style>
+  :root{
+    --bg:#0f172a; --panel:#1e293b; --line:#334155; --text:#e2e8f0; --muted:#94a3b8;
+    --accent:#38bdf8; --ok:#22c55e; --warn:#f59e0b; --danger:#ef4444; --info:#818cf8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{font-family:system-ui,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); overflow:hidden;}
+  .deck{height:100vh; width:100vw; position:relative;}
+  .slide{position:absolute; inset:0; display:none; padding:56px 64px; flex-direction:column; justify-content:center;}
+  .slide.active{display:flex;}
+  h1{font-size:44px; margin-bottom:14px; line-height:1.15;}
+  h2{font-size:32px; margin-bottom:16px; color:var(--accent);}
+  h3{font-size:22px; margin:14px 0 8px; color:var(--accent);}
+  p,li{font-size:21px; line-height:1.5; color:var(--text);}
+  .sub{color:var(--muted); font-size:18px;}
+  .muted{color:var(--muted);}
+  ul,ol{margin-left:28px; margin-top:8px;}
+  li{margin:7px 0;}
+  .chip{display:inline-block; padding:4px 12px; border-radius:20px; font-size:15px; font-weight:600; margin-right:6px;}
+  .chip.acc{background:var(--accent); color:#0b1220;}
+  .chip.ok{background:var(--ok); color:#0b1220;}
+  .chip.warn{background:var(--warn); color:#0b1220;}
+  .chip.danger{background:var(--danger); color:#0b1220;}
+  .chip.info{background:var(--info); color:#0b1220;}
+  .grid{display:grid; gap:14px; margin-top:12px;}
+  .g2{grid-template-columns:1fr 1fr;} .g3{grid-template-columns:1fr 1fr 1fr;} .g4{grid-template-columns:repeat(4,1fr);}
+  @media(max-width:760px){.g2,.g3,.g4{grid-template-columns:1fr;}}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px;}
+  .card .t{font-size:16px; font-weight:700; margin-bottom:6px; color:var(--accent);}
+  .card .d{font-size:16px; color:var(--muted);}
+  table{width:100%; border-collapse:collapse; font-size:18px; margin-top:10px;}
+  th,td{border:1px solid var(--line); padding:9px 12px; text-align:left;}
+  th{background:var(--panel); color:var(--accent);}
+  td{background:#0b1220;}
+  /* Diagrama de flujo simple */
+  .flow{display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin-top:18px;}
+  .step{background:var(--panel); border:1px solid var(--accent); border-radius:10px; padding:12px 16px; font-size:16px; text-align:center;}
+  .arrow{font-size:22px; color:var(--accent);}
+  .arch{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:16px;}
+  .arch .box{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px; text-align:center; font-size:15px;}
+  .arch .box.inf{border-color:var(--warn);} .arch .box.read{border-color:var(--ok);}
+  /* navegación */
+  .nav{position:fixed; bottom:18px; right:22px; display:flex; gap:8px; align-items:center;}
+  .nav button{background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:8px 14px; cursor:pointer; font-size:15px;}
+  .nav button:hover{background:var(--accent); color:#0b1220;}
+  .counter{color:var(--muted); font-size:14px; margin-right:8px;}
+  .foot{position:fixed; bottom:20px; left:64px; color:var(--muted); font-size:13px;}
+  .authors{margin-top:22px; font-size:19px;}
+  .authors span{display:block; margin:5px 0;}
+  .role{color:var(--accent); font-weight:600;}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1. Portada -->
+  <section class="slide active">
+    <h1>Smart Inventory</h1>
+    <p style="font-size:26px; color:var(--accent);">Arquitectura integral y gestión del proyecto</p>
+    <p class="sub" style="margin-top:8px;">Deber de Diseño de Sistemas · Universidad San Francisco de Quito · Colegio Politécnico</p>
+    <div class="authors">
+      <span><span class="role">Laura Reyes</span> — Líder de arquitectura / líder del proyecto</span>
+      <span><span class="role">Ariana Muñoz</span> — Product Owner</span>
+      <span><span class="role">Ana Paula López</span> — Scrum Master / facilitadora</span>
+    </div>
+    <p class="muted" style="margin-top:26px;">Noviembre de 2026 · Puntaje 10 · 4 sprints</p>
+  </section>
+
+  <!-- 2. Consigna -->
+  <section class="slide">
+    <h2>Consigna y alcance</h2>
+    <ul>
+      <li>Diseñar la <strong>arquitectura de Smart Inventory</strong> como plataforma empresarial integrada, preparada para evolucionar hacia <strong>microservicios</strong>.</li>
+      <li>Control de productos, ubicaciones, lotes y movimientos; decisiones de <strong>reposición</strong>; preparación de pedidos con <strong>FEFO</strong>; operación de <strong>AMR, camiones y muelles</strong>; dashboard interactivo.</li>
+      <li>Se evalúa <strong>diseño</strong>, no cantidad de servicios: dueño claro por dato, sin modificación cruzada de datos, interacciones coherentes con el negocio.</li>
+    </ul>
+    <div class="grid g3">
+      <div class="card"><div class="t">Dentro del alcance</div><div class="d">C4, UML, propiedad de datos, ADR, patrones, SOLID, requisitos de calidad, trazabilidad.</div></div>
+      <div class="card"><div class="t">Fuera del alcance</div><div class="d">APIs técnicas, mensajes, CI/CD, despliegue, pruebas (Desarrollo de Software Moderno).</div></div>
+      <div class="card"><div class="t">Gestión</div><div class="d">Backlog priorizado + 4 sprints con revisión y retrospectiva.</div></div>
+    </div>
+  </section>
+
+  <!-- 3. Visión y MVP -->
+  <section class="slide">
+    <h2>Visión y MVP conceptual</h2>
+    <p>Plataforma que consolida el estado de existencias, ayuda a reponer oportunamente y permite reservar con FEFO, trazando preparación y despacho. Cada dato tiene un <strong>único dueño</strong>.</p>
+    <div class="grid g3">
+      <div class="card"><div class="t">Catálogo</div><div class="d">SKU, categorías, bodegas, zonas y ubicaciones.</div></div>
+      <div class="card"><div class="t">Inventario</div><div class="d">Existencias por lote y ubicación; recepciones, salidas, ajustes, historial.</div></div>
+      <div class="card"><div class="t">Reposición</div><div class="d">Mínimos, alertas, sugerencias, proveedores, órdenes de compra.</div></div>
+      <div class="card"><div class="t">Fulfillment</div><div class="d">Reservas, preparación, selección FEFO, estados y despacho.</div></div>
+      <div class="card"><div class="t">Flota</div><div class="d">AMR, rutas, telemetría, camiones, muelles y patio.</div></div>
+      <div class="card"><div class="t">Dashboard + Analítica</div><div class="d">Indicadores, alertas, flujo y análisis histórico (solo lectura).</div></div>
+    </div>
+  </section>
+
+  <!-- 4. Arquitectura -->
+  <section class="slide">
+    <h2>Arquitectura lógica (C4 nivel 2)</h2>
+    <p class="sub">Servicios propietarios de sus datos · interacciones síncronas + mensajería asíncrona.</p>
+    <div class="arch">
+      <div class="box"><strong>Catálogo</strong><br><span class="muted">SKU, ubicaciones</span></div>
+      <div class="box"><strong>Inventario</strong><br><span class="muted">stock, lotes</span></div>
+      <div class="box"><strong>Fulfillment</strong><br><span class="muted">pedidos</span></div>
+      <div class="box"><strong>Reposición</strong><br><span class="muted">compras</span></div>
+      <div class="box"><strong>Flota</strong><br><span class="muted">AMR, camiones</span></div>
+      <div class="box inf"><strong>Broker</strong><br><span class="muted">eventos</span></div>
+      <div class="box read"><strong>Proyección lectura</strong><br><span class="muted">dashboard</span></div>
+      <div class="box read"><strong>Lakehouse</strong><br><span class="muted">analítica</span></div>
+    </div>
+    <ul style="margin-top:16px;">
+      <li><span class="chip acc">Síncrono</span> consultas y comandos inmediatos (reservar, salida, validar SKU).</li>
+      <li><span class="chip info">Asíncrono</span> hechos de negocio vía broker → proyección y Lakehouse.</li>
+    </ul>
+  </section>
+
+  <!-- 5. Propiedad de datos -->
+  <section class="slide">
+    <h2>Propiedad de datos</h2>
+    <p class="sub">Cada dato tiene una única fuente autorizada; nadie modifica datos ajenos.</p>
+    <table>
+      <tr><th>Dato</th><th>Dueño</th><th>Quién consulta / solicita</th></tr>
+      <tr><td>SKU, categoría, ubicación maestra</td><td><strong>Catálogo</strong></td><td>Inventario, Reposición, Dashboard</td></tr>
+      <tr><td>Lote, saldo por lote/ubicación, movimiento</td><td><strong>Inventario</strong></td><td>Todos (solo lectura)</td></tr>
+      <tr><td>Compromiso de unidades (reserva física)</td><td><strong>Inventario</strong></td><td>Fulfillment (reservar/liberar)</td></tr>
+      <tr><td>Pedido y estados</td><td><strong>Fulfillment</strong></td><td>Flota, Dashboard</td></tr>
+      <tr><td>Umbral, alerta, orden de compra</td><td><strong>Reposición</strong></td><td>Dashboard, Analítica</td></tr>
+      <tr><td>Vehículo, ruta, telemetría</td><td><strong>Flota</strong></td><td>Dashboard, Analítica</td></tr>
+      <tr><td>Indicadores y vistas (derivadas)</td><td><strong>Proyección / Lakehouse</strong></td><td>Dashboard, Analítica</td></tr>
+    </table>
+    <p class="muted" style="margin-top:10px;">El dashboard y la analítica <strong>no son fuente de verdad</strong>: solo leen vistas derivadas.</p>
+  </section>
+
+  <!-- 6. Interacciones -->
+  <section class="slide">
+    <h2>Interacciones: síncronas vs. asíncronas</h2>
+    <div class="grid g2">
+      <div class="card"><div class="t">Inmediata (síncrona)</div><div class="d">Validar SKU · reservar FEFO · confirmar salida · consultar disponibilidad. Requieren respuesta para continuar.</div></div>
+      <div class="card"><div class="t">Eventual (asíncrona)</div><div class="d">Hechos de negocio al broker → proyección de lectura, Lakehouse, Reposición, Dashboard.</div></div>
+    </div>
+    <h3>Patrón Outbox</h3>
+    <p>El movimiento y su evento se escriben en la <strong>misma transacción</strong>; así nunca queda un cambio sin notificar. Los consumidores son <strong>idempotentes</strong> ante reintentos.</p>
+    <div class="flow">
+      <div class="step">Recepción<br><span class="muted">transacción local</span></div>
+      <span class="arrow">→</span>
+      <div class="step">Outbox<br><span class="muted">evento</span></div>
+      <span class="arrow">→</span>
+      <div class="step">Broker</div>
+      <span class="arrow">→</span>
+      <div class="step">Proyección<br><span class="muted">dashboard</span></div>
+      <span class="arrow">+</span>
+      <div class="step">Lakehouse<br><span class="muted">analítica</span></div>
+    </div>
+  </section>
+
+  <!-- 7. Flujo vertical -->
+  <section class="slide">
+    <h2>Flujo vertical: recepción → stock → alerta → reposición</h2>
+    <div class="flow">
+      <div class="step">1. Registrar SKU<br><span class="muted">Catálogo</span></div>
+      <span class="arrow">→</span>
+      <div class="step">2. Recibir lote<br><span class="muted">Inventario</span></div>
+      <span class="arrow">→</span>
+      <div class="step">3. Actualizar stock<br><span class="muted">saldo + movimiento</span></div>
+      <span class="arrow">→</span>
+      <div class="step">4. Detectar umbral<br><span class="muted">Reposición</span></div>
+      <span class="arrow">→</span>
+      <div class="step">5. Aprobar y ordenar<br><span class="muted">orden de compra</span></div>
+    </div>
+    <div class="flow">
+      <div class="step">6. Reservar FEFO<br><span class="muted">Inventario</span></div>
+      <span class="arrow">→</span>
+      <div class="step">7. Preparar<br><span class="muted">Fulfillment</span></div>
+      <span class="arrow">→</span>
+      <div class="step">8. Confirmar despacho<br><span class="muted">salida</span></div>
+      <span class="arrow">→</span>
+      <div class="step">9. Asignar flota<br><span class="muted">vehículo/AMR</span></div>
+      <span class="arrow">→</span>
+      <div class="step">10. Consultar tablero<br><span class="muted">proyección</span></div>
+    </div>
+    <p class="muted" style="margin-top:14px;">Ningún paso modifica datos de un servicio que no es su propietario.</p>
+  </section>
+
+  <!-- 8. Recepción -->
+  <section class="slide">
+    <h2>F1 — Recepción y actualización de stock</h2>
+    <ol>
+      <li>Operador registra <strong>SKU, lote, cantidad, ubicación y vencimiento</strong>.</li>
+      <li>Inventario <strong>valida</strong> contra Catálogo (SKU y política de lote).</li>
+      <li>Inventario registra <strong>movimiento y saldo en una transacción</strong> + evento en Outbox.</li>
+      <li>La proyección refresca el dashboard y el Lakehouse conserva el histórico.</li>
+    </ol>
+    <div class="grid g2">
+      <div class="card"><div class="t">Responsable</div><div class="d">Inventario (fuente de verdad del stock).</div></div>
+      <div class="card"><div class="t">Garantía</div><div class="d">Nunca queda un saldo sin su movimiento, ni un cambio sin notificar.</div></div>
+    </div>
+  </section>
+
+  <!-- 9. Reposición -->
+  <section class="slide">
+    <h2>F3 — Riesgo de agotamiento y reposición</h2>
+    <ol>
+      <li>Inventario publica el cambio de saldo; <strong>Reposición detecta</strong> producto bajo mínimo.</li>
+      <li>Reposición calcula una <strong>sugerencia</strong> (mínimos, demanda, tiempo de entrega).</li>
+      <li>El planificador <strong>aprueba</strong>; Reposición crea la <strong>orden de compra</strong>.</li>
+    </ol>
+    <p style="margin-top:10px;"><span class="chip danger">Importante</span> La orden de compra <strong>no crea stock</strong>: el ingreso físico solo ocurre al registrar una recepción (F1).</p>
+    <div class="flow">
+      <div class="step">Stock bajo</div><span class="arrow">→</span>
+      <div class="step">Sugerencia</div><span class="arrow">→</span>
+      <div class="step">Aprobación</div><span class="arrow">→</span>
+      <div class="step">Orden de compra</div>
+    </div>
+  </section>
+
+  <!-- 10. Reserva FEFO -->
+  <section class="slide">
+    <h2>F4 — Reserva con criterio FEFO</h2>
+    <ol>
+      <li>Fulfillment crea el pedido y solicita la reserva a Inventario.</li>
+      <li>Inventario selecciona <strong>lotes elegibles por vencimiento más próximo</strong> (FEFO).</li>
+      <li>Si hay suficiente: <strong>compromete</strong> las unidades; si no, <strong>rechaza</strong> la reserva completa.</li>
+    </ol>
+    <div class="grid g2">
+      <div class="card"><div class="t">Consistencia fuerte</div><div class="d">Reserva síncrona, resuelta en transacción local de Inventario (ADR-0006).</div></div>
+      <div class="card"><div class="t">Sin sobreasignación</div><div class="d">Dos pedidos concurrentes no pueden reservar las mismas unidades (R01).</div></div>
+    </div>
+    <p class="muted" style="margin-top:8px;">Desempate: misma fecha de vencimiento → fecha de recepción más antigua.</p>
+  </section>
+
+  <!-- 11. Despacho y flota -->
+  <section class="slide">
+    <h2>F5 — Despacho y flota</h2>
+    <ol>
+      <li>Fulfillment crea la tarea de <strong>preparación (picking)</strong>.</li>
+      <li>Confirmar despacho → Inventario <strong>descuenta unidades ya reservadas</strong> y libera el compromiso (sin doble descuento).</li>
+      <li>Fulfillment solicita la asignación a <strong>Flota</strong> (AMR/vehículo + ruta).</li>
+      <li>Flota comunica el <strong>progreso</strong> (preparado → en ruta → entregado).</li>
+    </ol>
+    <div class="flow">
+      <div class="step">Reservado</div><span class="arrow">→</span>
+      <div class="step">En preparación</div><span class="arrow">→</span>
+      <div class="step">Listo despacho</div><span class="arrow">→</span>
+      <div class="step">En ruta</div><span class="arrow">→</span>
+      <div class="step">Entregado</div>
+    </div>
+  </section>
+
+  <!-- 12. Patrones y SOLID -->
+  <section class="slide">
+    <h2>Patrones y SOLID</h2>
+    <div class="grid g2">
+      <div class="card"><div class="t">Patrones (7)</div><div class="d">Puertos y adaptadores · Pub/Sub · Outbox + idempotencia · CQRS / proyección de lectura · State · Strategy/Adapter · Circuit Breaker/Retry.</div></div>
+      <div class="card"><div class="t">SOLID (evidencia)</div><div class="d">SRP: reposición separada de movimientos · OCP/LSP: estrategias FEFO y adaptadores sustituibles · ISP: interfaces de consulta/reserva/ajuste · DIP: dominio depende de puertos.</div></div>
+    </div>
+    <p class="muted" style="margin-top:10px;">La evidencia está en el componente Inventario (diagrama) y en pseudocódigo, indicando el cambio futuro que facilita cada decisión.</p>
+  </section>
+
+  <!-- 13. Calidad -->
+  <section class="slide">
+    <h2>Requisitos de calidad (verificables)</h2>
+    <table>
+      <tr><th>Atributo</th><th>Criterio propuesto</th></tr>
+      <tr><td>Seguridad</td><td>Roles/permisos en operaciones sensibles; sin secretos en el repo; auditoría de quién/cuándo.</td></tr>
+      <tr><td>Disponibilidad</td><td>Caída del broker no bloquea recepción/reserva; degradación con Circuit Breaker; 99,9 % mensual.</td></tr>
+      <tr><td>Rendimiento</td><td>p95 consulta stock &lt; 200 ms; reserva FEFO &lt; 500 ms; evento reflejado en dashboard &lt; 5 s.</td></tr>
+      <tr><td>Escalabilidad</td><td>Inventario escala en escritura; proyección/Dashboard y Lakehouse escalan en lectura de forma independiente.</td></tr>
+      <tr><td>Consistencia</td><td>Transacción local en recepción/reserva; consistencia eventual (con frescura) en lecturas.</td></tr>
+    </table>
+  </section>
+
+  <!-- 14. Dashboard -->
+  <section class="slide">
+    <h2>Dashboard — vistas interna y externa</h2>
+    <div class="grid g2">
+      <div class="card"><div class="t">Planta interna</div><div class="d">Racks, pallets, lotes, zonas de recepción y picking, y AMR. Estado de lote: normal / bajo mínimo / próximo a vencer.</div></div>
+      <div class="card"><div class="t">Planta externa</div><div class="d">Camiones en el patio, muelles, acceso y zona de espera.</div></div>
+    </div>
+    <p style="margin-top:12px;">Comparten <strong>indicadores, alertas y flujo de pedidos</strong>. El dashboard es una <strong>vista de consulta</strong> con etiqueta de frescura; las acciones (aprobar, reservar) van a la capacidad responsable.</p>
+    <p class="muted">Prototipo navegable: <code>docs/dashboard/index.html</code> (datos ilustrativos).</p>
+  </section>
+
+  <!-- 15. ADR -->
+  <section class="slide">
+    <h2>Decisiones registradas (ADR)</h2>
+    <ul>
+      <li><strong>ADR-0001</strong> — Siete capacidades de negocio como límites lógicos.</li>
+      <li><strong>ADR-0002</strong> — Agrupación de despliegue en el MVP (4 unidades).</li>
+      <li><strong>ADR-0003</strong> — Fuente autorizada única por dato.</li>
+      <li><strong>ADR-0004</strong> — Síncrono vs. asíncrono + Outbox.</li>
+      <li><strong>ADR-0005</strong> — CQRS / proyección de lectura para el dashboard.</li>
+      <li><strong>ADR-0006</strong> — Consistencia de la reserva FEFO en transacción local.</li>
+      <li><strong>ADR-0007</strong> — Lakehouse para analítica histórica.</li>
+    </ul>
+    <p class="muted" style="margin-top:10px;">Ratificados el 22/11/2026 tras revisión cruzada.</p>
+  </section>
+
+  <!-- 16. Autores -->
+  <section class="slide">
+    <h2>Autores y contribuciones</h2>
+    <table>
+      <tr><th>Integrante</th><th>Rol</th><th>Contribución principal</th></tr>
+      <tr><td><strong>Laura Reyes</strong></td><td>Líder de arquitectura</td><td>C4, propiedad de datos, ADR, patrones y requisitos de calidad.</td></tr>
+      <tr><td><strong>Ariana Muñoz</strong></td><td>Product Owner</td><td>Visión, historias, reserva/despacho, dashboard y presentación.</td></tr>
+      <tr><td><strong>Ana Paula López</strong></td><td>Scrum Master</td><td>Backlog, flujos de recepción/reposición, matriz de interacciones y cierre.</td></tr>
+    </table>
+    <p style="margin-top:26px; font-size:28px;">Gracias 🎉</p>
+  </section>
+</div>
+
+<div class="nav">
+  <span class="counter" id="counter">1 / 16</span>
+  <button id="prev">←</button>
+  <button id="next">→</button>
+</div>
+<div class="foot">Smart Inventory · Diseño de Sistemas · USFQ</div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  function show(n){
+    i=(n+slides.length)%slides.length;
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    document.getElementById('counter').textContent=(i+1)+' / '+slides.length;
+  }
+  document.getElementById('next').onclick=()=>show(i+1);
+  document.getElementById('prev').onclick=()=>show(i-1);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown') show(i+1);
+    if(e.key==='ArrowLeft'||e.key==='PageUp') show(i-1);
+    if(e.key==='Home') show(0);
+    if(e.key==='End') show(slides.length-1);
+  });
+</script>
+</body>
+</html>

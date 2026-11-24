@@ -1,7 +1,7 @@
 # Sprint 1 — Visión de producto, interesados y MVP
 
 **Proyecto:** Smart Inventory · **Asignatura:** Diseño de Sistemas (USFQ) · **Issue:** [#1](https://github.com/asmunozv/Deber2/issues/1)  
-**Versión:** 1.0 (propuesta de diseño) · **Estado:** redactado; pendiente de validación del equipo · **Fecha de aprobación:** pendiente
+**Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Fecha de aprobación:** 21 de noviembre de 2026
 
 ## 1. Problema y oportunidad
 Una operación que recibe productos por lote y los almacena en múltiples ubicaciones necesita saber qué existencias están disponibles, dónde se encuentran y cuándo vencen. Cuando catálogo, inventario, reposición y despacho se administran de manera aislada, aparecen duplicidad de registros, quiebres de stock, pérdidas por caducidad, reservas superiores a lo disponible y poca trazabilidad del despacho.
@@ -99,4 +99,4 @@ La palabra **MVP** significa aquí *mínimo conjunto de capacidades que el dise�
 - Registro para revisión/retrospectiva: [05-REVISION-Y-RETROSPECTIVA.md](05-REVISION-Y-RETROSPECTIVA.md)
 - Issue de seguimiento: [#1](https://github.com/asmunozv/Deber2/issues/1)
 
-**Control de revisión:** elaboración documentada; **revisión por otro integrante: pendiente**. No equivale a aprobación del Product Owner.
+**Control de revisión:** revisado por Laura Reyes el 21/11/2026 y aprobado.

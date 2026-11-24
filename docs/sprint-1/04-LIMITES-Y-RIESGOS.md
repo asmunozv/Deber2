@@ -1,6 +1,6 @@
 # Sprint 1 — Límites candidatos de diseño y riesgos iniciales
 
-**Issue:** [#4](https://github.com/asmunozv/Deber2/issues/4) · **Versión:** 1.0 · **Estado:** hipótesis arquitectónicas a validar en Sprint 2
+**Issue:** [#4](https://github.com/asmunozv/Deber2/issues/4) · **Versión:** 1.0 · **Estado:** validado en ADR (Sprint 2, 22/11/2026)
 
 ## 1. Criterios para proponer un límite
 1. Separar capacidades por **reglas y responsabilidades**, no por cantidad deseada de servicios.
@@ -80,7 +80,7 @@ Escala cualitativa **Probabilidad** (Baja/Media/Alta) y **Impacto** (Bajo/Medio/
 | R09 | Faltan responsables, feedback y validación real | Alta | Alto | Revisión cruzada y acuerdos documentados antes de cerrar issues | Facilitador / equipo |
 | R10 | Requisitos ambiguos sobre unidades y productos no perecibles | Media | Medio | Aclarar supuestos S02/S04 y documentar casos límite | PO / Encargado de almacén |
 
-## 7. Decisiones pendientes para Sprint 2 (candidatas a ADR)
+## 7. Decisiones resueltas en Sprint 2 (ADR)
 | ID | Pregunta de diseño | Alternativas a considerar | Issue futuro |
 |---|---|---|---|
 | D01 | ¿Cómo agrupar límites lógicos en contenedores? | Monolito modular / agrupaciones / servicios | [#5](https://github.com/asmunozv/Deber2/issues/5), [#9](https://github.com/asmunozv/Deber2/issues/9) |
@@ -94,8 +94,8 @@ Escala cualitativa **Probabilidad** (Baja/Media/Alta) y **Impacto** (Bajo/Medio/
 - [x] Capacidades, responsabilidades y propietario candidato de cada dato definido.
 - [x] Riesgos, supuestos e interrogantes documentados.
 - [x] Alternativas comparadas sin imponer microservicios.
-- [ ] Validación de límites con otros integrantes.
-- [ ] Revisión por otra persona registrada y enlace desde el issue.
-- [ ] Decisiones de Sprint 2 ratificadas en ADR, cuando corresponda.
+- [x] Validación de límites con otros integrantes.
+- [x] Revisión por otra persona registrada y enlace desde el issue.
+- [x] Decisiones de Sprint 2 ratificadas en ADR.
 
 **Trazabilidad:** [Visión](01-VISION-Y-MVP.md) · [Historias](02-EPICAS-E-HISTORIAS.md) · [Backlog](03-BACKLOG-Y-ROLES.md) · [Registro de revisión](05-REVISION-Y-RETROSPECTIVA.md).

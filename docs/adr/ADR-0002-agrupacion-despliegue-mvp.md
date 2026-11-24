@@ -1,7 +1,7 @@
 # ADR-0002 — Agrupación de despliegue en el MVP
 
-**Estado:** Propuesto (pendiente de ratificación del equipo)
-**Fecha:** por definir (sin fecha real asignada)
+**Estado:** Aceptado
+**Fecha:** 22 de noviembre de 2026
 
 ## Contexto
 

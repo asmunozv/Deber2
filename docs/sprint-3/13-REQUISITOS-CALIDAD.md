@@ -1,6 +1,6 @@
 # Sprint 3 — Requisitos de calidad
 
-**Issue:** [#13](https://github.com/asmunozv/Deber2/issues/13) · **Versión:** 1.0 · **Estado:** propuesta para revisión · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
+**Issue:** [#13](https://github.com/asmunozv/Deber2/issues/13) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
 
 Cada requisito se redacta de forma **verificable** y se justifica su umbral. Los umbrales son **propuestas académicas** (no hay carga real; ver supuesto S01).
 

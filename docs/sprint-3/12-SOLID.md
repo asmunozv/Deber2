@@ -1,6 +1,6 @@
 # Sprint 3 — Evidencia de principios SOLID
 
-**Issue:** [#12](https://github.com/asmunozv/Deber2/issues/12) · **Versión:** 1.0 · **Estado:** propuesta para revisión · **Responsable principal (rol):** Product Owner (Ariana Muñoz)
+**Issue:** [#12](https://github.com/asmunozv/Deber2/issues/12) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Product Owner (Ariana Muñoz)
 
 La evidencia debe estar **visible en un diagrama o pseudocódigo** e indicar **qué cambio futuro facilita** cada decisión. Se usa el componente Inventario como referencia.
 

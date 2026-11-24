@@ -1,6 +1,6 @@
 # Sprint 2 — Propiedad de datos
 
-**Issue:** [#6](https://github.com/asmunozv/Deber2/issues/6) · **Versión:** 1.0 · **Estado:** propuesta para revisión · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
+**Issue:** [#6](https://github.com/asmunozv/Deber2/issues/6) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
 
 ## 1. Regla de propiedad
 

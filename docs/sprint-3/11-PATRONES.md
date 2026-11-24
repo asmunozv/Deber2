@@ -1,6 +1,6 @@
 # Sprint 3 — Informe de patrones de software
 
-**Issue:** [#11](https://github.com/asmunozv/Deber2/issues/11) · **Versión:** 1.0 · **Estado:** propuesta para revisión · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
+**Issue:** [#11](https://github.com/asmunozv/Deber2/issues/11) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
 
 Se justifican **siete patrones** (la consigna exige al menos cuatro). Para cada uno: **problema, ubicación, beneficios, costos y límites**.
 

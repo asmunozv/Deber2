@@ -1,6 +1,6 @@
 # Sprint 2 — Flujos de recepción y reposición (UML)
 
-**Issue:** [#7](https://github.com/asmunozv/Deber2/issues/7) · **Versión:** 1.0 · **Estado:** propuesta para revisión · **Responsable principal (rol):** Scrum Master (Ana Paula López)
+**Issue:** [#7](https://github.com/asmunozv/Deber2/issues/7) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Scrum Master (Ana Paula López)
 
 Cubre los flujos **F1 (recepción → stock)** y **F3 (alerta → reposición)** del enunciado (Flujo A y Flujo B).
 
