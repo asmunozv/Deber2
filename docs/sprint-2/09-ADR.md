@@ -23,7 +23,7 @@ Cada decisión registra: **contexto**, **decisión**, **consecuencias** (positiv
 
 ## Estado y trazabilidad
 
-- Los ADR tienen estado **Aceptado**, ratificados el 22/11/2026 tras revisión cruzada.
+- Los ADR están redactados con decisiones propuestas; su aceptación/fecha de ratificación debe contrastarse con evidencia de revisión del equipo.
 - Cada ADR enlaza la issue, el diagrama y el documento que afecta.
 - Un cambio de arquitectura posterior debe generar un **nuevo ADR** (o la actualización versionada del existente), no una edición silenciosa.
 
@@ -33,6 +33,6 @@ Cada decisión registra: **contexto**, **decisión**, **consecuencias** (positiv
 - [x] Trazabilidad a riesgos, decisiones abiertas y flujos.
 - [x] Estado "Aceptado" con fecha real registrada.
 - [x] Revisión por otro integrante.
-- [x] Ratificación y fecha real registradas en cada ADR.
+- [ ] Ratificación de decisiones y fecha real confirmadas por el equipo con evidencia.
 
 **Relaciones:** [C4](05-C4-ARQUITECTURA.md) · [Propiedad de datos](06-PROPIEDAD-DE-DATOS.md) · [Flujos](07-FLUJOS-RECEPCION-REPOSICION.md) · [Reserva/despacho](08-FLUJOS-RESERVA-DESPACHO.md).
