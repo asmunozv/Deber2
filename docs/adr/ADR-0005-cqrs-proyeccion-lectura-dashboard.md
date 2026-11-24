@@ -21,4 +21,12 @@ Mantener una **proyección de lectura** optimizada para el dashboard, alimentada
 - Duplicación controlada de datos (derivada) que debe mantenerse sincronizada.
 - Posible desfase entre la proyección y el stock real (hay que informarlo).
 
+## Alternativas consideradas
+
+| Alternativa | Motivo para no elegirla |
+|---|---|
+| Consultar directamente las bases transaccionales desde el dashboard | Acopla la vista a varios propietarios y puede afectar operaciones |
+| Crear un modelo de escritura y lectura completamente independiente desde el MVP | Añade complejidad innecesaria; basta una proyección derivada para consultas |
+| Usar una proyección como fuente de verdad | Permite desfases y escrituras sobre datos derivados |
+
 **Vínculos:** Issue [#9](https://github.com/asmunozv/Deber2/issues/9) · [Requisitos de calidad](../sprint-3/13-REQUISITOS-CALIDAD.md)
