@@ -61,7 +61,7 @@ Esto resuelve una posible ambigüedad: *"ubicación"* aparece en dos módulos, p
 - [x] Matriz con fuente autorizada por clase de dato.
 - [x] Refinamientos de propiedad documentados (ubicación, pedido/reserva, lecturas).
 - [x] Vínculo con riesgos (R04) y decisiones (D02).
-- [ ] Revisión por otro integrante.
+- [x] Revisión cruzada registrada: comentario de Ariana en la issue #6 (fecha visible en GitHub).
 - [ ] Ratificación en ADR y enlace desde el issue.
 
 **Relaciones:** [C4](05-C4-ARQUITECTURA.md) · [Flujos recepción/reposición](07-FLUJOS-RECEPCION-REPOSICION.md) · [Flujos reserva/despacho](08-FLUJOS-RESERVA-DESPACHO.md) · [ADR](09-ADR.md).
