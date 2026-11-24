@@ -16,11 +16,11 @@
 
 | Artefactos | Responsable principal | Revisor propuesto | Fecha | Evidencia URL | Resultado |
 |---|---|---|---|---|---|
-| C4, propiedad y ADR | Lau | Ariana | ___ | ___ | Por validar |
-| UML recepción/reposición | Ana | Lau | ___ | ___ | Por validar |
-| UML FEFO/despacho | Ariana | Ana | ___ | ___ | Por validar |
-| Matriz de interacciones | Ana | Lau | ___ | ___ | Por validar |
-| Patrones y calidad | Lau | Ariana | ___ | ___ | Por validar |
-| SOLID | Ariana | Ana | ___ | ___ | Por validar |
+| C4, propiedad y ADR (#5, #6, #9) | Lau | Ariana | Fecha visible en issues | Issues #5, #6 y #9 | Comentarios de revisión registrados; ratificación ADR pendiente |
+| UML recepción/reposición (#7) | Ana | Ariana o Lau | — | — | Pendiente; issue #7 abierta sin comentario de revisión |
+| UML FEFO/despacho (#8) | Ariana | Lau | Fecha visible en issue | Issue #8 | Comentario de revisión registrado |
+| Matriz de interacciones (#10) | Ana | Ariana o Lau | — | — | Pendiente; issue #10 abierta sin comentario de revisión |
+| Patrones y calidad (#11, #13) | Lau | Ariana | Fecha visible en issues | Issues #11 y #13 | Comentarios de revisión registrados |
+| SOLID (#12) | Ariana | Lau | Fecha visible en issue | Issue #12 | Comentario de aprobación registrado |
 
-La existencia de PR fusionados demuestra cambios integrados, no necesariamente que se celebrara una review de sprint ni que otra persona aprobara cada archivo.
+Los comentarios cruzados citados acreditan revisión documental de esos artefactos, pero no sustituyen el acta formal de review/retrospectiva del sprint. Las fechas exactas se consultan en la interfaz de GitHub.
