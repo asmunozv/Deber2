@@ -3,7 +3,7 @@
 > **Estado verificado (auditoría 23/11/2026):** archivo de diseño disponible. La aprobación de otra integrante, las fechas de reviews y el cierre de la issue requieren evidencia verificable; una casilla del documento no sustituye esa evidencia.
 
 
-**Issue:** [#4](https://github.com/asmunozv/Deber2/issues/4) · **Versión:** 1.0 · **Estado:** validado en ADR (Sprint 2, 22/11/2026)
+**Issue:** [#4](https://github.com/asmunozv/Deber2/issues/4) · **Versión:** 1.1 · **Estado:** documentado en ADR propuestos (Sprint 2, borrador 22/11/2026); ratificación pendiente
 
 ## 1. Criterios para proponer un límite
 1. Separar capacidades por **reglas y responsabilidades**, no por cantidad deseada de servicios.
