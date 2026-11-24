@@ -198,7 +198,7 @@ flowchart TB
 - [x] Cada contenedor tiene responsabilidad y dato propietario explícito.
 - [x] Interacciones síncronas y asíncronas diferenciadas.
 - [x] Límite pedido/reserva física documentado.
-- [ ] Revisión por otro integrante.
+- [x] Revisión cruzada registrada: comentario de Ariana en la issue #5 (fecha visible en GitHub).
 - [ ] Ajustes y ratificación en ADR (enlace desde el issue).
 
 **Relaciones:** [Propiedad de datos](06-PROPIEDAD-DE-DATOS.md) · [Flujos recepción/reposición](07-FLUJOS-RECEPCION-REPOSICION.md) · [Flujos reserva/despacho](08-FLUJOS-RESERVA-DESPACHO.md) · [ADR](09-ADR.md).
