@@ -63,6 +63,6 @@ Cada requisito se redacta de forma **verificable** y se justifica su umbral. Los
 - [x] Requisitos verificables de seguridad, disponibilidad, rendimiento, escalabilidad, consistencia y mantenibilidad.
 - [x] Umbrales propuestos y justificados.
 - [x] Vínculo con ADR, patrones y riesgos.
-- [ ] Revisión por otro integrante.
+- [x] Revisión cruzada registrada: comentario de Ariana en la issue #13 (fecha visible en GitHub).
 
 **Relaciones:** [Matriz de interacciones](10-MATRIZ-INTERACCIONES.md) · [Patrones](11-PATRONES.md) · [ADR](../sprint-2/09-ADR.md).
