@@ -21,7 +21,7 @@ La consigna propone combinar interacciones **síncronas** (consultas y comandos 
 
 **Costos / riesgos:**
 - Consistencia eventual en lecturas (hay que informar el desfase al usuario).
-- Reintentos y duplicados posibles (mitigado con idempotencia, ADR-0005 y [11-PATRONES.md](../sprint-3/11-PATRONES.md)).
+- Reintentos y duplicados posibles (mitigados con idempotencia en los consumidores; ver [11-PATRONES.md](../sprint-3/11-PATRONES.md)).
 
 ## Alternativas consideradas
 
