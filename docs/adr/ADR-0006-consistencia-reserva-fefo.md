@@ -27,4 +27,12 @@ Esto mantiene la consistencia fuerte donde más importa, sin coordinar una trans
 - Acoplamiento puntual Fulfillment→Inventario en el flujo de reserva.
 - Si el MVP evolucionara a reserva parcial, habría que revisar este ADR.
 
+## Alternativas consideradas
+
+| Alternativa | Motivo para no elegirla |
+|---|---|
+| Transacción distribuida entre Fulfillment e Inventario | Aumenta complejidad y acoplamiento operativo |
+| Reserva asíncrona sin confirmación inmediata | El pedido podría avanzar sin compromiso físico confirmado |
+| Permitir reservas parciales en el MVP | Añade casos de compensación y reglas adicionales; se rechaza la solicitud completa si no alcanza |
+
 **Vínculos:** Issue [#8](https://github.com/asmunozv/Deber2/issues/8) · [Flujo reserva FEFO](../sprint-2/08-FLUJOS-RESERVA-DESPACHO.md)
