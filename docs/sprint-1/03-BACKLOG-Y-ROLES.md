@@ -47,7 +47,7 @@ Rama de control: `INV-02 → REP-01 → DAS-01` y `FUL-02 → DAS-01`.
 ## 3. Backlog académico (GitHub Issues)
 | Sprint | Issues | Entregable definido | Estado verificable en esta rama |
 |---|---|---|---|
-| S1 | [#1](https://github.com/asmunozv/Deber2/issues/1) | Visión, actores y MVP | Cerrado en GitHub; revisión cruzada pendiente de regularizar |
+| S1 | [#1](https://github.com/asmunozv/Deber2/issues/1) | Visión, actores y MVP | Abierto; revisión cruzada pendiente |
 | S1 | [#2](https://github.com/asmunozv/Deber2/issues/2) | 7 épicas, 14 historias y criterios | Cerrado en GitHub; revisión cruzada pendiente de regularizar |
 | S1 | [#3](https://github.com/asmunozv/Deber2/issues/3) | Backlog, dependencias, roles y tablero | Cerrado; comentario de revisión de Ariana registrado |
 | S1 | [#4](https://github.com/asmunozv/Deber2/issues/4) | Límites, riesgos, supuestos y decisiones | Cerrado; comentario de revisión de Ariana registrado |
