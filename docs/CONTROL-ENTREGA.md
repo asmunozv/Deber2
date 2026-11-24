@@ -31,7 +31,7 @@
 
 ## Estado de GitHub al 24/11/2026
 
-- **14 issues cerradas y 5 abiertas** (#7, #10, #14, #16 y #19).
+- **12 issues cerradas y 7 abiertas** (#1, #2, #7, #10, #14, #16 y #19).
 - Las issues #3 y #4 tienen comentarios cruzados de Ariana.
 - Las issues #5, #6, #9, #11, #13 y #17 tienen comentarios cruzados de Ariana.
 - Las issues #8, #12, #15 y #18 tienen comentarios cruzados de Lau.
@@ -41,7 +41,7 @@
 
 ## Acciones pendientes antes de la entrega final
 
-- [ ] **Issues #1 y #2:** obtener revisión independiente y regularizar el cierre, ya que aparecen cerradas sin evidencia cruzada identificable.
+- [ ] **Issues #1 y #2:** obtener revisión independiente y regularizar el cierre, porque se reabrieron para completar la revisión cruzada.
 - [ ] **Issues #7, #10, #14, #16 y #19:** completar revisión por otra persona, comprobar criterios y cerrar solo cuando se cumpla el DoD.
 - [ ] **Diagramas exportados:** generar SVG/PNG únicamente si se van a insertar en el informe; guardar los archivos realmente usados en docs/diagrams/exports. El visor [exportar.html](diagrams/exportar.html) descarga imágenes localmente, no las sube a GitHub.
 - [ ] **ADR:** el equipo debe ratificar o mantener explícitamente como propuestas las decisiones; no cambiar a Aceptado sin evidencia.
