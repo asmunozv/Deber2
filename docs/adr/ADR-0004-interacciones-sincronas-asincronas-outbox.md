@@ -23,4 +23,12 @@ La consigna propone combinar interacciones **síncronas** (consultas y comandos 
 - Consistencia eventual en lecturas (hay que informar el desfase al usuario).
 - Reintentos y duplicados posibles (mitigado con idempotencia, ADR-0005 y [11-PATRONES.md](../sprint-3/11-PATRONES.md)).
 
+## Alternativas consideradas
+
+| Alternativa | Motivo para no elegirla |
+|---|---|
+| Hacer todas las interacciones asíncronas | No permite confirmar inmediatamente reservas y salidas críticas |
+| Hacer todas las interacciones síncronas | Acopla productores y consumidores y carga el camino operativo |
+| Publicar eventos después de confirmar la transacción, sin Outbox | Existe riesgo de registrar el cambio sin publicar el hecho (o viceversa) |
+
 **Vínculos:** Issue [#9](https://github.com/asmunozv/Deber2/issues/9) · [C4](../sprint-2/05-C4-ARQUITECTURA.md) · [Flujo recepción](../sprint-2/07-FLUJOS-RECEPCION-REPOSICION.md)
