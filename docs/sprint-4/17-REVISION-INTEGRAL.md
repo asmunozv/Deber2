@@ -24,10 +24,10 @@
 
 ## Acta final pendiente
 
-Fecha de reunión ___ · Asistentes ___ · Resultado ___ · Correcciones ___ · Enlaces a revisión de los PR/issues ___.
+Fecha de reunión ___ · Asistentes ___ · Resultado ___ · Correcciones ___ · Enlaces a revisión de los PR/issues ___. La revisión documental de #17 tiene comentario cruzado; el acta de reunión y la retrospectiva siguen pendientes.
 
 - [x] Artefactos principales presentes.
-- [ ] Revisión humana cruzada verificable.
+- [x] Revisión cruzada de la revisión integral: comentario de Ariana en la issue #17 (fecha visible en GitHub).
 - [ ] Hallazgos y cambios cerrados.
 - [ ] Presentación ensayada por el equipo.
 
