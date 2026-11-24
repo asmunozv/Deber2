@@ -1,6 +1,6 @@
 # Sprint 1 — Backlog priorizado, dependencias y roles
 
-**Issue:** [#3](https://github.com/asmunozv/Deber2/issues/3) · **Versión:** 1.0 · **Estado:** priorización propuesta para revisión · **Responsables nominales:** sin asignar
+**Issue:** [#3](https://github.com/asmunozv/Deber2/issues/3) · **Versión:** 1.0 · **Estado:** priorización propuesta para revisión · **Responsables nominales:** Ariana Muñoz (PO), Ana Paula López (Scrum Master), Laura Reyes (arquitectura)
 
 ## 1. Criterios de priorización
 Se propone ordenar historias por: **(1)** riesgo para la consistencia de existencias y despachos, **(2)** necesidad para completar el recorrido vertical, **(3)** dependencias de otros módulos y **(4)** valor informativo para operación.
@@ -57,13 +57,13 @@ Este backlog **no marca ninguna actividad como terminada sin validación real**;
 ## 4. Roles Scrum y de arquitectura
 | Rol | Responsabilidad concreta | Persona asignada | Cómo se confirma |
 |---|---|---|---|
-| Product Owner (PO) | Validar valor, alcance, orden del backlog y reglas de negocio | **Pendiente** | Nombre y aceptación del equipo |
-| Scrum Master / facilitador | Facilitar planificación, seguimiento, review, retro y impedimentos | **Pendiente** | Nombre y aceptación del equipo |
-| Líder de arquitectura | Cuidar límites, propiedad de datos, trazabilidad C4/UML/ADR | **Pendiente** | Nombre y aceptación del equipo |
-| Equipo de diseño | Redactar y revisar historias, diagramas y decisiones | **Pendiente** | Integrantes y asignaciones registradas |
-| Revisor cruzado | Verificar calidad de un entregable que no redactó | **Pendiente** | Comentario/review con autor, fecha y observaciones |
+| Product Owner (PO) | Validar valor, alcance, orden del backlog y reglas de negocio | **Ariana Muñoz** | Aceptación del equipo y cierre de #3 |
+| Scrum Master / facilitadora | Facilitar planificación, seguimiento, review, retro y impedimentos | **Ana Paula López** | Aceptación del equipo y cierre de #3 |
+| Líder de arquitectura | Cuidar límites, propiedad de datos, trazabilidad C4/UML/ADR | **Laura Reyes** | Aceptación del equipo y cierre de #3 |
+| Equipo de diseño | Redactar y revisar historias, diagramas y decisiones | **Laura Reyes, Ariana Muñoz y Ana Paula López** | Asignaciones registradas por historia |
+| Revisor cruzado | Verificar calidad de un entregable que no redactó | **Pendiente** (se asigna por artefacto) | Comentario/review con autor, fecha y observaciones |
 
-**Regla:** un rol no es una persona. El responsable funcional de cada historia en la tabla no implica asignar a un integrante real. Antes de cerrar #3 hay que registrar los nombres reales con su acuerdo y actualizar los assignees de los issues cuando corresponda.
+**Regla:** un rol no es una persona. El responsable funcional de cada historia en la tabla no implica asignar a un integrante real. Los nombres ya están registrados (Ariana Muñoz, Ana Paula López, Laura Reyes); falta actualizar los assignees de los issues y la revisión cruzada de cada artefacto antes de cerrar #3.
 
 ## 5. Tablero de seguimiento para el Sprint 1
 | Columna | Qué significa | Elementos |
@@ -85,7 +85,7 @@ Este backlog **no marca ninguna actividad como terminada sin validación real**;
 ## 7. Criterios de aceptación específicos de #3
 - [x] Orden de prioridad, dependencias, sprint de diseño y rol funcional documentados.
 - [x] Roles PO, facilitador, arquitectura y equipo definidos en cuanto a responsabilidad.
-- [ ] Responsables nominales acordados por el equipo.
+- [x] Responsables nominales acordados (Ariana Muñoz, Ana Paula López, Laura Reyes).
 - [ ] Revisión cruzada registrada con nombre, fecha y enlace.
 - [ ] Validación final y cierre formal del issue.
 

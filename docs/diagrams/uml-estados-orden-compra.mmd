@@ -1,0 +1,21 @@
+stateDiagram-v2
+    %% ============================================================
+    %% Máquina de estados — Orden de compra (propiedad de Reposición)
+    %% ============================================================
+    [*] --> SUGERENCIA: disponibilidad bajo umbral
+
+    SUGERENCIA --> APROBADA: aprobar sugerencia
+    SUGERENCIA --> DESCARTADA: descartar sugerencia
+
+    APROBADA --> ORDEN_CREADA: crear orden de compra
+    ORDEN_CREADA --> PENDIENTE_RECEPCION: enviada a proveedor
+
+    PENDIENTE_RECEPCION --> CERRADA: recepción registrada (Inventario)
+
+    DESCARTADA --> [*]
+    CERRADA --> [*]
+
+    note right of PENDIENTE_RECEPCION
+        La orden NO crea stock: el ingreso físico
+        solo ocurre al registrar una recepción (F1).
+    end note
