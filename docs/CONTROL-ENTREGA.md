@@ -35,7 +35,7 @@
 - Las issues #3 y #4 tienen comentarios cruzados de Ariana.
 - Las issues #5, #6, #9, #11, #13 y #17 tienen comentarios cruzados de Ariana.
 - Las issues #8, #12, #15 y #18 tienen comentarios cruzados de Lau.
-- **#1 y #2 están cerradas, pero no se identificó un comentario de revisión independiente**. Regularizar la revisión o reabrirlas antes de afirmar que el Sprint 1 cumplió el DoD.
+- **#1 y #2 fueron reabiertas porque no se identificó un comentario de revisión independiente**. Deben revisarse antes de cerrar el Sprint 1.
 - Las issues #7, #10, #14, #16 y #19 siguen abiertas y sin comentario de revisión observado.
 - La ratificación de los ADR continúa pendiente: están correctamente marcados como Propuestos.
 
@@ -64,7 +64,7 @@ Resultado: aprobado / cambios solicitados.
 
 | Sprint | Documentos disponibles | Revisión cruzada | Review/retro formal | Estado |
 |---|---|---|---|---|
-| 1 | Sí | Parcial: #3 y #4; #1 y #2 pendientes | Pendiente | En validación |
+| 1 | Sí | Parcial: #3 y #4; #1 y #2 abiertas para revisión | Pendiente | En validación |
 | 2 | Sí | Parcial: #5, #6, #8, #9; #7 pendiente | Pendiente | En validación |
 | 3 | Sí | Parcial: #11, #12, #13; #10 y #14 pendientes | Pendiente | En validación |
 | 4 | Sí | Parcial: #15, #17, #18; #16 y #19 pendientes | Pendiente | En validación |
