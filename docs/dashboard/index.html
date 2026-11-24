@@ -1,149 +1,539 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Inventory — Dashboard (propuesta visual)</title>
-<style>
-  :root{
-    --bg:#0f172a; --panel:#1e293b; --panel2:#273449; --line:#334155;
-    --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --ok:#22c55e;
-    --warn:#f59e0b; --danger:#ef4444; --info:#818cf8;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{font-family:system-ui,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:20px;}
-  .wrap{max-width:1100px; margin:0 auto;}
-  header{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;}
-  h1{font-size:20px;}
-  .sub{color:var(--muted); font-size:13px;}
-  .tabs{display:flex; gap:8px;}
-  .tab{border:1px solid var(--line); background:var(--panel); color:var(--text); padding:8px 14px; border-radius:8px; cursor:pointer; font-size:14px;}
-  .tab.active{background:var(--accent); color:#0b1220; border-color:var(--accent); font-weight:600;}
-  .kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:16px;}
-  .kpi{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px;}
-  .kpi .label{color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.5px;}
-  .kpi .value{font-size:28px; font-weight:700; margin-top:4px;}
-  .kpi .value.ok{color:var(--ok);} .kpi .value.warn{color:var(--warn);} .kpi .value.danger{color:var(--danger);} .kpi .value.info{color:var(--info);}
-  .grid{display:grid; grid-template-columns:2fr 1fr; gap:16px;}
-  @media(max-width:760px){.grid{grid-template-columns:1fr;}}
-  .panel{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px;}
-  .panel h2{font-size:15px; margin-bottom:12px; color:var(--accent);}
-  .fresco{font-size:11px; color:var(--muted); float:right; font-weight:400;}
-  /* Planta interna: racks */
-  .planta{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
-  .zona{border:1px solid var(--line); border-radius:8px; padding:8px; background:var(--panel2); min-height:70px;}
-  .zona .t{font-size:11px; color:var(--muted); text-transform:uppercase;}
-  .rack{font-size:12px; margin-top:4px; padding:4px 6px; border-radius:6px; background:#0b1220; border-left:3px solid var(--accent);}
-  .rack.vencido{border-left-color:var(--danger);} .rack.bajo{border-left-color:var(--warn);}
-  .amr{display:inline-block; background:var(--info); color:#0b1220; font-size:11px; padding:2px 6px; border-radius:4px; margin:4px 2px 0 0;}
-  /* Planta externa: muelles y camiones */
-  .patio{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
-  .muelle{border:1px solid var(--line); border-radius:8px; padding:8px; background:var(--panel2); text-align:center;}
-  .muelle .num{font-weight:700;} .muelle .estado{font-size:11px;}
-  .libre{color:var(--ok);} .ocupado{color:var(--warn);} .espera{color:var(--info);}
-  /* Alertas y flujo */
-  .alerta{display:flex; justify-content:space-between; gap:8px; padding:8px 10px; border-radius:8px; margin-bottom:8px; background:#0b1220; border:1px solid var(--line); font-size:13px;}
-  .tag{padding:2px 8px; border-radius:20px; font-size:11px; font-weight:600;}
-  .tag.danger{background:var(--danger); color:#0b1220;} .tag.warn{background:var(--warn); color:#0b1220;} .tag.ok{background:var(--ok); color:#0b1220;}
-  .paso{display:flex; gap:8px; align-items:center; margin-bottom:10px; font-size:13px;}
-  .dot{width:10px; height:10px; border-radius:50%; background:var(--muted);}
-  .dot.on{background:var(--accent);} .dot.done{background:var(--ok);}
-  .legend{font-size:11px; color:var(--muted); margin-top:12px;}
-  .nota{background:#0b1220; border:1px dashed var(--line); border-radius:8px; padding:10px; font-size:12px; color:var(--muted); margin-bottom:16px;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101a2c">
+  <title>Smart Inventory | Centro de operaciones</title>
+  <style>
+    :root{
+      color-scheme:light;
+      --navy:#101a2c;--navy-2:#17243a;--navy-3:#22334d;
+      --bg:#f3f6fb;--surface:#fff;--surface-2:#f8faff;
+      --text:#172338;--muted:#718096;--line:#e5eaf2;
+      --blue:#3867e8;--blue-soft:#edf2ff;--cyan:#16a6c5;
+      --green:#15966a;--green-soft:#e8f7f0;
+      --amber:#c78316;--amber-soft:#fff5df;
+      --red:#d64b58;--red-soft:#fff0f1;
+      --purple:#7958c8;--purple-soft:#f1edff;
+      --shadow:0 8px 24px rgba(25,43,74,.055);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px}
+    button,input,select{font:inherit}
+    button{cursor:pointer}
+    button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid rgba(56,103,232,.25);outline-offset:2px}
+    .app{min-height:100vh}
+    .sidebar{position:fixed;inset:0 auto 0 0;width:246px;background:var(--navy);color:#dce6f6;padding:24px 16px;display:flex;flex-direction:column;z-index:10}
+    .brand{display:flex;align-items:center;gap:12px;padding:2px 10px 28px}
+    .brand-mark{width:39px;height:39px;border-radius:12px;background:linear-gradient(145deg,#5e8aff,#2d55d4);display:grid;place-items:center;color:white;font-weight:800;font-size:16px;box-shadow:0 8px 20px rgba(56,103,232,.28)}
+    .brand-name{font-weight:750;font-size:15px;letter-spacing:.1px;color:#fff}
+    .brand-caption{font-size:10px;color:#8fa3c0;margin-top:3px;letter-spacing:1.2px;text-transform:uppercase}
+    .nav-label{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:#7488a6;padding:0 12px;margin:8px 0 10px}
+    .nav{display:grid;gap:5px}
+    .nav button{border:0;background:transparent;color:#aebdd2;border-radius:10px;padding:11px 12px;display:flex;align-items:center;gap:12px;text-align:left;width:100%;transition:.18s}
+    .nav button:hover{background:rgba(255,255,255,.07);color:#fff}
+    .nav button.active{background:#263b60;color:#fff;box-shadow:inset 3px 0 #6e95ff}
+    .nav svg{width:18px;height:18px;flex:none;opacity:.92}
+    .nav .count{margin-left:auto;font-size:11px;padding:3px 7px;border-radius:20px;background:rgba(214,75,88,.18);color:#ff9ca5}
+    .sidebar-bottom{margin-top:auto}
+    .warehouse-card{background:var(--navy-2);border:1px solid #2b3d59;border-radius:13px;padding:13px;margin:0 4px 14px}
+    .warehouse-card .small{color:#8fa3c0;font-size:11px}
+    .warehouse-card strong{display:block;color:#fff;margin-top:5px;font-size:13px}
+    .user{display:flex;align-items:center;gap:10px;padding:13px 8px 0;border-top:1px solid #2a3951}
+    .avatar{width:33px;height:33px;border-radius:50%;display:grid;place-items:center;background:#dbe7ff;color:#284b9b;font-weight:750;font-size:11px}
+    .user strong{display:block;font-size:12px;color:#fff}
+    .user span{font-size:10px;color:#8fa3c0}
+    .main{margin-left:246px;min-height:100vh}
+    .topbar{height:76px;background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+    .crumb{font-size:12px;color:var(--muted)}
+    .crumb b{color:var(--text);font-weight:650}
+    .top-actions{display:flex;align-items:center;gap:12px}
+    .demo-pill{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:30px;background:var(--amber-soft);color:#95600d;font-size:11px;font-weight:700}
+    .demo-pill i{width:6px;height:6px;background:#d99a2b;border-radius:50%}
+    .icon-btn{border:1px solid var(--line);background:white;color:#52627a;border-radius:10px;padding:9px 12px;display:flex;align-items:center;gap:8px;font-size:12px}
+    .icon-btn:hover{border-color:#b8c7e2;background:#f9fbff}
+    .content{max-width:1500px;margin:auto;padding:30px 34px 42px}
+    .page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:24px}
+    .eyebrow{color:var(--blue);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+    h1{font-size:25px;letter-spacing:-.7px;margin:0;font-weight:760}
+    .subtitle{color:var(--muted);font-size:12px;margin-top:7px}
+    .head-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+    .btn{border:1px solid var(--line);background:white;color:#4b5b72;padding:10px 13px;border-radius:10px;font-size:12px;font-weight:650;display:inline-flex;align-items:center;gap:8px}
+    .btn:hover{background:#f8faff;border-color:#cbd6e7}
+    .btn.primary{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 5px 12px rgba(56,103,232,.18)}
+    .btn.primary:hover{background:#2d58d5}
+    .btn svg{width:15px;height:15px}
+    .section{display:none}
+    .section.active{display:block;animation:appear .22s ease}
+    @keyframes appear{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}
+    .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:17px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .kpi{padding:17px 18px;min-height:126px;position:relative;overflow:hidden}
+    .kpi-top{display:flex;justify-content:space-between;align-items:center}
+    .kpi-label{font-size:11px;color:var(--muted);font-weight:650}
+    .kpi-icon{width:34px;height:34px;border-radius:11px;display:grid;place-items:center}
+    .kpi-icon svg{width:17px;height:17px}
+    .kpi-icon.blue{background:var(--blue-soft);color:var(--blue)}
+    .kpi-icon.green{background:var(--green-soft);color:var(--green)}
+    .kpi-icon.amber{background:var(--amber-soft);color:var(--amber)}
+    .kpi-icon.red{background:var(--red-soft);color:var(--red)}
+    .kpi-value{font-size:27px;font-weight:780;letter-spacing:-.8px;margin-top:10px;line-height:1}
+    .kpi-foot{font-size:10px;color:var(--muted);margin-top:9px}
+    .trend{font-weight:700;color:var(--green)}
+    .trend.warn{color:var(--amber)}
+    .layout-2{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(290px,.9fr);gap:16px;margin-bottom:16px}
+    .layout-equal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:16px}
+    .panel{padding:19px 20px}
+    .panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:17px}
+    .panel-title{font-size:13px;font-weight:760;margin:0}
+    .panel-sub{font-size:10px;color:var(--muted);margin-top:5px}
+    .quiet{font-size:10px;color:var(--muted)}
+    .select{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 9px;color:#58677d;font-size:11px}
+    .chart{height:188px;display:flex;align-items:flex-end;gap:12px;padding:10px 6px 0;border-bottom:1px solid var(--line);position:relative}
+    .chart:before,.chart:after{content:"";position:absolute;left:0;right:0;border-top:1px dashed #edf0f6}
+    .chart:before{top:34%}.chart:after{top:67%}
+    .bar-group{height:100%;flex:1;display:flex;align-items:flex-end;justify-content:center;gap:4px;position:relative;z-index:1}
+    .bar{width:min(17px,38%);border-radius:5px 5px 0 0;background:#b8c9fb;min-height:5px;transition:height .2s}
+    .bar.strong{background:var(--blue)}
+    .chart-labels{display:flex;justify-content:space-around;color:#9aa6b7;font-size:9px;padding:8px 0 0}
+    .chart-legend{display:flex;gap:15px;align-items:center;margin-top:14px;color:var(--muted);font-size:10px}
+    .legend-dot{width:7px;height:7px;border-radius:2px;display:inline-block;margin-right:5px}
+    .donut-wrap{display:flex;align-items:center;gap:22px;padding:8px 2px 10px}
+    .donut{width:126px;height:126px;border-radius:50%;background:conic-gradient(var(--green) 0 68%,#e5a43a 68% 88%,var(--red) 88% 100%);display:grid;place-items:center;flex:none;position:relative}
+    .donut:after{content:"";position:absolute;width:88px;height:88px;border-radius:50%;background:white}
+    .donut-center{position:relative;z-index:1;text-align:center}
+    .donut-center strong{display:block;font-size:23px;letter-spacing:-1px}
+    .donut-center span{font-size:9px;color:var(--muted)}
+    .legend-list{display:grid;gap:13px;flex:1}
+    .legend-row{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px}
+    .legend-name{display:flex;align-items:center;gap:7px;color:#59677c}
+    .legend-row strong{font-size:11px}
+    .alert-list{display:grid;gap:9px}
+    .alert-item{display:flex;gap:10px;padding:11px;border-radius:11px;background:var(--surface-2);border:1px solid #eef1f7}
+    .alert-symbol{width:29px;height:29px;flex:none;border-radius:9px;display:grid;place-items:center;font-weight:800}
+    .alert-symbol.red{background:var(--red-soft);color:var(--red)}
+    .alert-symbol.amber{background:var(--amber-soft);color:var(--amber)}
+    .alert-symbol.blue{background:var(--blue-soft);color:var(--blue)}
+    .alert-copy{min-width:0;flex:1}
+    .alert-copy strong{font-size:11px;display:block;font-weight:700}
+    .alert-copy span{font-size:10px;color:var(--muted);display:block;margin-top:4px;line-height:1.4}
+    .alert-time{font-size:9px;color:#9aa6b7;white-space:nowrap}
+    .text-link{border:0;background:transparent;color:var(--blue);font-size:10px;font-weight:700;padding:7px 0 0}
+    .text-link:hover{text-decoration:underline}
+    .table-wrap{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;white-space:nowrap}
+    th{text-align:left;color:#8a97a9;font-size:9px;text-transform:uppercase;letter-spacing:.65px;font-weight:750;padding:10px 12px;border-bottom:1px solid var(--line)}
+    td{font-size:11px;color:#536178;padding:12px;border-bottom:1px solid #f0f2f7}
+    tbody tr:last-child td{border-bottom:0}
+    tbody tr:hover{background:#fafbfe}
+    td strong{color:var(--text);font-weight:700}
+    .sku{font-size:10px;color:#8b98aa;margin-top:3px}
+    .status{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:30px;font-size:9px;font-weight:750}
+    .status:before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+    .status.good{color:var(--green);background:var(--green-soft)}
+    .status.warning{color:var(--amber);background:var(--amber-soft)}
+    .status.critical{color:var(--red);background:var(--red-soft)}
+    .status.info{color:var(--blue);background:var(--blue-soft)}
+    .status.neutral{color:#66758a;background:#eef1f5}
+    .progress{height:6px;background:#edf0f5;border-radius:20px;overflow:hidden;min-width:72px}
+    .progress span{height:100%;display:block;background:var(--blue);border-radius:20px}
+    .activity{display:grid;gap:0}
+    .activity-row{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid #f0f2f7}
+    .activity-row:last-child{border:0}
+    .activity-icon{width:27px;height:27px;border-radius:9px;display:grid;place-items:center;background:var(--blue-soft);color:var(--blue);font-size:11px;flex:none}
+    .activity-text{font-size:10px;color:#5c6a7e;line-height:1.5;flex:1}
+    .activity-text strong{color:var(--text)}
+    .activity-time{font-size:9px;color:#9aa6b7;white-space:nowrap}
+    .toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+    .search{position:relative;min-width:230px;max-width:360px;flex:1}
+    .search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:#98a4b5}
+    .search input{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px 12px 10px 34px;background:#fff;font-size:11px;color:var(--text)}
+    .toolbar-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .table-card{padding:8px 18px 14px}
+    .replenish{padding:18px}
+    .formula{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:13px 0}
+    .formula div{background:var(--surface-2);border:1px solid #edf0f6;border-radius:10px;padding:10px}
+    .formula span{display:block;color:var(--muted);font-size:9px}
+    .formula strong{display:block;font-size:18px;margin-top:5px}
+    .suggestion{background:var(--green-soft);border:1px solid #d7f0e4;border-radius:12px;padding:13px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .suggestion span{font-size:10px;color:#3c7b60}
+    .suggestion strong{font-size:22px;color:#137a54}
+    .order-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-bottom:16px}
+    .order-stat{padding:15px}
+    .order-stat span{font-size:10px;color:var(--muted)}
+    .order-stat strong{font-size:22px;display:block;margin-top:7px}
+    .order-card{padding:15px 16px;margin-bottom:10px}
+    .order-top{display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .order-id{font-weight:750;font-size:12px}
+    .order-meta{font-size:10px;color:var(--muted);margin-top:5px}
+    .order-track{display:flex;gap:4px;margin-top:14px}
+    .order-track span{height:5px;flex:1;border-radius:20px;background:#e9edf4}
+    .order-track span.done{background:var(--blue)}
+    .order-track span.current{background:#91aaf5}
+    .fleet-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-bottom:16px}
+    .fleet-card{padding:16px}
+    .fleet-top{display:flex;justify-content:space-between;align-items:center}
+    .robot-icon{width:36px;height:36px;border-radius:11px;background:var(--purple-soft);color:var(--purple);display:grid;place-items:center;font-size:17px}
+    .fleet-card strong{font-size:13px}
+    .fleet-card .fleet-desc{font-size:10px;color:var(--muted);margin-top:8px}
+    .fleet-card .fleet-foot{display:flex;justify-content:space-between;margin-top:15px;font-size:10px;color:#69788d}
+    .warehouse-map{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    .zone{border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:13px;min-height:118px}
+    .zone-title{font-size:10px;color:var(--muted);font-weight:750;text-transform:uppercase;letter-spacing:.6px}
+    .rack{margin-top:9px;border-radius:7px;padding:7px 8px;background:white;border:1px solid #e9edf4;border-left:3px solid var(--blue);font-size:10px;color:#59677c}
+    .rack.low{border-left-color:var(--amber)}
+    .rack.expiry{border-left-color:var(--red)}
+    .zone small{display:block;color:#9aa6b7;font-size:9px;margin-top:8px}
+    .dock-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+    .dock{border:1px solid var(--line);border-radius:12px;padding:15px;text-align:center;background:var(--surface-2)}
+    .dock strong{font-size:12px;display:block}
+    .dock span{font-size:10px;display:block;margin-top:7px}
+    .alert-row{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:13px 3px;border-bottom:1px solid #f0f2f7}
+    .alert-row:last-child{border:0}
+    .alert-row strong{font-size:11px}
+    .alert-row p{font-size:10px;color:var(--muted);margin:4px 0 0}
+    .empty{padding:30px;text-align:center;color:var(--muted);font-size:11px;display:none}
+    .footer-note{margin-top:18px;color:#99a4b4;font-size:9px;text-align:right}
+    .toast{position:fixed;right:25px;bottom:24px;background:var(--navy);color:white;padding:12px 16px;border-radius:10px;box-shadow:0 12px 30px #10203a30;font-size:11px;opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s;z-index:30}
+    .toast.show{opacity:1;transform:none}
+    @media(max-width:1100px){.sidebar{width:210px}.main{margin-left:210px}.content{padding:25px 22px}.topbar{padding:0 22px}.kpis{grid-template-columns:repeat(2,1fr)}.layout-2{grid-template-columns:1fr}.fleet-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:760px){.sidebar{position:static;width:auto;height:auto;padding:13px 14px}.brand{padding:0 5px 12px}.brand-mark{width:33px;height:33px}.nav-label,.sidebar-bottom{display:none}.nav{display:flex;overflow-x:auto;padding-bottom:2px}.nav button{width:auto;white-space:nowrap;padding:9px 11px;font-size:11px}.nav button.active{box-shadow:inset 0 -2px #6e95ff}.nav svg{width:15px;height:15px}.main{margin-left:0}.topbar{height:58px;padding:0 16px}.content{padding:22px 15px 30px}.page-head{align-items:flex-start;flex-direction:column}.page-head h1{font-size:22px}.head-actions{width:100%}.layout-equal{grid-template-columns:1fr}.warehouse-map{grid-template-columns:repeat(2,1fr)}.alert-row{grid-template-columns:1fr auto}.alert-row .alert-time{display:none}}
+    @media(max-width:460px){.kpis{gap:9px}.kpi{padding:13px;min-height:112px}.kpi-value{font-size:23px}.kpi-label{font-size:10px}.kpi-foot{font-size:9px}.top-actions .demo-pill{display:none}.icon-btn{padding:8px}.fleet-grid,.order-grid{grid-template-columns:1fr}.warehouse-map{grid-template-columns:1fr 1fr}.dock-grid{grid-template-columns:1fr}.donut-wrap{gap:13px}.donut{width:105px;height:105px}.donut:after{width:73px;height:73px}.donut-center strong{font-size:19px}.panel{padding:15px}.chart{gap:5px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div>
-      <h1>Smart Inventory — Dashboard</h1>
-      <div class="sub">Propuesta visual · datos ilustrativos · no conectado a servicios reales</div>
+<div class="app">
+  <aside class="sidebar" aria-label="Navegación principal">
+    <div class="brand">
+      <div class="brand-mark">SI</div>
+      <div><div class="brand-name">Smart Inventory</div><div class="brand-caption">LogistPulse · Operations</div></div>
     </div>
-    <div class="tabs">
-      <button class="tab active" id="tabInt">Planta interna</button>
-      <button class="tab" id="tabExt">Planta externa</button>
+    <div class="nav-label">Workspace</div>
+    <nav class="nav">
+      <button class="active" data-page="overview" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="11" width="7" height="10" rx="2"/><rect x="3" y="14" width="8" height="7" rx="2"/></svg>Resumen
+      </button>
+      <button data-page="inventory">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/></svg>Inventario
+      </button>
+      <button data-page="orders">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5M8 17h3"/></svg>Pedidos
+      </button>
+      <button data-page="fleet">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 16V8h12v8H3ZM15 11h4l2 3v2h-6"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Flota y muelles
+      </button>
+      <button data-page="alerts">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>Alertas <span class="count">7</span>
+      </button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="warehouse-card"><div class="small">Centro logístico activo</div><strong>Planta principal · Quito</strong><div class="small" style="margin-top:6px">Vista de demostración</div></div>
+      <div class="user"><div class="avatar">OP</div><div><strong>Equipo de operaciones</strong><span>Panel de consulta</span></div></div>
     </div>
-  </header>
+  </aside>
 
-  <div class="nota">
-    El dashboard es una <strong>interfaz y vista de consulta</strong>; no es la fuente de verdad del stock. Las actualizaciones usan una
-    <strong>proyección de lectura</strong> (consistencia eventual). Las acciones (aprobar sugerencia, reservar) se dirigen a la capacidad responsable.
-  </div>
+  <main class="main">
+    <div class="topbar">
+      <div class="crumb">LogistPulse <span style="padding:0 7px;color:#c1cad7">/</span> <b id="breadcrumb">Resumen general</b></div>
+      <div class="top-actions">
+        <span class="demo-pill"><i></i> Datos ilustrativos</span>
+        <button class="icon-btn" id="refreshBtn" title="Actualizar la hora de la vista">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.5 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.5-3"/></svg>
+          <span id="updatedLabel">Vista de ejemplo</span>
+        </button>
+      </div>
+    </div>
 
-  <!-- KPIs compartidos -->
-  <div class="kpis">
-    <div class="kpi"><div class="label">Stock total (unidades)</div><div class="value ok">12 480</div></div>
-    <div class="kpi"><div class="label">Alertas activas</div><div class="value warn">7</div></div>
-    <div class="kpi"><div class="label">Pedidos en preparación</div><div class="value info">14</div></div>
-    <div class="kpi"><div class="label">Pedidos en ruta</div><div class="value">9</div></div>
-  </div>
-
-  <div class="grid">
-    <!-- VISTA PRINCIPAL -->
-    <div class="panel">
-      <h2 id="vistaTitle">Planta interna — racks, lotes y AMR <span class="fresco">última lectura: hace 4 s</span></h2>
-
-      <div id="vistaInterna">
-        <div class="planta">
-          <div class="zona"><div class="t">Recepción</div><div class="rack">Lote A-101 · 240 u</div><div class="rack bajo">Lote B-201 · 30 u</div></div>
-          <div class="zona"><div class="t">Zona A · Rack 1</div><div class="rack">SKU 1012 · 480 u</div><div class="rack">SKU 1012 · 210 u</div></div>
-          <div class="zona"><div class="t">Zona A · Rack 2</div><div class="rack vencido">SKU 1031 · vence hoy</div><div class="rack">SKU 1044 · 620 u</div></div>
-          <div class="zona"><div class="t">Zona B · Picking</div><div class="rack">SKU 1055 · 150 u</div><span class="amr">AMR-3</span><span class="amr">AMR-7</span></div>
+    <div class="content">
+      <section class="section active" id="page-overview">
+        <div class="page-head">
+          <div><div class="eyebrow">Centro de control · Smart Inventory</div><h1>Resumen de operaciones</h1><div class="subtitle">Visibilidad general del inventario, los pedidos y los recursos logísticos.</div></div>
+          <div class="head-actions"><button class="btn" data-go="inventory">Consultar inventario <span>→</span></button><button class="btn primary" data-go="alerts">Revisar alertas <span>↗</span></button></div>
         </div>
-        <div class="legend">■ borde azul = stock normal · ■ naranja = bajo mínimo · ■ rojo = lote próximo a vencer/bloqueado · AMR = robot de picking.</div>
-      </div>
-
-      <div id="vistaExterna" style="display:none;">
-        <div class="patio">
-          <div class="muelle"><div class="num">Muelle 1</div><div class="estado libre">Libre</div></div>
-          <div class="muelle"><div class="num">Muelle 2</div><div class="estado ocupado">Camión TR-04</div></div>
-          <div class="muelle"><div class="num">Muelle 3</div><div class="estado espera">En espera</div></div>
-          <div class="muelle"><div class="num">Patio</div><div class="estado libre">2 plazas libres</div></div>
-          <div class="muelle"><div class="num">Acceso</div><div class="estado espera">TR-08 entrando</div></div>
-          <div class="muelle"><div class="num">Zona espera</div><div class="estado">TR-02, TR-06</div></div>
+        <div class="kpis">
+          <article class="card kpi"><div class="kpi-top"><span class="kpi-label">Unidades registradas</span><span class="kpi-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 7 9-4 9 4-9 4-9-4ZM3 7v10l9 4 9-4V7M12 11v10"/></svg></span></div><div class="kpi-value">12.480</div><div class="kpi-foot"><span class="trend">↑ 4,8%</span> respecto al periodo anterior</div></article>
+          <article class="card kpi"><div class="kpi-top"><span class="kpi-label">Disponibilidad estimada</span><span class="kpi-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m5 12 4 4L19 6"/></svg></span></div><div class="kpi-value">10.920</div><div class="kpi-foot">Unidades libres para comprometer</div></article>
+          <article class="card kpi"><div class="kpi-top"><span class="kpi-label">Pedidos activos</span><span class="kpi-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg></span></div><div class="kpi-value">23</div><div class="kpi-foot">14 en preparación · 9 en ruta</div></article>
+          <article class="card kpi"><div class="kpi-top"><span class="kpi-label">Alertas por atender</span><span class="kpi-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5m0 3h.01"/></svg></span></div><div class="kpi-value">7</div><div class="kpi-foot"><span class="trend warn">2 prioritarias</span> requieren seguimiento</div></article>
         </div>
-        <div class="legend">Camiones y muelles de la planta externa. La asignación de recursos vive en Flota; el dashboard solo la muestra.</div>
-      </div>
-    </div>
 
-    <!-- PANEL DERECHO: alertas + flujo -->
-    <div>
-      <div class="panel">
-        <h2>Alertas</h2>
-        <div class="alerta"><span>SKU 1055 bajo mínimo</span><span class="tag warn">Reponer</span></div>
-        <div class="alerta"><span>SKU 1031 próximo a vencer</span><span class="tag danger">Caducidad</span></div>
-        <div class="alerta"><span>Pedido #482 sin recurso asignado</span><span class="tag warn">Flota</span></div>
-        <div class="alerta"><span>Recepción #7112 pendiente de ubicación</span><span class="tag ok">Atención</span></div>
-      </div>
+        <div class="layout-2">
+          <article class="card panel">
+            <div class="panel-head"><div><h2 class="panel-title">Movimiento de inventario</h2><div class="panel-sub">Entradas y salidas · últimos 7 días · unidades</div></div><select class="select" aria-label="Periodo del gráfico"><option>Últimos 7 días</option><option>Últimos 30 días</option></select></div>
+            <div class="chart" aria-label="Gráfico ilustrativo de entradas y salidas de inventario">
+              <div class="bar-group"><span class="bar" style="height:48%"></span><span class="bar strong" style="height:34%"></span></div>
+              <div class="bar-group"><span class="bar" style="height:66%"></span><span class="bar strong" style="height:44%"></span></div>
+              <div class="bar-group"><span class="bar" style="height:54%"></span><span class="bar strong" style="height:61%"></span></div>
+              <div class="bar-group"><span class="bar" style="height:79%"></span><span class="bar strong" style="height:50%"></span></div>
+              <div class="bar-group"><span class="bar" style="height:62%"></span><span class="bar strong" style="height:72%"></span></div>
+              <div class="bar-group"><span class="bar" style="height:88%"></span><span class="bar strong" style="height:57%"></span></div>
+              <div class="bar-group"><span class="bar" style="height:72%"></span><span class="bar strong" style="height:65%"></span></div>
+            </div>
+            <div class="chart-labels"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span></div>
+            <div class="chart-legend"><span><i class="legend-dot" style="background:#b8c9fb"></i>Entradas</span><span><i class="legend-dot" style="background:#3867e8"></i>Salidas</span><span class="quiet">Valores demostrativos</span></div>
+          </article>
+          <article class="card panel">
+            <div class="panel-head"><div><h2 class="panel-title">Estado del stock</h2><div class="panel-sub">Distribución por condición de inventario</div></div><span class="quiet">Total: 12.480 u</span></div>
+            <div class="donut-wrap"><div class="donut"><div class="donut-center"><strong>88%</strong><span>en condición normal</span></div></div>
+              <div class="legend-list">
+                <div class="legend-row"><span class="legend-name"><i class="legend-dot" style="background:#15966a"></i>Normal</span><strong>8.486</strong></div>
+                <div class="legend-row"><span class="legend-name"><i class="legend-dot" style="background:#e5a43a"></i>Bajo mínimo</span><strong>2.496</strong></div>
+                <div class="legend-row"><span class="legend-name"><i class="legend-dot" style="background:#d64b58"></i>Crítico / vencimiento</span><strong>1.498</strong></div>
+              </div>
+            </div>
+            <div class="quiet">La clasificación es referencial y no reemplaza la consulta del saldo por lote.</div>
+          </article>
+        </div>
 
-      <div class="panel">
-        <h2>Flujo de pedidos</h2>
-        <div class="paso"><span class="dot done"></span> Recepción #7101 confirmada</div>
-        <div class="paso"><span class="dot done"></span> Reserva FEFO #480 (2 lotes)</div>
-        <div class="paso"><span class="dot on"></span> Preparación #480 — AMR-7</div>
-        <div class="paso"><span class="dot"></span> Despacho #479 — asignar muelle</div>
-        <div class="paso"><span class="dot"></span> Entrega #478 — en ruta</div>
-      </div>
+        <div class="layout-2">
+          <article class="card panel">
+            <div class="panel-head"><div><h2 class="panel-title">Productos que requieren atención</h2><div class="panel-sub">Existencias por debajo del umbral o lotes próximos a vencer</div></div><button class="text-link" data-go="inventory">Ver inventario completo →</button></div>
+            <div class="table-wrap"><table><thead><tr><th>Producto / SKU</th><th>Ubicación</th><th>Disponible</th><th>Condición</th></tr></thead><tbody>
+              <tr><td><strong>Producto 1055</strong><div class="sku">SKU-1055</div></td><td>Zona B · Picking</td><td><strong>18 u</strong></td><td><span class="status warning">Bajo mínimo</span></td></tr>
+              <tr><td><strong>Producto 1031</strong><div class="sku">SKU-1031 · Lote L-1031</div></td><td>Zona A · Rack 2</td><td><strong>42 u</strong></td><td><span class="status critical">Vence hoy</span></td></tr>
+              <tr><td><strong>Producto 1012</strong><div class="sku">SKU-1012</div></td><td>Zona A · Rack 1</td><td><strong>690 u</strong></td><td><span class="status good">Normal</span></td></tr>
+            </tbody></table></div>
+          </article>
+          <article class="card panel">
+            <div class="panel-head"><div><h2 class="panel-title">Alertas recientes</h2><div class="panel-sub">Incidencias que requieren seguimiento</div></div><button class="text-link" data-go="alerts">Ver todas →</button></div>
+            <div class="alert-list">
+              <div class="alert-item"><div class="alert-symbol red">!</div><div class="alert-copy"><strong>Lote próximo a vencer</strong><span>SKU-1031 · revisar prioridad FEFO</span></div><span class="alert-time">09:42</span></div>
+              <div class="alert-item"><div class="alert-symbol amber">↗</div><div class="alert-copy"><strong>Stock por debajo del mínimo</strong><span>SKU-1055 · sugerencia de reposición</span></div><span class="alert-time">09:18</span></div>
+              <div class="alert-item"><div class="alert-symbol blue">↔</div><div class="alert-copy"><strong>Recurso pendiente de asignación</strong><span>Pedido #482 · módulo Flota</span></div><span class="alert-time">08:56</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="card panel">
+          <div class="panel-head"><div><h2 class="panel-title">Actividad operativa</h2><div class="panel-sub">Eventos de negocio registrados en el flujo de inventario y despacho</div></div><span class="quiet">Secuencia ilustrativa</span></div>
+          <div class="activity">
+            <div class="activity-row"><div class="activity-icon">↓</div><div class="activity-text"><strong>Recepción confirmada · #7101</strong><br>Ingreso de lote A-101 y actualización del saldo de inventario.</div><span class="activity-time">10:12</span></div>
+            <div class="activity-row"><div class="activity-icon">▣</div><div class="activity-text"><strong>Reserva FEFO creada · #480</strong><br>Asignación de unidades desde dos lotes elegibles.</div><span class="activity-time">09:54</span></div>
+            <div class="activity-row"><div class="activity-icon">⌁</div><div class="activity-text"><strong>Preparación iniciada · Pedido #480</strong><br>Recurso AMR-7 asignado al proceso de picking.</div><span class="activity-time">09:31</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="page-inventory">
+        <div class="page-head"><div><div class="eyebrow">Control de existencias</div><h1>Inventario y lotes</h1><div class="subtitle">Consulta de disponibilidad, ubicación, vencimiento y políticas de selección FEFO.</div></div><div class="head-actions"><button class="btn primary" id="exportBtn">↓ Exportar CSV</button></div></div>
+        <div class="kpis">
+          <article class="card kpi"><div class="kpi-label">Unidades registradas</div><div class="kpi-value">12.480</div><div class="kpi-foot">En todas las ubicaciones</div></article>
+          <article class="card kpi"><div class="kpi-label">Unidades reservadas</div><div class="kpi-value">1.560</div><div class="kpi-foot">Comprometidas para pedidos</div></article>
+          <article class="card kpi"><div class="kpi-label">Lotes próximos a vencer</div><div class="kpi-value" style="color:var(--amber)">4</div><div class="kpi-foot">Requieren priorización FEFO</div></article>
+          <article class="card kpi"><div class="kpi-label">Productos bajo mínimo</div><div class="kpi-value" style="color:var(--red)">7</div><div class="kpi-foot">Con sugerencia de reposición</div></article>
+        </div>
+        <article class="card table-card">
+          <div class="toolbar"><div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="inventorySearch" type="search" placeholder="Buscar SKU, producto, lote o zona..." aria-label="Buscar en inventario"></div><div class="toolbar-right"><select class="select" id="stockFilter" aria-label="Filtrar por estado"><option value="all">Todos los estados</option><option value="good">Normal</option><option value="warning">Bajo mínimo</option><option value="critical">Próximo a vencer</option></select><span class="quiet" id="inventoryCount">6 registros</span></div></div>
+          <div class="table-wrap"><table id="inventoryTable"><thead><tr><th>Producto / SKU</th><th>Lote</th><th>Ubicación</th><th>Disponible</th><th>Reservado</th><th>Vencimiento</th><th>Estado</th></tr></thead><tbody>
+            <tr data-status="good"><td><strong>Producto 1012</strong><div class="sku">SKU-1012</div></td><td>L-1012-A</td><td>Zona A · Rack 1</td><td>480 u</td><td>60 u</td><td>18/03/2027</td><td><span class="status good">Normal</span></td></tr>
+            <tr data-status="good"><td><strong>Producto 1012</strong><div class="sku">SKU-1012</div></td><td>L-1012-B</td><td>Zona A · Rack 1</td><td>210 u</td><td>30 u</td><td>02/04/2027</td><td><span class="status good">Normal</span></td></tr>
+            <tr data-status="critical"><td><strong>Producto 1031</strong><div class="sku">SKU-1031</div></td><td>L-1031-A</td><td>Zona A · Rack 2</td><td>42 u</td><td>0 u</td><td>24/11/2026</td><td><span class="status critical">Vence hoy</span></td></tr>
+            <tr data-status="good"><td><strong>Producto 1044</strong><div class="sku">SKU-1044</div></td><td>L-1044-C</td><td>Zona A · Rack 2</td><td>620 u</td><td>80 u</td><td>12/06/2027</td><td><span class="status good">Normal</span></td></tr>
+            <tr data-status="warning"><td><strong>Producto 1055</strong><div class="sku">SKU-1055</div></td><td>L-1055-B</td><td>Zona B · Picking</td><td>18 u</td><td>12 u</td><td>09/02/2027</td><td><span class="status warning">Bajo mínimo</span></td></tr>
+            <tr data-status="good"><td><strong>Producto 1060</strong><div class="sku">SKU-1060</div></td><td>L-1060-A</td><td>Recepción</td><td>240 u</td><td>0 u</td><td>22/08/2027</td><td><span class="status good">Normal</span></td></tr>
+          </tbody></table><div class="empty" id="inventoryEmpty">No se encontraron registros con esos filtros.</div></div>
+        </article>
+        <div class="layout-equal" style="margin-top:16px">
+          <article class="card replenish"><div class="panel-head"><div><h2 class="panel-title">Sugerencia de reposición · SKU-1055</h2><div class="panel-sub">Cálculo ilustrativo de posición de inventario</div></div><span class="status warning">Bajo mínimo</span></div>
+            <div class="formula"><div><span>Disponible</span><strong>18</strong></div><div><span>En orden</span><strong>10</strong></div><div><span>Reservado</span><strong>6</strong></div></div>
+            <div class="quiet">Posición = disponible + en orden − reservado = 22 unidades. Mínimo: 30 · Objetivo: 60.</div>
+            <div class="suggestion" style="margin-top:13px"><div><span>Cantidad sugerida para reponer</span><strong>38 unidades</strong></div><span style="font-size:20px">↗</span></div>
+          </article>
+          <article class="card replenish"><div class="panel-head"><div><h2 class="panel-title">Criterio FEFO</h2><div class="panel-sub">Primero vence, primero sale</div></div><span class="status info">Política activa</span></div>
+            <p style="font-size:11px;color:#5d6b80;line-height:1.7;margin:0">La reserva prioriza los lotes elegibles con fecha de vencimiento más próxima. Si dos lotes tienen la misma fecha, se utiliza el código de lote como criterio de desempate.</p>
+            <div style="margin-top:14px;padding:12px;background:var(--surface-2);border-radius:10px;font-size:10px;color:var(--muted)">La vista permite consultar la decisión; la asignación y el registro de reservas pertenecen al componente responsable de Inventario.</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="page-orders">
+        <div class="page-head"><div><div class="eyebrow">Cumplimiento de pedidos</div><h1>Pedidos y preparación</h1><div class="subtitle">Seguimiento del ciclo desde la reserva de inventario hasta el despacho.</div></div><div class="head-actions"><span class="status info">Flujo de referencia</span></div></div>
+        <div class="order-grid">
+          <article class="card order-stat"><span>Por reservar / confirmar</span><strong>3</strong><div class="progress" style="margin-top:10px"><span style="width:13%;background:var(--amber)"></span></div></article>
+          <article class="card order-stat"><span>En preparación</span><strong>14</strong><div class="progress" style="margin-top:10px"><span style="width:61%"></span></div></article>
+          <article class="card order-stat"><span>En ruta</span><strong>9</strong><div class="progress" style="margin-top:10px"><span style="width:39%;background:var(--green)"></span></div></article>
+        </div>
+        <div class="layout-2">
+          <div>
+            <article class="card order-card"><div class="order-top"><div><div class="order-id">Pedido #482</div><div class="order-meta">Prioridad alta · 8 líneas · recurso pendiente</div></div><span class="status warning">Por asignar</span></div><div class="order-track"><span class="done"></span><span class="done"></span><span class="current"></span><span></span></div><div class="quiet" style="margin-top:9px">Recepción de pedido → Reserva → Preparación → Despacho</div></article>
+            <article class="card order-card"><div class="order-top"><div><div class="order-id">Pedido #480</div><div class="order-meta">2 lotes asignados · AMR-7</div></div><span class="status info">En preparación</span></div><div class="order-track"><span class="done"></span><span class="done"></span><span class="current"></span><span></span></div><div class="quiet" style="margin-top:9px">Reserva FEFO confirmada · picking en curso</div></article>
+            <article class="card order-card"><div class="order-top"><div><div class="order-id">Pedido #478</div><div class="order-meta">Muelle 2 · transportista TR-04</div></div><span class="status good">En ruta</span></div><div class="order-track"><span class="done"></span><span class="done"></span><span class="done"></span><span class="current"></span></div><div class="quiet" style="margin-top:9px">Despacho confirmado · entrega pendiente</div></article>
+          </div>
+          <article class="card panel"><div class="panel-head"><div><h2 class="panel-title">Secuencia del proceso</h2><div class="panel-sub">Estados principales del pedido</div></div></div>
+            <div class="activity">
+              <div class="activity-row"><div class="activity-icon">1</div><div class="activity-text"><strong>Pedido recibido</strong><br>Se registra la solicitud y sus líneas.</div></div>
+              <div class="activity-row"><div class="activity-icon">2</div><div class="activity-text"><strong>Reserva de inventario</strong><br>Se asignan lotes disponibles mediante FEFO.</div></div>
+              <div class="activity-row"><div class="activity-icon">3</div><div class="activity-text"><strong>Preparación</strong><br>Se realiza picking y se coordina el recurso.</div></div>
+              <div class="activity-row"><div class="activity-icon">4</div><div class="activity-text"><strong>Despacho</strong><br>Se asigna muelle y se confirma la salida.</div></div>
+              <div class="activity-row"><div class="activity-icon">5</div><div class="activity-text"><strong>Entrega</strong><br>Se completa el ciclo del pedido.</div></div>
+            </div>
+          </article>
+        </div>
+        <article class="card panel"><div class="panel-head"><div><h2 class="panel-title">Pedidos recientes</h2><div class="panel-sub">Muestra de órdenes para ilustrar el seguimiento</div></div></div><div class="table-wrap"><table><thead><tr><th>Pedido</th><th>Fecha</th><th>Líneas</th><th>Responsable / recurso</th><th>Estado</th></tr></thead><tbody>
+          <tr><td><strong>#482</strong></td><td>24/11/2026</td><td>8</td><td>Pendiente de asignación</td><td><span class="status warning">Por asignar</span></td></tr>
+          <tr><td><strong>#480</strong></td><td>24/11/2026</td><td>5</td><td>AMR-7</td><td><span class="status info">Preparación</span></td></tr>
+          <tr><td><strong>#478</strong></td><td>24/11/2026</td><td>3</td><td>TR-04</td><td><span class="status good">En ruta</span></td></tr>
+        </tbody></table></div></article>
+      </section>
+
+      <section class="section" id="page-fleet">
+        <div class="page-head"><div><div class="eyebrow">Recursos logísticos</div><h1>Flota, AMR y muelles</h1><div class="subtitle">Vista de consulta de recursos internos y patio de despacho externo.</div></div><div class="head-actions"><span class="status info">Vista demostrativa</span></div></div>
+        <div class="fleet-grid">
+          <article class="card fleet-card"><div class="fleet-top"><div class="robot-icon">▣</div><span class="status good">Disponible</span></div><div style="margin-top:12px"><strong>AMR-3</strong><div class="fleet-desc">Robot móvil autónomo · Zona A</div></div><div class="fleet-foot"><span>Batería: 92%</span><span>En espera</span></div></article>
+          <article class="card fleet-card"><div class="fleet-top"><div class="robot-icon">▣</div><span class="status info">En operación</span></div><div style="margin-top:12px"><strong>AMR-7</strong><div class="fleet-desc">Robot móvil autónomo · Picking</div></div><div class="fleet-foot"><span>Batería: 76%</span><span>Pedido #480</span></div></article>
+          <article class="card fleet-card"><div class="fleet-top"><div class="robot-icon">▣</div><span class="status warning">Mantenimiento</span></div><div style="margin-top:12px"><strong>AMR-2</strong><div class="fleet-desc">Robot móvil autónomo · Taller</div></div><div class="fleet-foot"><span>Batería: —</span><span>No asignable</span></div></article>
+        </div>
+        <div class="layout-equal">
+          <article class="card panel"><div class="panel-head"><div><h2 class="panel-title">Planta interna · distribución de zonas</h2><div class="panel-sub">Ubicación referencial de racks, picking y recepción</div></div><span class="quiet">Vista esquemática</span></div>
+            <div class="warehouse-map">
+              <div class="zone"><div class="zone-title">Recepción</div><div class="rack">Lote A-101 · 240 u</div><div class="rack low">Lote B-201 · 30 u</div><small>Ingreso y verificación</small></div>
+              <div class="zone"><div class="zone-title">Zona A · Rack 1</div><div class="rack">SKU-1012 · 480 u</div><div class="rack">SKU-1012 · 210 u</div><small>Almacenamiento</small></div>
+              <div class="zone"><div class="zone-title">Zona A · Rack 2</div><div class="rack expiry">SKU-1031 · vence hoy</div><div class="rack">SKU-1044 · 620 u</div><small>Control FEFO</small></div>
+              <div class="zone"><div class="zone-title">Zona B · Picking</div><div class="rack low">SKU-1055 · 18 u</div><div class="rack">AMR-7 · Pedido #480</div><small>Preparación de pedidos</small></div>
+            </div>
+          </article>
+          <article class="card panel"><div class="panel-head"><div><h2 class="panel-title">Planta externa · muelles y patio</h2><div class="panel-sub">Estado de andenes y vehículos</div></div></div>
+            <div class="dock-grid">
+              <div class="dock"><strong>Muelle 1</strong><span class="status good">Libre</span></div>
+              <div class="dock"><strong>Muelle 2</strong><span class="status warning">TR-04 ocupado</span></div>
+              <div class="dock"><strong>Muelle 3</strong><span class="status info">En espera</span></div>
+              <div class="dock"><strong>Patio</strong><span class="status good">2 plazas libres</span></div>
+              <div class="dock"><strong>Acceso</strong><span class="status info">TR-08 entrando</span></div>
+              <div class="dock"><strong>Zona espera</strong><span class="status neutral">TR-02 · TR-06</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="card panel"><div class="panel-head"><div><h2 class="panel-title">Asignación de recursos</h2><div class="panel-sub">Relación entre pedidos y recursos logísticos</div></div></div><div class="table-wrap"><table><thead><tr><th>Recurso</th><th>Tipo</th><th>Asignación</th><th>Ubicación</th><th>Estado</th></tr></thead><tbody>
+          <tr><td><strong>AMR-3</strong></td><td>Robot móvil</td><td>Sin asignación</td><td>Zona A</td><td><span class="status good">Disponible</span></td></tr>
+          <tr><td><strong>AMR-7</strong></td><td>Robot móvil</td><td>Pedido #480</td><td>Picking</td><td><span class="status info">En operación</span></td></tr>
+          <tr><td><strong>TR-04</strong></td><td>Camión</td><td>Pedido #478</td><td>Muelle 2</td><td><span class="status warning">Ocupado</span></td></tr>
+        </tbody></table></div></div>
+      </section>
+
+      <section class="section" id="page-alerts">
+        <div class="page-head"><div><div class="eyebrow">Monitoreo y seguimiento</div><h1>Centro de alertas</h1><div class="subtitle">Excepciones de inventario, pedidos y recursos que necesitan atención.</div></div><div class="head-actions"><span class="status warning">7 alertas ilustrativas</span></div></div>
+        <div class="kpis">
+          <article class="card kpi"><div class="kpi-label">Prioridad alta</div><div class="kpi-value" style="color:var(--red)">2</div><div class="kpi-foot">Atención prioritaria</div></article>
+          <article class="card kpi"><div class="kpi-label">Advertencias</div><div class="kpi-value" style="color:var(--amber)">3</div><div class="kpi-foot">Seguimiento requerido</div></article>
+          <article class="card kpi"><div class="kpi-label">Informativas</div><div class="kpi-value" style="color:var(--blue)">2</div><div class="kpi-foot">Eventos de operación</div></article>
+          <article class="card kpi"><div class="kpi-label">Total activas</div><div class="kpi-value">7</div><div class="kpi-foot">En diferentes componentes</div></article>
+        </div>
+        <article class="card panel"><div class="toolbar"><div><h2 class="panel-title">Alertas activas</h2><div class="panel-sub">Filtra por texto o severidad</div></div><div class="toolbar-right"><div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="alertSearch" type="search" placeholder="Buscar alerta..." aria-label="Buscar alertas"></div><select class="select" id="alertFilter" aria-label="Filtrar severidad"><option value="all">Todas</option><option value="critical">Alta</option><option value="warning">Advertencia</option><option value="info">Informativa</option></select></div></div>
+          <div id="alertRows">
+            <div class="alert-row" data-severity="critical"><div><strong>Lote SKU-1031 próximo a vencer</strong><p>Lote L-1031-A · Zona A, Rack 2 · revisar prioridad de salida FEFO.</p></div><span class="status critical">Alta</span><span class="alert-time">09:42</span></div>
+            <div class="alert-row" data-severity="critical"><div><strong>Pedido #482 sin recurso asignado</strong><p>La preparación no puede continuar hasta coordinar un recurso de Flota.</p></div><span class="status critical">Alta</span><span class="alert-time">08:56</span></div>
+            <div class="alert-row" data-severity="warning"><div><strong>SKU-1055 por debajo del mínimo</strong><p>Posición estimada: 22 u · mínimo: 30 u · sugerencia: 38 u.</p></div><span class="status warning">Advertencia</span><span class="alert-time">09:18</span></div>
+            <div class="alert-row" data-severity="warning"><div><strong>Recepción #7112 pendiente de ubicación</strong><p>Hay unidades recibidas que todavía no tienen ubicación final asignada.</p></div><span class="status warning">Advertencia</span><span class="alert-time">08:40</span></div>
+            <div class="alert-row" data-severity="warning"><div><strong>AMR-2 en mantenimiento</strong><p>Recurso no disponible para nuevas asignaciones.</p></div><span class="status warning">Advertencia</span><span class="alert-time">08:12</span></div>
+            <div class="alert-row" data-severity="info"><div><strong>Pedido #480 inició preparación</strong><p>AMR-7 asignado y reserva FEFO confirmada.</p></div><span class="status info">Informativa</span><span class="alert-time">09:31</span></div>
+            <div class="alert-row" data-severity="info"><div><strong>Recepción #7101 confirmada</strong><p>El lote A-101 fue incorporado al inventario.</p></div><span class="status info">Informativa</span><span class="alert-time">10:12</span></div>
+          </div><div class="empty" id="alertEmpty">No hay alertas que coincidan con la búsqueda.</div>
+        </article>
+        <div class="footer-note">Las alertas se muestran como ejemplos de eventos; no se envían notificaciones ni se ejecutan acciones sobre inventario.</div>
+      </section>
+
+      <div class="footer-note">Smart Inventory · LogistPulse · Prototipo de consulta para Diseño de Sistemas</div>
     </div>
-  </div>
+  </main>
 </div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-  const tInt=document.getElementById('tabInt'), tExt=document.getElementById('tabExt');
-  const vInt=document.getElementById('vistaInterna'), vExt=document.getElementById('vistaExterna');
-  const title=document.getElementById('vistaTitle');
-  function show(which){
-    const internal = which==='int';
-    vInt.style.display = internal?'block':'none';
-    vExt.style.display = internal?'none':'block';
-    tInt.classList.toggle('active', internal);
-    tExt.classList.toggle('active', !internal);
-    title.innerHTML = internal
-      ? 'Planta interna — racks, lotes y AMR <span class="fresco">última lectura: hace 4 s</span>'
-      : 'Planta externa — camiones, muelles y patio <span class="fresco">última lectura: hace 6 s</span>';
+  const pageNames={overview:"Resumen general",inventory:"Inventario y lotes",orders:"Pedidos y preparación",fleet:"Flota y muelles",alerts:"Centro de alertas"};
+  const navButtons=Array.from(document.querySelectorAll("[data-page]"));
+  const sections=Array.from(document.querySelectorAll(".section"));
+  function showPage(page){
+    sections.forEach(section=>section.classList.toggle("active",section.id==="page-"+page));
+    navButtons.forEach(button=>{
+      const active=button.dataset.page===page;
+      button.classList.toggle("active",active);
+      if(active) button.setAttribute("aria-current","page"); else button.removeAttribute("aria-current");
+    });
+    document.getElementById("breadcrumb").textContent=pageNames[page]||"Resumen general";
+    window.scrollTo({top:0,behavior:"smooth"});
   }
-  tInt.onclick=()=>show('int');
-  tExt.onclick=()=>show('ext');
+  navButtons.forEach(button=>button.addEventListener("click",()=>showPage(button.dataset.page)));
+  document.querySelectorAll("[data-go]").forEach(button=>button.addEventListener("click",()=>showPage(button.dataset.go)));
+
+  const toast=document.getElementById("toast");
+  let toastTimer;
+  function notify(message){
+    toast.textContent=message;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(()=>toast.classList.remove("show"),2600);
+  }
+  document.getElementById("refreshBtn").addEventListener("click",()=>{
+    const now=new Date();
+    document.getElementById("updatedLabel").textContent="Vista consultada · "+now.toLocaleTimeString("es-EC",{hour:"2-digit",minute:"2-digit"});
+    notify("Se actualizó la hora de consulta. Los datos siguen siendo ilustrativos.");
+  });
+
+  const inventorySearch=document.getElementById("inventorySearch");
+  const stockFilter=document.getElementById("stockFilter");
+  const inventoryRows=Array.from(document.querySelectorAll("#inventoryTable tbody tr"));
+  function filterInventory(){
+    const query=(inventorySearch.value||"").toLocaleLowerCase("es");
+    const state=stockFilter.value;
+    let visible=0;
+    inventoryRows.forEach(row=>{
+      const matchesText=row.textContent.toLocaleLowerCase("es").includes(query);
+      const matchesState=state==="all"||row.dataset.status===state;
+      const show=matchesText&&matchesState;
+      row.style.display=show?"":"none";
+      if(show) visible++;
+    });
+    document.getElementById("inventoryCount").textContent=visible+" registros";
+    document.getElementById("inventoryEmpty").style.display=visible?"none":"block";
+  }
+  inventorySearch.addEventListener("input",filterInventory);
+  stockFilter.addEventListener("change",filterInventory);
+
+  const alertSearch=document.getElementById("alertSearch");
+  const alertFilter=document.getElementById("alertFilter");
+  const alertRows=Array.from(document.querySelectorAll("#alertRows .alert-row"));
+  function filterAlerts(){
+    const query=(alertSearch.value||"").toLocaleLowerCase("es");
+    const severity=alertFilter.value;
+    let visible=0;
+    alertRows.forEach(row=>{
+      const show=row.textContent.toLocaleLowerCase("es").includes(query)&&(severity==="all"||row.dataset.severity===severity);
+      row.style.display=show?"":"none";
+      if(show) visible++;
+    });
+    document.getElementById("alertEmpty").style.display=visible?"none":"block";
+  }
+  alertSearch.addEventListener("input",filterAlerts);
+  alertFilter.addEventListener("change",filterAlerts);
+
+  document.getElementById("exportBtn").addEventListener("click",()=>{
+    const visibleRows=inventoryRows.filter(row=>row.style.display!=="none");
+    const headers=["Producto","SKU","Lote","Ubicacion","Disponible","Reservado","Vencimiento","Estado"];
+    const lines=[headers];
+    visibleRows.forEach(row=>{
+      const cells=Array.from(row.cells);
+      lines.push([
+        cells[0].querySelector("strong").textContent,
+        cells[0].querySelector(".sku").textContent,
+        cells[1].textContent,
+        cells[2].textContent,
+        cells[3].textContent,
+        cells[4].textContent,
+        cells[5].textContent,
+        cells[6].textContent
+      ]);
+    });
+    const csv=lines.map(line=>line.map(value=>'"'+String(value).replace(/"/g,'""')+'"').join(";")).join("\n");
+    const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8;"});
+    const url=URL.createObjectURL(blob);
+    const link=document.createElement("a");
+    link.href=url;link.download="smart-inventory-demo.csv";link.click();
+    URL.revokeObjectURL(url);
+    notify("Se generó el CSV con los registros visibles.");
+  });
 </script>
 </body>
 </html>
