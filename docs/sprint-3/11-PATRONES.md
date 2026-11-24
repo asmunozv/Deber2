@@ -1,6 +1,9 @@
 # Sprint 3 — Informe de patrones de software
 
-**Issue:** [#11](https://github.com/asmunozv/Deber2/issues/11) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
+> **Auditoría documental (23/11/2026):** el contenido técnico está redactado. Las revisiones, aprobaciones, etiquetas/releases y actos de cierre solo deben declararse realizados si existen evidencias correspondientes en GitHub o actas confirmadas por el equipo.
+
+
+**Issue:** [#11](https://github.com/asmunozv/Deber2/issues/11) · **Versión:** 1.0 · **Estado:** artefacto redactado; revisión y aceptación pendientes de verificar
 
 Se justifican **siete patrones** (la consigna exige al menos cuatro). Para cada uno: **problema, ubicación, beneficios, costos y límites**.
 
