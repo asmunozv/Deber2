@@ -1,0 +1,31 @@
+flowchart LR
+    %% ============================================================
+    %% C4 — Nivel 1: Contexto del sistema (Smart Inventory)
+    %% Fuente: Deber de Diseño de Sistemas (USFQ) · versión 1.0
+    %% ============================================================
+
+    subgraph USU["Personas (actores internos)"]
+        OPR["Operador de recepción"]
+        ALM["Encargado de almacén"]
+        PLA["Planificador de compras"]
+        FULP["Coordinador de pedidos"]
+        FLO["Coordinador de flota"]
+        SUP["Supervisión / gerencia"]
+    end
+
+    SI["Smart Inventory<br/>Plataforma de inventario,<br/>fulfillment y operación logística"]
+
+    subgraph EXT["Sistemas externos"]
+        ERP["ERP / proveedores<br/>(órdenes de compra)"]
+        TRS["Transportistas<br/>(estado de entregas)"]
+    end
+
+    OPR -->|"registra recepción"| SI
+    ALM -->|"consulta y ajusta stock"| SI
+    PLA -->|"revisa y aprueba reposición"| SI
+    FULP -->|"reserva y despacha pedidos"| SI
+    FLO -->|"asigna vehículos y AMR"| SI
+    SUP -->|"lee indicadores"| SI
+
+    SI -->|"sincroniza compras"| ERP
+    SI -->|"notifica despachos"| TRS

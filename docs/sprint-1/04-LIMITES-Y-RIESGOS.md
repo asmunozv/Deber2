@@ -28,13 +28,15 @@
 - Catálogo define políticas y atributos de SKU; Inventario conserva la instancia de cada lote recibido y su estado de almacenamiento.
 
 ## 3. Alternativas de organización arquitectónica
+La consigna propone una **arquitectura de referencia** (Figura 1): servicios propietarios de sus datos, una capa de aplicación que coordina el dashboard, un broker que alimenta una proyección de lectura y un Lakehouse, combinando interacciones síncronas y asíncronas. Sobre esa base, la única decisión abierta es **cómo agrupar el despliegue** de las capacidades, sin fragmentar arbitrariamente.
+
 | Alternativa | Ventaja | Riesgo / costo | Evaluación preliminar |
 |---|---|---|---|
-| A. **Monolito modular** con límites lógicos claros | Menos coordinación distribuida y más facilidad para reglas consistentes | Riesgo de acoplamiento si se cruzan límites | **Hipótesis preferida** para un MVP conceptual sin evidencias de escala que obliguen a distribuir |
-| B. Servicios separados para todas las capacidades | Autonomía de despliegue potencial | Complejidad en reservas, consistencia, observabilidad y operación | **No justificada aún**; no confundir capacidades con siete microservicios |
-| C. Núcleo transaccional compartido (catálogo/inventario/fulfillment) y capacidades de consulta separables | Reduce acoplamiento en parte crítica | Requiere gobernar datos derivados e interfaces | Alternativa para comparar en ADR |
+| A. **Servicios por capacidad + broker + proyección + Lakehouse** (según la consigna) | Responsabilidad y propiedad de datos explícitas; evolución a microservicios | Coordinación distribuida si se separa de más | **Base de la propuesta**; respeta la regla de "un dueño por dato" |
+| B. Servicios separados como procesos independientes desde el inicio | Autonomía de despliegue potencial | Complejidad en reservas, consistencia, observabilidad y operación | **No justificada aún**; no confundir capacidades con siete microservicios |
+| C. Núcleo transaccional compartido (catálogo/inventario/fulfillment) y capacidades de consulta separables | Reduce acoplamiento en parte crítica | Requiere gobernar datos derivados e interfaces | Alternativa de despliegue para comparar en ADR |
 
-**Propuesta, no decisión aprobada:** modelar primero capacidades y sus dependencias, después evaluar si conviene agruparlas. La primera entrega C4 debe representar responsabilidades, no inventar infraestructura.
+**Propuesta, no decisión aprobada:** representar los límites lógicos según la consigna y resolver la agrupación de despliegue en Sprint 2 mediante ADR (ver [ADR-0001](../adr/ADR-0001-limites-servicio-capacidad-negocio.md) y [ADR-0002](../adr/ADR-0002-agrupacion-despliegue-mvp.md)). La primera entrega C4 representa responsabilidades, no inventa infraestructura técnica.
 
 ## 4. Interacciones relevantes (sin contratos técnicos)
 | Flujo | Origen → destino | Intención | Consistencia relevante |

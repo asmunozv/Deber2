@@ -1,0 +1,43 @@
+flowchart TB
+    %% ============================================================
+    %% C4 — Nivel 3: Componentes del contenedor Fulfillment
+    %% ============================================================
+
+    subgraph FUL["Contenedor: Fulfillment"]
+        direction TB
+
+        API["API / puerto de entrada<br/>(pedidos, reservas, despacho)"]
+
+        PED["Gestión de pedidos<br/>(estado del pedido)"]
+        PREP["Preparación<br/>(tareas de picking)"]
+        DES["Despacho<br/>(intención de salida y confirmación)"]
+
+        DOM["Núcleo de dominio<br/>(pedido, línea, estado)"]
+
+        OUT["Outbox<br/>(publica hechos de pedido)"]
+
+        REPO["Repositorios<br/>(pedidos, líneas, estados)"]
+    end
+
+    DB[("BD<br/>Fulfillment")]
+
+    INV["Inventario<br/>(reserva / salida)"]
+    FLT["Flota<br/>(asignación logística)"]
+
+    API --> PED
+    API --> PREP
+    API --> DES
+
+    PED --> DOM
+    PREP --> DOM
+    DES --> DOM
+
+    DOM --> REPO
+    REPO --> DB
+    DOM --> OUT
+
+    %% Colaboraciones de negocio (síncronas)
+    DOM -->|"solicita reserva / salida"| INV
+    DOM -->|"solicita asignación de vehículo"| FLT
+
+    OUT -. "hecho: pedido / reserva / despacho" .-> BROKER{{"Broker de eventos"}}

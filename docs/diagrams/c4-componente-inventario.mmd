@@ -1,0 +1,42 @@
+flowchart TB
+    %% ============================================================
+    %% C4 — Nivel 3: Componentes del contenedor Inventario
+    %% ============================================================
+
+    subgraph INV["Contenedor: Inventario"]
+        direction TB
+
+        API["API / puerto de entrada<br/>(consulta, reserva, ajuste)"]
+
+        REC["Gestión de recepciones"]
+        MOV["Gestión de movimientos<br/>(salidas, transferencias, ajustes)"]
+        RES["Reserva FEFO<br/>(compromiso de lotes)"]
+        DISP["Servicio de disponibilidad<br/>(físico − reservado)"]
+
+        DOM["Núcleo de dominio<br/>(lote, saldo, movimiento, reserva)"]
+
+        OUT["Outbox<br/>(publica hechos de stock)"]
+
+        REPO["Repositorios<br/>(lotes, saldos, movimientos, reservas)"]
+    end
+
+    DB[("BD<br/>Inventario")]
+
+    %% Puertos de entrada
+    API --> REC
+    API --> MOV
+    API --> RES
+    API --> DISP
+
+    %% Todos los casos de uso pasan por el dominio
+    REC --> DOM
+    MOV --> DOM
+    RES --> DOM
+    DISP --> DOM
+
+    %% Persistencia y publicación
+    DOM --> REPO
+    REPO --> DB
+    DOM --> OUT
+
+    OUT -. "hecho: stock actualizado" .-> BROKER{{"Broker de eventos"}}
