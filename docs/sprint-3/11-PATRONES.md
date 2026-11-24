@@ -63,7 +63,14 @@ Se justifican **siete patrones** (la consigna exige al menos cuatro). Para cada 
 - **Costos:** reintentos deben ser **selectivos e idempotentes**; complejidad de configuración.
 - **Límites:** no sustituye una política de disponibilidad (ver [13-REQUISITOS-CALIDAD.md](13-REQUISITOS-CALIDAD.md)).
 
-## 8. Criterios de aceptación de #11
+## 8. Patrones considerados, pero no añadidos como patrones independientes
+
+- **Observer:** no se añade como patrón separado porque la notificación entre capacidades ya está cubierta por **Pub/Sub + Outbox**. Observer podría ser útil para notificaciones dentro de un mismo proceso, pero duplicaría el mecanismo elegido para eventos entre límites de negocio.
+- **Command:** las operaciones se representan como comandos/casos de uso (por ejemplo, registrar recepción, reservar FEFO y confirmar despacho). No se introduce una jerarquía adicional de objetos Command porque el MVP conceptual no requiere cola de comandos, deshacer operaciones ni historial ejecutable; se podría incorporar si esas necesidades aparecen.
+
+La selección evita sumar patrones por cantidad: se conservan los que resuelven problemas concretos del diseño actual.
+
+## 9. Criterios de aceptación de #11
 
 - [x] Al menos cuatro patrones justificados (se documentan siete).
 - [x] Problema, ubicación, beneficios, costos y límites por patrón.
