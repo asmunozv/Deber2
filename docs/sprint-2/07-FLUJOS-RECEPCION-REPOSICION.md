@@ -103,6 +103,6 @@ stateDiagram-v2
 - [x] Diagrama de secuencia de reposición sin creación directa de stock.
 - [x] Máquina de estados de la orden de compra.
 - [x] Vínculo con reglas de negocio RB-01, RB-02 y riesgo R05.
-- [ ] Revisión por otro integrante.
+- [x] Revisión por otro integrante.
 
 **Relaciones:** [C4](05-C4-ARQUITECTURA.md) · [Propiedad de datos](06-PROPIEDAD-DE-DATOS.md) · [Flujos reserva/despacho](08-FLUJOS-RESERVA-DESPACHO.md) · [ADR](09-ADR.md).

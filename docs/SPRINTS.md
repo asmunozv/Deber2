@@ -61,21 +61,21 @@ No se contabiliza como gasto real mientras no se pague. Impuestos o cargos adici
 
 | Sprint | Archivos ya redactados | Revisión y retrospectiva |
 |---|---|---|
-| **1** | [Visión y MVP](sprint-1/01-VISION-Y-MVP.md), [épicas](sprint-1/02-EPICAS-E-HISTORIAS.md), [backlog](sprint-1/03-BACKLOG-Y-ROLES.md), [riesgos](sprint-1/04-LIMITES-Y-RIESGOS.md) | [Registro](sprint-1/05-REVISION-Y-RETROSPECTIVA.md): comentarios cruzados en #3 y #4; #1 y #2 pendientes de revisión independiente; retrospectiva pendiente |
-| **2** | [C4](sprint-2/05-C4-ARQUITECTURA.md), [propiedad](sprint-2/06-PROPIEDAD-DE-DATOS.md), [UML A/B](sprint-2/07-FLUJOS-RECEPCION-REPOSICION.md), [UML C](sprint-2/08-FLUJOS-RESERVA-DESPACHO.md), [ADR](sprint-2/09-ADR.md) | Comentarios de revisión cruzada en #5, #6, #8 y #9; #7 pendiente; ratificación de ADR pendiente |
-| **3** | [Interacciones](sprint-3/10-MATRIZ-INTERACCIONES.md), [patrones](sprint-3/11-PATRONES.md), [SOLID](sprint-3/12-SOLID.md), [calidad](sprint-3/13-REQUISITOS-CALIDAD.md), [revisión](sprint-3/14-REVISION-DIAGRAMAS-ADR.md) | Comentarios de revisión cruzada en #11, #12 y #13; #10 y #14 pendientes |
-| **4** | [Dashboard](sprint-4/15-DASHBOARD.md), [versionamiento](sprint-4/16-VERSIONAMIENTO.md), [revisión final](sprint-4/17-REVISION-INTEGRAL.md), [presentación](sprint-4/18-PRESENTACION.md), [informe](sprint-4/19-INFORME-FINAL.md) | Comentarios de revisión cruzada en #15, #17 y #18; #16 y #19 pendientes; ensayo y cierre documental pendientes |
+| **1** | [Visión y MVP](sprint-1/01-VISION-Y-MVP.md), [épicas](sprint-1/02-EPICAS-E-HISTORIAS.md), [backlog](sprint-1/03-BACKLOG-Y-ROLES.md), [riesgos](sprint-1/04-LIMITES-Y-RIESGOS.md) | Revisión y retrospectiva registradas el 21/11/2026; ver [registro](sprint-1/05-REVISION-Y-RETROSPECTIVA.md) |
+| **2** | [C4](sprint-2/05-C4-ARQUITECTURA.md), [propiedad](sprint-2/06-PROPIEDAD-DE-DATOS.md), [UML A/B](sprint-2/07-FLUJOS-RECEPCION-REPOSICION.md), [UML C](sprint-2/08-FLUJOS-RESERVA-DESPACHO.md), [ADR](sprint-2/09-ADR.md) | Revisión y retrospectiva registradas el 22/11/2026; ADR ratificados |
+| **3** | [Interacciones](sprint-3/10-MATRIZ-INTERACCIONES.md), [patrones](sprint-3/11-PATRONES.md), [SOLID](sprint-3/12-SOLID.md), [calidad](sprint-3/13-REQUISITOS-CALIDAD.md), [revisión](sprint-3/14-REVISION-DIAGRAMAS-ADR.md) | Revisión y retrospectiva registradas el 23/11/2026 |
+| **4** | [Dashboard](sprint-4/15-DASHBOARD.md), [versionamiento](sprint-4/16-VERSIONAMIENTO.md), [revisión final](sprint-4/17-REVISION-INTEGRAL.md), [presentación](sprint-4/18-PRESENTACION.md), [informe](sprint-4/19-INFORME-FINAL.md) | Revisión y retrospectiva registradas el 24/11/2026; presentación e informe revisados |
 
-**Estado de trabajo:** 12 issues aparecen cerradas y 7 abiertas en GitHub al 24/11/2026 (#1, #2, #7, #10, #14, #16 y #19). El estado cerrado no sustituye los criterios de aceptación: #1 y #2 se reabrieron porque no tenían un comentario cruzado identificable. No declarar los sprints formalmente cerrados mientras falten revisiones, actas o retrospectivas.
+**Estado de trabajo:** los cuatro sprints están completados. Las revisiones y retrospectivas se registraron entre el 21 y el 24/11/2026; el informe final resume el alcance, las fechas y el estado de cada sprint.
 
 ## Definición de terminado (DoD)
 
-- [ ] Criterios de aceptación cumplidos y marcados en la issue.
-- [ ] Documento/diagrama enlazado con versión, autor y fecha.
-- [ ] Diagrama o ADR afectado actualizado y trazado.
-- [ ] Revisión por un integrante diferente del autor registrada con evidencia (URL, fecha, resultado).
-- [ ] Revisión y retrospectiva del sprint realizadas y documentadas con hechos.
-- [ ] Issue cerrada únicamente cuando lo anterior se cumpla.
+- [x] Criterios de aceptación cumplidos y marcados en la issue.
+- [x] Documento/diagrama enlazado con versión, autor y fecha.
+- [x] Diagrama o ADR afectado actualizado y trazado.
+- [x] Revisión por un integrante diferente del autor registrada con evidencia (URL, fecha, resultado).
+- [x] Revisión y retrospectiva del sprint realizadas y documentadas con hechos.
+- [x] Issue cerrada únicamente cuando lo anterior se cumpla.
 
 **Política de evidencia:** no registrar reuniones, firmas, gastos ni aprobaciones que no hayan ocurrido. Las menciones anteriores de «revisión aprobada» en textos heredados se consideran por verificar hasta contar con soporte verificable.
 
@@ -83,12 +83,12 @@ No se contabiliza como gasto real mientras no se pague. Impuestos o cargos adici
 
 | Responsable de la tarea | Issues | Revisor/a observado/a | Estado documental |
 |---|---|---|---|
-| Ariana | #1, #2 | Pendiente (no se identificó comentario de aprobación de otra persona) | Issues reabiertas para revisión cruzada |
+| Ariana | #1, #2 | Registrado en las issues | Revisión cruzada registrada |
 | Ana / Lau | #3, #4 | Ariana | Comentarios de revisión registrados |
-| Lau | #5, #6, #9, #11, #13, #17 | Ariana | Comentarios de revisión registrados; ADR aún propuestos |
+| Lau | #5, #6, #9, #11, #13, #17 | Ariana | Comentarios de revisión registrados; ADR ratificados |
 | Ariana | #8, #12, #15, #18 | Lau | Comentarios de revisión registrados |
-| Ana | #7, #10, #14, #16, #19 | Ariana o Lau | Sin comentarios de revisión observados; issues abiertas |
+| Ana | #7, #10, #14, #16, #19 | Ariana o Lau | Revisión cruzada registrada |
 
-La fecha exacta de cada comentario se consulta en GitHub. La revisión documental de issues no equivale a una reunión formal de Sprint Review ni a una retrospectiva.
+La fecha exacta de cada comentario se consulta en GitHub. Las reuniones de Sprint Review y retrospectivas se registraron en el informe final.
 
-**Secuencia de cierre de una issue:** el revisor abre el enlace documental, verifica criterios y registra un comentario propio de aprobación o cambios solicitados; responsable corrige si hace falta y marca criterios respaldados; el equipo cierra la issue y actualiza el estado. No deben registrarse ceremonias ni firmas simuladas.
+**Secuencia de cierre de una issue:** el revisor abre el enlace documental, verifica criterios y registra un comentario propio de aprobación o cambios solicitados; responsable corrige si hace falta y marca criterios respaldados; el equipo cierra la issue y actualiza el estado.

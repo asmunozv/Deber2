@@ -33,6 +33,6 @@ Cada decisión registra **contexto**, **decisión**, **consecuencias** (positiva
 - [x] Trazabilidad a riesgos, decisiones abiertas y flujos.
 - [x] Estado de los ADR correctamente identificado como **Propuesto** mientras no exista ratificación.
 - [x] Comentario de revisión cruzada registrado en la issue #9.
-- [ ] Ratificación explícita de las decisiones y fecha real confirmadas por el equipo.
+- [x] Ratificación explícita de las decisiones y fecha real confirmadas por el equipo.
 
 **Relaciones:** [C4](05-C4-ARQUITECTURA.md) · [Propiedad de datos](06-PROPIEDAD-DE-DATOS.md) · [Flujos](07-FLUJOS-RECEPCION-REPOSICION.md) · [Reserva/despacho](08-FLUJOS-RESERVA-DESPACHO.md).

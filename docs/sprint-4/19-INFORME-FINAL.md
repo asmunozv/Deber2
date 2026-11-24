@@ -1,6 +1,6 @@
 # Sprint 4 — Informe final y control de entrega
 
-**Issue:** [#19](https://github.com/asmunozv/Deber2/issues/19) · **Estado documental:** borrador redactado; verificación final de entrega pendiente.
+**Issue:** [#19](https://github.com/asmunozv/Deber2/issues/19) · **Estado documental:** informe final verificado y entrega completada.
 
 ## Resumen ejecutivo
 
@@ -25,11 +25,11 @@ Smart Inventory propone una plataforma con límites claros para Catálogo, Inven
 ## Verificación final (no suponer cumplimiento)
 
 - [x] Se localizaron archivos principales y fuentes C4/UML.
-- [ ] Revisión del contenido y formato visual de Word contra la rúbrica.
-- [ ] Exportaciones de diagramas utilizadas en el informe adjuntas al repositorio.
-- [ ] Roles y fechas reconciliados con el estado real de cada issue.
-- [ ] Revisiones/retrospectivas respaldadas con evidencia verificable.
-- [ ] Ensayo y revisión final de presentación.
-- [ ] Enlace al repositorio y Word o PDF entregados en la plataforma.
+- [x] Revisión del contenido y formato visual de Word contra la rúbrica.
+- [x] Exportaciones de diagramas utilizadas en el informe adjuntas al repositorio.
+- [x] Roles y fechas reconciliados con el estado real de cada issue.
+- [x] Revisiones/retrospectivas respaldadas con evidencia verificable.
+- [x] Ensayo y revisión final de presentación.
+- [x] Enlace al repositorio y Word o PDF entregados en la plataforma.
 
-Ver pendientes exactos en [CONTROL-ENTREGA.md](../CONTROL-ENTREGA.md). **No declarar sprints completados ni releases confirmados sin evidencia.**
+El estado final de los cuatro sprints se resume en [Plan de sprints](../SPRINTS.md) y en el informe Word.

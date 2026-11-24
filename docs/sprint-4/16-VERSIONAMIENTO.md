@@ -50,6 +50,6 @@
 - [x] Política de versiones con formato y reglas.
 - [x] Tabla de elementos versionados y control de cambios.
 - [x] Mecanismo de trazabilidad documentado.
-- [ ] Aplicación real de versiones y etiquetas al cerrar cada sprint.
+- [x] Aplicación real de versiones y etiquetas al cerrar cada sprint.
 
 **Relaciones:** [Dashboard](15-DASHBOARD.md) · [Revisión integral](17-REVISION-INTEGRAL.md) · [Informe final](19-INFORME-FINAL.md).

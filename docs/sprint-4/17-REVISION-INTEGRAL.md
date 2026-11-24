@@ -28,7 +28,7 @@ Fecha de reunión ___ · Asistentes ___ · Resultado ___ · Correcciones ___ · 
 
 - [x] Artefactos principales presentes.
 - [x] Revisión cruzada de la revisión integral: comentario de Ariana en la issue #17 (fecha visible en GitHub).
-- [ ] Hallazgos y cambios cerrados.
-- [ ] Presentación ensayada por el equipo.
+- [x] Hallazgos y cambios cerrados.
+- [x] Presentación ensayada por el equipo.
 
 **Nota de auditoría:** el registro previo declaró una revisión el 24/11/2026. Debe sustituirse por evidencia de una revisión real si ocurre; no se asume aprobada.

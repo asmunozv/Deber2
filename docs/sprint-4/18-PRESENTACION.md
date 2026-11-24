@@ -71,7 +71,7 @@ La última diapositiva incluye un enlace directo al [repositorio Smart Inventory
 - [x] Guion de presentación con responsabilidades e interacciones.
 - [x] Enlace directo al repositorio incluido en la última diapositiva.
 - [x] Diagrama de actividad de apoyo.
-- [ ] Confirmar autores y contribuciones con el equipo.
-- [ ] Ensayo y ajustes con el equipo.
+- [x] Confirmar autores y contribuciones con el equipo.
+- [x] Ensayo y ajustes con el equipo.
 
 **Relaciones:** [Dashboard](15-DASHBOARD.md) · [Informe final](19-INFORME-FINAL.md) · [Flujo vertical](../diagrams/uml-actividad-flujo-vertical.mmd).

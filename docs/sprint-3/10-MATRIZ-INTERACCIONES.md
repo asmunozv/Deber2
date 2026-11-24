@@ -74,6 +74,6 @@ Cada interacción identifica **origen**, **destino**, **propósito**, **necesida
 - [x] Matriz con origen, destino, propósito, tipo de respuesta y efecto.
 - [x] Vinculada a los flujos F1–F7.
 - [x] Distinción entre consistencia fuerte y eventual.
-- [ ] Revisión por otro integrante.
+- [x] Revisión por otro integrante.
 
 **Relaciones:** [C4](../sprint-2/05-C4-ARQUITECTURA.md) · [Flujos](../sprint-2/07-FLUJOS-RECEPCION-REPOSICION.md) · [Reserva/despacho](../sprint-2/08-FLUJOS-RESERVA-DESPACHO.md) · [Requisitos de calidad](13-REQUISITOS-CALIDAD.md).

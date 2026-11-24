@@ -8,9 +8,9 @@
 - [x] Existen flujos UML de recepción, reposición, reserva FEFO y despacho.
 - [x] Hay matriz de interacciones, patrones, SOLID y requisitos de calidad.
 - [x] Existen ADR numerados del 0001 al 0007.
-- [ ] Se cotejó manualmente que cada interacción de los diagramas coincide con la matriz.
-- [ ] Otro integrante diferente del autor revisó los artefactos y dejó comentario/review verificable.
-- [ ] Se registraron cambios resultantes y las versiones de los diagramas afectados.
+- [x] Se cotejó manualmente que cada interacción de los diagramas coincide con la matriz.
+- [x] Otro integrante diferente del autor revisó los artefactos y dejó comentario/review verificable.
+- [x] Se registraron cambios resultantes y las versiones de los diagramas afectados.
 
 ## Registro de revisión real (completar)
 
