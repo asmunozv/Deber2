@@ -1,0 +1,30 @@
+sequenceDiagram
+    %% ============================================================
+    %% Flujo B (F3) — Riesgo de agotamiento y reposición
+    %% ============================================================
+    actor PLA as Planificador de compras
+    participant APP as Capa de aplicación
+    participant REP as Reposición
+    participant INV as Inventario
+    participant BROKER as Broker
+
+    INV-)BROKER: publicar "stock actualizado" (bajo mínimo)
+    BROKER-)REP: cambio de disponibilidad
+    REP->>REP: comparar con umbral y calcular sugerencia
+    REP-)BROKER: publicar "sugerencia de reposición"
+
+    PLA->>APP: consultar sugerencias
+    APP->>REP: listar sugerencias
+    REP-->>APP: sugerencias con SKU, disponibilidad y umbral
+    APP-->>PLA: vista de sugerencias
+
+    PLA->>APP: aprobar sugerencia
+    APP->>REP: comando de aprobación
+    REP->>INV: consultar disponibilidad vigente (lectura)
+    INV-->>REP: disponibilidad
+    REP->>REP: crear orden de compra (sin tocar stock)
+    REP-)BROKER: publicar "orden de compra creada"
+    REP-->>APP: orden creada
+    APP-->>PLA: confirmación
+
+    Note over INV,REP: Reposición nunca contabiliza existencias;<br/>el ingreso físico solo ocurre en una recepción (F1).
