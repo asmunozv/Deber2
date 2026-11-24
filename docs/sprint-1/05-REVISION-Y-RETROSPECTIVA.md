@@ -1,15 +1,15 @@
 # Sprint 1 — Registro de revisión y retrospectiva
 
-**Estado de auditoría:** entregables disponibles; la aprobación formal debe verificarse con evidencia. El documento anterior incluía un cierre declarado el 21/11/2026; no se ha podido corroborar un review formal de los PR consultados. No se usa esa declaración como aceptación automática.
+**Estado de auditoría (24/11/2026):** los issues #3 y #4 tienen comentarios de revisión cruzada de Ariana. Los issues #1 y #2 están cerrados en GitHub, pero no se observa un comentario de aprobación de otra persona distinto de la responsable; deben revisarse o reabrirse antes de declarar el Sprint 1 validado. La retrospectiva y el acta formal siguen pendientes.
 
 ## Entregables y revisores propuestos
 
 | Issue | Artefacto | Responsable | Revisor sugerido | Evidencia de aprobación |
 |---|---|---|---|---|
-| [#1](https://github.com/asmunozv/Deber2/issues/1) | [Visión/MVP](01-VISION-Y-MVP.md) | Ariana | Lau | Por adjuntar |
-| [#2](https://github.com/asmunozv/Deber2/issues/2) | [Épicas](02-EPICAS-E-HISTORIAS.md) | Ariana | Ana | Por adjuntar |
-| [#3](https://github.com/asmunozv/Deber2/issues/3) | [Backlog](03-BACKLOG-Y-ROLES.md) | Ana | Lau | Por adjuntar |
-| [#4](https://github.com/asmunozv/Deber2/issues/4) | [Límites/riesgos](04-LIMITES-Y-RIESGOS.md) | Lau | Ariana | Por adjuntar |
+| [#1](https://github.com/asmunozv/Deber2/issues/1) | [Visión/MVP](01-VISION-Y-MVP.md) | Ariana | Lau o Ana | Pendiente; issue cerrada sin comentario cruzado identificable |
+| [#2](https://github.com/asmunozv/Deber2/issues/2) | [Épicas](02-EPICAS-E-HISTORIAS.md) | Ariana | Lau o Ana | Pendiente; issue cerrada sin comentario cruzado identificable |
+| [#3](https://github.com/asmunozv/Deber2/issues/3) | [Backlog](03-BACKLOG-Y-ROLES.md) | Ana | Ariana | Comentario de revisión de Ariana en la issue #3 (fecha visible en GitHub) |
+| [#4](https://github.com/asmunozv/Deber2/issues/4) | [Límites/riesgos](04-LIMITES-Y-RIESGOS.md) | Lau | Ariana | Comentario de revisión de Ariana en la issue #4 (fecha visible en GitHub) |
 
 ## Acta de review a completar con información real
 
@@ -22,9 +22,9 @@
 ## Cierre
 
 - [x] Existen documentos de visión, historias, backlog y límites iniciales.
-- [ ] Otra persona revisó y aprobó cada artefacto con evidencia verificable.
+- [ ] Otra persona revisó y aprobó todos los artefactos: #3 y #4 tienen comentario cruzado; #1 y #2 siguen pendientes.
 - [ ] Acta de revisión con fecha real y participantes.
 - [ ] Retrospectiva con resultados reales.
-- [ ] Issues #1–#4 cerradas tras cumplir DoD.
+- [ ] Regularizar #1 y #2 (cerradas sin evidencia de revisión cruzada identificable); #3 y #4 tienen comentarios cruzados.
 
 **Referencia de cambios:** [Plan de sprints](../SPRINTS.md) · [Control de entrega](../CONTROL-ENTREGA.md). Los datos de revisiones anteriores se conservan en el historial Git; no deben presentarse sin validación.
