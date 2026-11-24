@@ -6,9 +6,9 @@
 
 | Integrante | Rol principal | Aporte |
 |---|---|---|
-| **Laura (Lau) Reyes** | Líder de proyecto y arquitectura | C4, límites y dueños de datos, ADR, patrones y calidad |
-| **Ana Paula López** | Scrum Master / facilitadora | Backlog, seguimiento, matriz, flujos de recepción/reposición y versionamiento |
-| **Ariana Muñoz** | Product Owner | Visión, MVP, historias, flujos FEFO/despacho, dashboard y presentación |
+| **Laura (Lau) Reyes** (@crazylilypad0801) | Líder de proyecto y arquitectura | C4, límites y dueños de datos, ADR, patrones y calidad |
+| **Ana Paula López** (@anypau) | Scrum Master / facilitadora | Backlog, seguimiento, matriz, flujos de recepción/reposición y versionamiento |
+| **Ariana Muñoz** (@asmunozv) | Product Owner | Visión, MVP, historias, flujos FEFO/despacho, dashboard y presentación |
 
 Todos participan en el equipo de diseño y revisan los artefactos de otra persona.
 
@@ -61,12 +61,12 @@ No se contabiliza como gasto real mientras no se pague. Impuestos o cargos adici
 
 | Sprint | Archivos ya redactados | Revisión y retrospectiva |
 |---|---|---|
-| **1** | [Visión y MVP](sprint-1/01-VISION-Y-MVP.md), [épicas](sprint-1/02-EPICAS-E-HISTORIAS.md), [backlog](sprint-1/03-BACKLOG-Y-ROLES.md), [riesgos](sprint-1/04-LIMITES-Y-RIESGOS.md) | [Registro existente](sprint-1/05-REVISION-Y-RETROSPECTIVA.md): confirmar evidencias y fechas |
-| **2** | [C4](sprint-2/05-C4-ARQUITECTURA.md), [propiedad](sprint-2/06-PROPIEDAD-DE-DATOS.md), [UML A/B](sprint-2/07-FLUJOS-RECEPCION-REPOSICION.md), [UML C](sprint-2/08-FLUJOS-RESERVA-DESPACHO.md), [ADR](sprint-2/09-ADR.md) | Completar enlace a revisión real y retrospectiva |
-| **3** | [Interacciones](sprint-3/10-MATRIZ-INTERACCIONES.md), [patrones](sprint-3/11-PATRONES.md), [SOLID](sprint-3/12-SOLID.md), [calidad](sprint-3/13-REQUISITOS-CALIDAD.md), [revisión](sprint-3/14-REVISION-DIAGRAMAS-ADR.md) | Completar evidencia de revisión independiente |
-| **4** | [Dashboard](sprint-4/15-DASHBOARD.md), [versionamiento](sprint-4/16-VERSIONAMIENTO.md), [revisión final](sprint-4/17-REVISION-INTEGRAL.md), [presentación](sprint-4/18-PRESENTACION.md), [informe](sprint-4/19-INFORME-FINAL.md) | Ensayo y cierre solo después de revisión real |
+| **1** | [Visión y MVP](sprint-1/01-VISION-Y-MVP.md), [épicas](sprint-1/02-EPICAS-E-HISTORIAS.md), [backlog](sprint-1/03-BACKLOG-Y-ROLES.md), [riesgos](sprint-1/04-LIMITES-Y-RIESGOS.md) | [Registro](sprint-1/05-REVISION-Y-RETROSPECTIVA.md): comentarios cruzados en #3 y #4; #1 y #2 pendientes de revisión independiente; retrospectiva pendiente |
+| **2** | [C4](sprint-2/05-C4-ARQUITECTURA.md), [propiedad](sprint-2/06-PROPIEDAD-DE-DATOS.md), [UML A/B](sprint-2/07-FLUJOS-RECEPCION-REPOSICION.md), [UML C](sprint-2/08-FLUJOS-RESERVA-DESPACHO.md), [ADR](sprint-2/09-ADR.md) | Comentarios de revisión cruzada en #5, #6, #8 y #9; #7 pendiente; ratificación de ADR pendiente |
+| **3** | [Interacciones](sprint-3/10-MATRIZ-INTERACCIONES.md), [patrones](sprint-3/11-PATRONES.md), [SOLID](sprint-3/12-SOLID.md), [calidad](sprint-3/13-REQUISITOS-CALIDAD.md), [revisión](sprint-3/14-REVISION-DIAGRAMAS-ADR.md) | Comentarios de revisión cruzada en #11, #12 y #13; #10 y #14 pendientes |
+| **4** | [Dashboard](sprint-4/15-DASHBOARD.md), [versionamiento](sprint-4/16-VERSIONAMIENTO.md), [revisión final](sprint-4/17-REVISION-INTEGRAL.md), [presentación](sprint-4/18-PRESENTACION.md), [informe](sprint-4/19-INFORME-FINAL.md) | Comentarios de revisión cruzada en #15, #17 y #18; #16 y #19 pendientes; ensayo y cierre documental pendientes |
 
-**Estado de trabajo:** los documentos están redactados, no equivale a los sprints formalmente cerrados. Revisar las issues y cerrar únicamente aquellas cuyos criterios se comprueben. El detalle está en [CONTROL-ENTREGA](CONTROL-ENTREGA.md).
+**Estado de trabajo:** 14 issues aparecen cerradas y 5 abiertas en GitHub al 24/11/2026. El estado cerrado no sustituye los criterios de aceptación: #1 y #2 están cerradas sin un comentario cruzado identificable. No declarar los sprints formalmente cerrados mientras falten revisiones, actas o retrospectivas.
 
 ## Definición de terminado (DoD)
 
@@ -79,15 +79,16 @@ No se contabiliza como gasto real mientras no se pague. Impuestos o cargos adici
 
 **Política de evidencia:** no registrar reuniones, firmas, gastos ni aprobaciones que no hayan ocurrido. Las menciones anteriores de «revisión aprobada» en textos heredados se consideran por verificar hasta contar con soporte verificable.
 
-## Distribución de revisión cruzada acordada (pendiente de ejecución)
+## Revisión cruzada: comentarios observados en GitHub
 
-Los enlaces de las issues 5–9 y 15–19 incluyen ya sus artefactos y comprobaciones concretas. **La inclusión de un revisor aquí no equivale a su aprobación.**
+| Responsable de la tarea | Issues | Revisor/a observado/a | Estado documental |
+|---|---|---|---|
+| Ariana | #1, #2 | Pendiente (no se identificó comentario de aprobación de otra persona) | Issues cerradas; regularizar revisión |
+| Ana / Lau | #3, #4 | Ariana | Comentarios de revisión registrados |
+| Lau | #5, #6, #9, #11, #13, #17 | Ariana | Comentarios de revisión registrados; ADR aún propuestos |
+| Ariana | #8, #12, #15, #18 | Lau | Comentarios de revisión registrados |
+| Ana | #7, #10, #14, #16, #19 | Ariana o Lau | Sin comentarios de revisión observados; issues abiertas |
 
-| Responsable de la tarea | Tareas | Revisor/a propuesto/a |
-|---|---|---|
-| Lau | #5, #6, #9 (Sprint 2), #17 (Sprint 4) | Ana Paula |
-| Ariana | #8 (Sprint 2), #15 y #18 (Sprint 4) | Ana Paula |
-| Ana Paula | #7 (Sprint 2), #16 y #19 (Sprint 4) | Ariana o Lau; nunca auto-revisión |
-| Ana Paula | #3 (Sprint 1), #10 y #14 (Sprint 3) | Ariana (revisión y cierre una vez cumplido el DoD) |
+La fecha exacta de cada comentario se consulta en GitHub. La revisión documental de issues no equivale a una reunión formal de Sprint Review ni a una retrospectiva.
 
-**Secuencia de cierre de una issue:** revisor/a abre el enlace documental, verifica criterios técnicos y registra un comentario propio de aprobación o cambios solicitados; responsable corrige si hace falta y marca criterios respaldados; el equipo cierra la issue y actualiza el estado. No deben registrarse ceremonias ni firmas simuladas.
+**Secuencia de cierre de una issue:** el revisor abre el enlace documental, verifica criterios y registra un comentario propio de aprobación o cambios solicitados; responsable corrige si hace falta y marca criterios respaldados; el equipo cierra la issue y actualiza el estado. No deben registrarse ceremonias ni firmas simuladas.
