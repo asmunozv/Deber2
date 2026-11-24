@@ -1,5 +1,8 @@
 # Sprint 1 — Límites candidatos de diseño y riesgos iniciales
 
+> **Estado verificado (auditoría 23/11/2026):** archivo de diseño disponible. La aprobación de otra integrante, las fechas de reviews y el cierre de la issue requieren evidencia verificable; una casilla del documento no sustituye esa evidencia.
+
+
 **Issue:** [#4](https://github.com/asmunozv/Deber2/issues/4) · **Versión:** 1.0 · **Estado:** validado en ADR (Sprint 2, 22/11/2026)
 
 ## 1. Criterios para proponer un límite
