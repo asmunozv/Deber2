@@ -29,7 +29,7 @@
 |---|---|---|
 | Ramas y pull requests | Equipo | GitHub |
 | Historial de cambios | Git (commits atómicos con mensaje claro) | GitHub |
-| Releases | Etiquetas `vX.Y` al cerrar cada sprint | GitHub |
+| Etiquetas de artefactos (opcional) | Crear etiquetas `vX.Y` solo cuando se cierre un incremento real | GitHub |
 | Backlog y tablero | Scrum Master / facilitador | GitHub Issues |
 
 > El flujo de ramas, CI/CD y releases de **software** corresponde a Desarrollo de Software Moderno. Aquí solo se versionan **artefactos de diseño**.
@@ -42,6 +42,8 @@
 | ADR | Riesgo / decisión abierta | Campo "Vínculos" en cada ADR |
 | Requisito de calidad | ADR / patrón | IDs Q-* referenciados |
 | Diagrama | Documento que lo explica | Ruta relativa al `.mmd` |
+
+**Estado comprobable:** la política está definida, pero no hay confirmación de que ya se hayan creado etiquetas Git. No declarar etiquetas de cada sprint sin verificarlas.
 
 ## 5. Criterios de aceptación de #16
 
