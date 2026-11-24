@@ -1,6 +1,9 @@
 # Sprint 2 — Registro de decisiones de arquitectura (ADR)
 
-**Issue:** [#9](https://github.com/asmunozv/Deber2/issues/9) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Líder de arquitectura (Laura Reyes)
+> **Estado verificado (auditoría 23/11/2026):** archivo de diseño disponible. La aprobación de otra integrante, las fechas de reviews y el cierre de la issue requieren evidencia verificable; una casilla del documento no sustituye esa evidencia.
+
+
+**Issue:** [#9](https://github.com/asmunozv/Deber2/issues/9) · **Versión:** 1.0 · **Estado:** artefacto redactado; validación documental pendiente
 
 ## Índice de ADR
 
