@@ -1,6 +1,9 @@
 # Sprint 4 — Política de versionamiento y trazabilidad
 
-**Issue:** [#16](https://github.com/asmunozv/Deber2/issues/16) · **Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Responsable principal (rol):** Scrum Master (Ana Paula López)
+> **Auditoría documental (23/11/2026):** el contenido técnico está redactado. Las revisiones, aprobaciones, etiquetas/releases y actos de cierre solo deben declararse realizados si existen evidencias correspondientes en GitHub o actas confirmadas por el equipo.
+
+
+**Issue:** [#16](https://github.com/asmunozv/Deber2/issues/16) · **Versión:** 1.0 · **Estado:** artefacto redactado; revisión y aceptación pendientes de verificar
 
 ## 1. Elementos versionados
 
