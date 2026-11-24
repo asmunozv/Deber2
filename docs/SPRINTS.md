@@ -78,3 +78,16 @@ No se contabiliza como gasto real mientras no se pague. Impuestos o cargos adici
 - [ ] Issue cerrada únicamente cuando lo anterior se cumpla.
 
 **Política de evidencia:** no registrar reuniones, firmas, gastos ni aprobaciones que no hayan ocurrido. Las menciones anteriores de «revisión aprobada» en textos heredados se consideran por verificar hasta contar con soporte verificable.
+
+## Distribución de revisión cruzada acordada (pendiente de ejecución)
+
+Los enlaces de las issues 5–9 y 15–19 incluyen ya sus artefactos y comprobaciones concretas. **La inclusión de un revisor aquí no equivale a su aprobación.**
+
+| Responsable de la tarea | Tareas | Revisor/a propuesto/a |
+|---|---|---|
+| Lau | #5, #6, #9 (Sprint 2), #17 (Sprint 4) | Ana Paula |
+| Ariana | #8 (Sprint 2), #15 y #18 (Sprint 4) | Ana Paula |
+| Ana Paula | #7 (Sprint 2), #16 y #19 (Sprint 4) | Ariana o Lau; nunca auto-revisión |
+| Ana Paula | #3 (Sprint 1), #10 y #14 (Sprint 3) | Ariana (revisión y cierre una vez cumplido el DoD) |
+
+**Secuencia de cierre de una issue:** revisor/a abre el enlace documental, verifica criterios técnicos y registra un comentario propio de aprobación o cambios solicitados; responsable corrige si hace falta y marca criterios respaldados; el equipo cierra la issue y actualiza el estado. No deben registrarse ceremonias ni firmas simuladas.
