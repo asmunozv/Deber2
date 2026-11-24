@@ -28,7 +28,7 @@ Se justifican **siete patrones** (la consigna exige al menos cuatro). Para cada 
 - **Problema:** evitar que un cambio de negocio quede registrado pero sin notificar (o viceversa).
 - **Ubicación:** Inventario, Fulfillment y Reposición publican a través de Outbox; los consumidores toleran duplicados (idempotencia).
 - **Beneficios:** registro y notificación atómicos; consumidores seguros ante reintentos.
-- **Costos:** tabla/tabla Outbox y proceso de publicación; cada consumidor debe ser idempotente.
+- **Costos:** tabla Outbox y proceso de publicación; cada consumidor debe ser idempotente.
 - **Límites:** la entrega puede repetirse; no garantiza orden global por sí solo.
 
 ## 4. CQRS / proyección de lectura
