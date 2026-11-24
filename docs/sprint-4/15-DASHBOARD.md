@@ -1,50 +1,61 @@
 # Sprint 4 — Propuesta visual del dashboard
 
-> **Auditoría documental (23/11/2026):** el contenido técnico está redactado. Las revisiones, aprobaciones, etiquetas/releases y actos de cierre solo deben declararse realizados si existen evidencias correspondientes en GitHub o actas confirmadas por el equipo.
+> **Auditoría documental (24/11/2026):** prototipo HTML estático disponible y actualizado. La revisión visual por el equipo y el ensayo de presentación deben registrarse por separado.
 
-
-**Issue:** [#15](https://github.com/asmunozv/Deber2/issues/15) · **Versión:** 1.0 · **Estado:** artefacto redactado; revisión y aceptación pendientes de verificar
+**Issue:** [#15](https://github.com/asmunozv/Deber2/issues/15) · **Versión:** 1.1 · **Estado:** prototipo disponible; revisión del equipo registrada en la issue, fecha exacta visible en GitHub.
 
 ## 1. Objetivo de la vista
 
-Separar la **supervisión de existencias** (indicadores) de la **visualización física de la bodega** (planta). Ambas vistas comparten **alertas, indicadores y flujo de pedidos**.
+Ofrecer una vista de consulta que reúna indicadores de inventario, alertas, pedidos y recursos logísticos, sin convertir al dashboard en fuente de verdad ni permitir que modifique directamente las existencias.
 
-| Vista | Qué muestra | Fuente conceptual |
-|---|---|---|
-| **Planta interna** | Racks, pallets, lotes, zonas de recepción y picking, y AMR dentro de la bodega | Proyección de lectura (Inventario/Flota) |
-| **Planta externa** | Camiones en el patio, muelles, acceso y zona de espera | Proyección de lectura (Flota) |
-| **Indicadores compartidos** | Stock total, alertas activas, pedidos en preparación y en ruta | Proyección de lectura |
+## 2. Estructura del prototipo
 
-## 2. Prototipo navegable
+Archivo: [dashboard/index.html](../dashboard/index.html). Es HTML estático y navegable, con **datos ilustrativos**; no está conectado a servicios reales ni a una base de datos.
 
-Archivo: [`dashboard/index.html`](../dashboard/index.html) (ábralo en el navegador). Es **HTML estático con datos ilustrativos**; **no** representa una conexión funcional con servicios reales.
+La navegación lateral incluye cinco secciones:
 
-- Botones **Planta interna / Planta externa** para alternar vistas.
-- Tarjetas KPI, panel de **alertas** y **flujo de pedidos** compartidos.
-- Etiqueta de **frescura** ("última lectura: hace … s") que materializa la consistencia eventual.
+- **Resumen:** indicadores generales, movimiento de inventario, distribución del stock, productos que requieren atención, alertas y actividad operativa.
+- **Inventario y lotes:** búsqueda por SKU/producto/lote/zona, filtros por estado, consulta de cantidades y vencimientos, sugerencia de reposición y explicación de FEFO.
+- **Pedidos:** estados y avance de preparación/despacho, con secuencia del proceso.
+- **Flota y muelles:** muestra en una misma sección la **planta interna** (recepción, racks, picking y AMR) y la **planta externa** (patio, camiones, acceso y muelles).
+- **Alertas:** lista filtrable por texto y severidad.
 
-## 3. Explicación de las vistas
+## 3. Indicadores y reglas de consulta
 
-### 3.1 Planta interna
-- **Zonas:** recepción, zona A (racks), zona B (picking).
-- **Lotes** con estado visual: normal (azul), bajo mínimo (naranja), próximo a vencer/bloqueado (rojo).
-- **AMR** de picking posicionados en la zona correspondiente.
+- Indicadores de unidades registradas, disponibilidad estimada, pedidos activos y alertas.
+- Distribución ilustrativa de stock normal, bajo mínimo y crítico/próximo a vencer.
+- Los filtros de inventario y alertas actúan sobre los registros de muestra cargados en el HTML.
+- La exportación CSV descarga los registros visibles de la tabla de inventario.
+- La etiqueta **“Datos ilustrativos”** advierte que los valores no son telemetría ni datos operativos reales.
 
-### 3.2 Planta externa
-- **Muelles** con estado libre/ocupado/en espera.
-- **Patio, acceso y zona de espera** con camiones.
+## 4. Planta interna y externa
 
-## 4. Reglas de lectura (no de escritura)
+### 4.1 Planta interna
 
-- El dashboard **no** es la fuente de verdad del stock; **no** permite editar directamente existencias.
-- Las **acciones** (aprobar una sugerencia, reservar stock) se dirigen a la **capacidad responsable** a través de la capa de aplicación.
-- Los datos se muestran como **proyección de lectura** con su posible desfase indicado.
+- Zona de recepción con lotes recibidos.
+- Racks de almacenamiento y lotes con fecha de vencimiento.
+- Zona de picking y recurso AMR asignado.
+- Indicadores de condición normal, bajo mínimo y próximo a vencer.
 
-## 5. Criterios de aceptación de #15
+### 4.2 Planta externa
 
-- [x] Prototipo HTML navegable con vistas interna y externa.
-- [x] Indicadores, alertas y flujo compartidos.
-- [x] Explicación de cada vista y de la regla de solo lectura.
-- [ ] Revisión por otro integrante.
+- Camiones asociados a pedidos.
+- Muelles libres, ocupados o en espera.
+- Patio, acceso y zona de espera.
+
+Ambas representaciones están disponibles dentro de la sección **Flota y muelles**; no se alternan mediante botones independientes.
+
+## 5. Reglas de lectura (no de escritura)
+
+- El dashboard es una vista de consulta; no es dueño del stock ni registra movimientos.
+- Las acciones de negocio pertenecen a la capacidad responsable.
+- La proyección de lectura puede presentar desfase frente al dato transaccional; la frescura debe mostrarse cuando exista conexión real. El prototipo actual no simula una marca dinámica de última actualización.
+
+## 6. Criterios de aceptación de #15
+
+- [x] Prototipo HTML navegable con resumen, inventario, pedidos, flota/muelles y alertas.
+- [x] Representación de planta interna y externa, indicadores, alertas y flujo de pedidos.
+- [x] Datos identificados explícitamente como ilustrativos; búsqueda, filtros y exportación CSV de muestra.
+- [x] Comentario de revisión de otro integrante registrado en la issue #15.
 
 **Relaciones:** [Versionamiento](16-VERSIONAMIENTO.md) · [Presentación](18-PRESENTACION.md) · [Requisitos de calidad](../sprint-3/13-REQUISITOS-CALIDAD.md).
