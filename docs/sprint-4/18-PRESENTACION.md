@@ -52,7 +52,11 @@ flowchart TB
     dash --> fin
 ```
 
-## 3. Autores y contribuciones
+## 3. Enlace al repositorio
+
+La última diapositiva incluye un enlace directo al [repositorio Smart Inventory en GitHub](https://github.com/asmunozv/Deber2).
+
+## 4. Autores y contribuciones
 
 | Integrante | Rol | Contribución principal |
 |---|---|---|
@@ -62,9 +66,10 @@ flowchart TB
 
 > Nombres y división de trabajo confirmados con el equipo.
 
-## 4. Criterios de aceptación de #18
+## 5. Criterios de aceptación de #18
 
 - [x] Guion de presentación con responsabilidades e interacciones.
+- [x] Enlace directo al repositorio incluido en la última diapositiva.
 - [x] Diagrama de actividad de apoyo.
 - [ ] Confirmar autores y contribuciones con el equipo.
 - [ ] Ensayo y ajustes con el equipo.
