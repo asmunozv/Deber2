@@ -1,163 +1,80 @@
 # Plan de sprints — Smart Inventory
 
-**Materia:** Diseño de Sistemas · **Duración:** 4 sprints de 2 semanas · **Estado:** cuatro sprints ejecutados y registrados (revisión, retrospectiva y ADR ratificados entre el 21 y el 24/11/2026).
+**Consigna:** 4 sprints × 2 semanas = **8 semanas de calendario**. Esta es la duración requerida por el profesor; las **horas-persona de trabajo activo** se estiman aparte. No se asignan retrospectivamente fechas ficticias al calendario. Las fechas concretas de inicio y fin se completan con el equipo.
 
-## Reglas de seguimiento
-- Backlog: [Issues](https://github.com/asmunozv/Deber2/issues). Las tareas se identifican por el prefijo de sprint.
-- Cada sprint registra objetivo, historias/tareas, responsable, incremento revisable, revisión y retrospectiva.
-- Estados: Pendiente / En progreso / En revisión / Terminado (cerrar el issue solo cuando se cumpla su aceptación).
-- No asignar fechas reales ni responsables sin acuerdo del equipo.
-- Cada historia terminada enlaza su documento, diagrama fuente, versión o ADR y evidencia de revisión por otro integrante.
-- Quedan fuera del alcance APIs, contratos técnicos de mensajes, CI/CD, despliegues y pruebas.
+## Equipo y roles
+
+| Integrante | Rol principal | Aporte |
+|---|---|---|
+| **Laura (Lau) Reyes** | Líder de proyecto y arquitectura | C4, límites y dueños de datos, ADR, patrones y calidad |
+| **Ana Paula López** | Scrum Master / facilitadora | Backlog, seguimiento, matriz, flujos de recepción/reposición y versionamiento |
+| **Ariana Muñoz** | Product Owner | Visión, MVP, historias, flujos FEFO/despacho, dashboard y presentación |
+
+Todos participan en el equipo de diseño y revisan los artefactos de otra persona.
+
+## Tiempo y presupuesto (estimaciones)
+
+| Sprint | Plazo en calendario | Objetivo e incremento | Horas-persona del equipo | Responsable de coordinación |
+|---|---|---|---:|---|
+| **1** | Semanas 1–2 | Visión, interesados, MVP, historias, backlog, límites y riesgos | 9 | Ariana + Ana |
+| **2** | Semanas 3–4 | C4, propiedad de datos, flujos UML y ADR | 18 | Lau |
+| **3** | Semanas 5–6 | Matriz de interacciones, patrones, SOLID, calidad | 15 | Lau + Ana |
+| **4** | Semanas 7–8 | Dashboard, versionamiento, trazabilidad, informe y presentación | 12 | Ariana + Ana |
+| **Total** | **8 semanas** | | **54 horas-persona** | Equipo |
+
+Las 54 horas-persona equivalen, si se distribuyen por igual, a 18 h por integrante en todo el trabajo; no son 54 horas de duración real. El equipo puede ajustar la distribución. **Fechas reales:** inicio ___; fin ___.
+
+| Recurso | Presupuesto monetario previsto (USD) |
+|---|---:|
+| Trabajo académico no remunerado | 0 |
+| GitHub, diagramación y documentos con herramientas gratuitas | 0 |
+| IA paga opcional (máximo una mensualidad) | Hasta 20 |
+| **Total previsto** | **0 a 20** |
+
+No se contabiliza como gasto real mientras no se pague. Impuestos o cargos adicionales deben comprobarse antes de adquirir la suscripción.
+
+## Backlog de sprints y responsable principal
+
+| Sprint | Issue | Entregable | Responsable | Horas-persona |
+|---|---|---|---|---:|
+| S1 | [#1](https://github.com/asmunozv/Deber2/issues/1) | Visión, interesados, MVP | Ariana | 2 |
+| S1 | [#2](https://github.com/asmunozv/Deber2/issues/2) | Épicas e historias | Ariana | 2 |
+| S1 | [#3](https://github.com/asmunozv/Deber2/issues/3) | Backlog y roles | Ana | 2 |
+| S1 | [#4](https://github.com/asmunozv/Deber2/issues/4) | Límites y riesgos | Lau | 3 |
+| S2 | [#5](https://github.com/asmunozv/Deber2/issues/5) | C4 | Lau | 4 |
+| S2 | [#6](https://github.com/asmunozv/Deber2/issues/6) | Propiedad de datos | Lau | 3 |
+| S2 | [#7](https://github.com/asmunozv/Deber2/issues/7) | UML recepción/reposición | Ana | 4 |
+| S2 | [#8](https://github.com/asmunozv/Deber2/issues/8) | UML reserva/despacho | Ariana | 4 |
+| S2 | [#9](https://github.com/asmunozv/Deber2/issues/9) | ADR | Lau | 3 |
+| S3 | [#10](https://github.com/asmunozv/Deber2/issues/10) | Interacciones | Ana | 3 |
+| S3 | [#11](https://github.com/asmunozv/Deber2/issues/11) | Patrones | Lau | 4 |
+| S3 | [#12](https://github.com/asmunozv/Deber2/issues/12) | SOLID | Ariana | 3 |
+| S3 | [#13](https://github.com/asmunozv/Deber2/issues/13) | Calidad | Lau | 3 |
+| S3 | [#14](https://github.com/asmunozv/Deber2/issues/14) | Revisión diagramas/ADR | Ana | 2 |
+| S4 | [#15](https://github.com/asmunozv/Deber2/issues/15) | Dashboard | Ariana | 3 |
+| S4 | [#16](https://github.com/asmunozv/Deber2/issues/16) | Versionamiento | Ana | 2 |
+| S4 | [#17](https://github.com/asmunozv/Deber2/issues/17) | Revisión integral | Lau | 2 |
+| S4 | [#18](https://github.com/asmunozv/Deber2/issues/18) | Presentación | Ariana | 3 |
+| S4 | [#19](https://github.com/asmunozv/Deber2/issues/19) | Informe final | Ana | 2 |
+
+## Registro por sprint: evidencias y estado de cierre
+
+| Sprint | Archivos ya redactados | Revisión y retrospectiva |
+|---|---|---|
+| **1** | [Visión y MVP](sprint-1/01-VISION-Y-MVP.md), [épicas](sprint-1/02-EPICAS-E-HISTORIAS.md), [backlog](sprint-1/03-BACKLOG-Y-ROLES.md), [riesgos](sprint-1/04-LIMITES-Y-RIESGOS.md) | [Registro existente](sprint-1/05-REVISION-Y-RETROSPECTIVA.md): confirmar evidencias y fechas |
+| **2** | [C4](sprint-2/05-C4-ARQUITECTURA.md), [propiedad](sprint-2/06-PROPIEDAD-DE-DATOS.md), [UML A/B](sprint-2/07-FLUJOS-RECEPCION-REPOSICION.md), [UML C](sprint-2/08-FLUJOS-RESERVA-DESPACHO.md), [ADR](sprint-2/09-ADR.md) | Completar enlace a revisión real y retrospectiva |
+| **3** | [Interacciones](sprint-3/10-MATRIZ-INTERACCIONES.md), [patrones](sprint-3/11-PATRONES.md), [SOLID](sprint-3/12-SOLID.md), [calidad](sprint-3/13-REQUISITOS-CALIDAD.md), [revisión](sprint-3/14-REVISION-DIAGRAMAS-ADR.md) | Completar evidencia de revisión independiente |
+| **4** | [Dashboard](sprint-4/15-DASHBOARD.md), [versionamiento](sprint-4/16-VERSIONAMIENTO.md), [revisión final](sprint-4/17-REVISION-INTEGRAL.md), [presentación](sprint-4/18-PRESENTACION.md), [informe](sprint-4/19-INFORME-FINAL.md) | Ensayo y cierre solo después de revisión real |
+
+**Estado de trabajo:** los documentos están redactados, no equivale a los sprints formalmente cerrados. Revisar las issues y cerrar únicamente aquellas cuyos criterios se comprueben. El detalle está en [CONTROL-ENTREGA](CONTROL-ENTREGA.md).
 
 ## Definición de terminado (DoD)
-- [ ] Se satisfacen los criterios de aceptación del issue.
-- [ ] Se identifica el módulo o capacidad propietaria.
-- [ ] Se actualizan los diagramas o ADR afectados y se conserva versión e historial.
-- [ ] Otro integrante revisa el artefacto.
-- [ ] Se adjunta o enlaza evidencia verificable a la historia.
-- [ ] Se registra la revisión del sprint y la retrospectiva, sin inventar resultados.
 
-## Sprint 1 — Visión y planificación (2 semanas)
-**Objetivo:** acordar visión, MVP, interesados, épicas, historias, backlog y límites candidatos.
+- [ ] Criterios de aceptación cumplidos y marcados en la issue.
+- [ ] Documento/diagrama enlazado con versión, autor y fecha.
+- [ ] Diagrama o ADR afectado actualizado y trazado.
+- [ ] Revisión por un integrante diferente del autor registrada con evidencia (URL, fecha, resultado).
+- [ ] Revisión y retrospectiva del sprint realizadas y documentadas con hechos.
+- [ ] Issue cerrada únicamente cuando lo anterior se cumpla.
 
-**Historias seleccionadas:** [#1](https://github.com/asmunozv/Deber2/issues/1), [#2](https://github.com/asmunozv/Deber2/issues/2), [#3](https://github.com/asmunozv/Deber2/issues/3), [#4](https://github.com/asmunozv/Deber2/issues/4).
-
-**Incremento documental redactado (revisado):**
-- [Visión, interesados y MVP](sprint-1/01-VISION-Y-MVP.md).
-- [Épicas, historias de usuario y criterios](sprint-1/02-EPICAS-E-HISTORIAS.md).
-- [Backlog priorizado, dependencias y roles](sprint-1/03-BACKLOG-Y-ROLES.md).
-- [Límites candidatos, riesgos y decisiones abiertas](sprint-1/04-LIMITES-Y-RIESGOS.md).
-- [Lista de validación, registro para review y retrospectiva](sprint-1/05-REVISION-Y-RETROSPECTIVA.md).
-
-**Responsables principales:** Ariana Muñoz (#1–#2), Ana Paula López (#3) y Laura Reyes (#4), según la asignación por issue. **Fechas:** revisión y retrospectiva el 21/11/2026.
-**Estado de las issues #1–#4:** cerradas; revisión cruzada registrada y criterios de aceptación cumplidos (ver [05-REVISION-Y-RETROSPECTIVA.md](sprint-1/05-REVISION-Y-RETROSPECTIVA.md)).
-
-**Revisión:** 21/11/2026 — asistentes Laura Reyes, Ariana Muñoz y Ana Paula López; artefactos #1–#4 verificados y aceptados.  
-**Retrospectiva:** funcionó el vocabulario de dominio común; mejorar la claridad de supuestos de negocio; acción: ratificar límites y propiedad de datos en ADR (Sprint 2).
-
-## Sprint 2 — Arquitectura y flujos (2 semanas)
-**Objetivo:** justificar límites y propiedad de datos, modelar C4 y flujos UML, registrar ADR iniciales.
-
-**Historias seleccionadas:** [#5](https://github.com/asmunozv/Deber2/issues/5), [#6](https://github.com/asmunozv/Deber2/issues/6), [#7](https://github.com/asmunozv/Deber2/issues/7), [#8](https://github.com/asmunozv/Deber2/issues/8), [#9](https://github.com/asmunozv/Deber2/issues/9).
-
-**Incremento revisable redactado (revisado):**
-- [Arquitectura C4 y límites de servicio](sprint-2/05-C4-ARQUITECTURA.md).
-- [Propiedad de datos](sprint-2/06-PROPIEDAD-DE-DATOS.md).
-- [Flujos de recepción y reposición (UML)](sprint-2/07-FLUJOS-RECEPCION-REPOSICION.md).
-- [Flujos de reserva FEFO y despacho (UML)](sprint-2/08-FLUJOS-RESERVA-DESPACHO.md).
-- [ADR iniciales](sprint-2/09-ADR.md) y [`docs/adr/`](adr/).
-
-**Responsables:** Laura Reyes (#5, #6, #9), Ana Paula López (#7), Ariana Muñoz (#8). **Fechas:** revisión y retrospectiva el 22/11/2026.
-
-**Revisión:** 22/11/2026 — C4, propiedad de datos, flujos UML y ADR verificados; ADR-0001 a ADR-0007 ratificados.
-
-**Retrospectiva:** funcionó dejar decisiones explícitas en ADR; mejorar la sincronización entre diagramas y documentos; acción siguiente: redactar matriz de interacciones y requisitos medibles (Sprint 3).
-
-## Sprint 3 — Interacciones, patrones y calidad (2 semanas)
-**Objetivo:** completar matriz de interacciones, justificar patrones/SOLID y fijar requisitos medibles, refinando diagramas y decisiones.
-
-**Historias seleccionadas:** [#10](https://github.com/asmunozv/Deber2/issues/10), [#11](https://github.com/asmunozv/Deber2/issues/11), [#12](https://github.com/asmunozv/Deber2/issues/12), [#13](https://github.com/asmunozv/Deber2/issues/13), [#14](https://github.com/asmunozv/Deber2/issues/14).
-
-**Incremento revisable redactado (revisado):**
-- [Matriz de interacciones](sprint-3/10-MATRIZ-INTERACCIONES.md).
-- [Informe de patrones](sprint-3/11-PATRONES.md).
-- [Evidencia SOLID](sprint-3/12-SOLID.md).
-- [Requisitos de calidad](sprint-3/13-REQUISITOS-CALIDAD.md).
-- [Revisión de diagramas y ADR](sprint-3/14-REVISION-DIAGRAMAS-ADR.md).
-
-**Responsables:** Ana Paula López (#10, #14), Laura Reyes (#11, #13), Ariana Muñoz (#12). **Fechas:** revisión y retrospectiva el 23/11/2026.
-
-**Revisión:** 23/11/2026 — matriz de interacciones, patrones, evidencia SOLID y requisitos de calidad verificados.
-
-**Retrospectiva:** funcionó vincular patrones/SOLID a diagramas concretos; mejorar la justificación de umbrales sin datos reales de carga; acción siguiente: cerrar versionamiento, dashboard y presentación (Sprint 4).
-
-## Sprint 4 — Coherencia, trazabilidad y entrega (2 semanas)
-**Objetivo:** cerrar documentación, trazabilidad y política de versiones; preparar mockups, informe y presentación.
-
-**Historias seleccionadas:** [#15](https://github.com/asmunozv/Deber2/issues/15), [#16](https://github.com/asmunozv/Deber2/issues/16), [#17](https://github.com/asmunozv/Deber2/issues/17), [#18](https://github.com/asmunozv/Deber2/issues/18), [#19](https://github.com/asmunozv/Deber2/issues/19).
-
-**Incremento revisable redactado (revisado):**
-- [Propuesta visual del dashboard](sprint-4/15-DASHBOARD.md) y [prototipo HTML](dashboard/index.html).
-- [Política de versionamiento](sprint-4/16-VERSIONAMIENTO.md).
-- [Revisión integral](sprint-4/17-REVISION-INTEGRAL.md).
-- [Presentación del flujo vertical](sprint-4/18-PRESENTACION.md).
-- [Informe final](sprint-4/19-INFORME-FINAL.md).
-
-**Responsables:** Ariana Muñoz (#15, #18), Ana Paula López (#16, #19), Laura Reyes (#17). **Fechas:** revisión y retrospectiva el 24/11/2026.
-
-**Revisión:** 24/11/2026 — dashboard, política de versionamiento, revisión integral, presentación e informe final verificados.
-
-**Retrospectiva:** funcionó el recorrido vertical trazable de punta a punta; mejorar la exportación de diagramas a imagen para el informe; acción siguiente: entregar el paquete versionado.
-
-## Roles del equipo
-| Rol | Responsable | Rama de trabajo |
-|---|---|---|
-| Product Owner | Ariana Muñoz | `am_check_branch` |
-| Scrum Master / facilitadora | Ana Paula López | `anl_check_branch` |
-| Líder de arquitectura | Laura Reyes | `lr_check_branch` |
-| Equipo de diseño | Laura Reyes, Ana Paula López y Ariana Muñoz | Incrementos apilados en las tres ramas |
-
-Los incrementos se registran en orden: Ana Paula, Laura y Ariana. Cada rama posterior conserva en su historial los incrementos anteriores; esto permite revisar y fusionar el trabajo acumulado sin perder la atribución de cada commit.
-
-> Este documento registra la planificación y el cierre de los cuatro sprints; la evidencia detallada de cada revisión y retrospectiva está en los documentos de control correspondientes.
-
-
-## Roles, tiempo y presupuesto del equipo
-
-**Equipo (3 personas):** Laura Reyes, Ariana Muñoz y Ana Paula López. La asignación siguiente es la organización del deber; las tres colaboran en el diseño y realizan revisión cruzada.
-
-| Integrante | Rol principal | Responsabilidad |
-|---|---|---|
-| **Laura Reyes** | Líder del proyecto y líder de arquitectura | Coordina decisiones, define límites y datos propietarios, revisa C4/UML y ADR |
-| **Ana Paula López** | Scrum Master / facilitadora | Organiza tablero, backlog, seguimiento, revisión/retrospectiva y trazabilidad |
-| **Ariana Muñoz** | Product Owner | Define visión, alcance MVP y criterios de aceptación; coordina prototipo del dashboard y presentación |
-
-### Tiempo: calendario vs. trabajo efectivo
-**Se conservan los 4 sprints de 2 semanas indicados en el deber (8 semanas de calendario).** Esto no significa trabajar a tiempo completo: el esfuerzo previsto es **54 horas-persona entre las tres**, aproximadamente **18 horas por persona en todo el trabajo** (promedio 2 h 15 min semanales por persona). Son estimaciones ajustables, no tiempos ya ejecutados.
-
-| Sprint | Plazo formal | Responsable de coordinación | Trabajo previsto | Esfuerzo total del equipo |
-|---|---|---|---|---:|
-| **1** | Semanas 1–2 | Ariana Muñoz (producto) + Ana Paula López (seguimiento) | Visión, épicas, MVP, backlog y riesgos iniciales | **9 h-persona** |
-| **2** | Semanas 3–4 | Laura Reyes (arquitectura) | Diagramas C4/UML, límites, propietarios de datos, ADR | **18 h-persona** |
-| **3** | Semanas 5–6 | Laura Reyes (diseño) + Ana Paula López (registro) | Matriz de interacciones, patrones, SOLID, calidad | **15 h-persona** |
-| **4** | Semanas 7–8 | Ariana Muñoz (presentación) + Ana Paula López (trazabilidad) | Dashboard, versionamiento, informe y exposición | **12 h-persona** |
-| **Total** | **8 semanas formales** | Equipo completo | | **54 h-persona** |
-
-**Tiempos aproximados por actividad:** Sprint 1: issues #1 2 h, #2 2 h, #3 2 h, #4 3 h; Sprint 2: #5 4 h, #6 3 h, #7 4 h, #8 4 h, #9 3 h; Sprint 3: #10 3 h, #11 4 h, #12 3 h, #13 3 h, #14 2 h; Sprint 4: #15 3 h, #16 2 h, #17 2 h, #18 3 h, #19 2 h. **Son horas-persona sumadas, no duración de cada sprint.**
-
-### Presupuesto monetario (USD)
-| Concepto | Costo previsto |
-|---|---:|
-| GitHub (plan gratuito) | **$0** |
-| Diagramas y documentación con herramientas gratuitas | **$0** |
-| Trabajo académico de los integrantes (no remunerado) | **$0** |
-| Suscripción de IA paga, opcional, máximo una mensualidad | **Hasta $20** |
-| **Presupuesto máximo previsto** | **$20** |
-
-**Escenario sin suscripción nueva:** $0. **Escenario con suscripción:** hasta $20, si no existen impuestos, comisiones o cargos adicionales; comprobar el total facturado antes de pagar. La estimación **no** incluye laptops, internet u otras herramientas que el equipo ya posee. No se debe tratar como gasto ejecutado.
-
-### Asignación principal y horas estimadas por historia
-| Issue | Tema | Responsable principal | Esfuerzo equipo |
-|---|---|---|---:|
-| #1 | Visión, interesados y MVP | Ariana Muñoz | 2 h |
-| #2 | Épicas e historias | Ariana Muñoz | 2 h |
-| #3 | Backlog y responsabilidades | Ana Paula López | 2 h |
-| #4 | Límites iniciales y riesgos | Laura Reyes | 3 h |
-| #5 | C4 y límites de servicio | Laura Reyes | 4 h |
-| #6 | Propiedad de datos | Laura Reyes | 3 h |
-| #7 | Recepción y reposición UML | Ana Paula López | 4 h |
-| #8 | Reserva FEFO y despacho UML | Ariana Muñoz | 4 h |
-| #9 | ADR iniciales | Laura Reyes | 3 h |
-| #10 | Matriz de interacciones | Ana Paula López | 3 h |
-| #11 | Patrones y justificación | Laura Reyes | 4 h |
-| #12 | Evidencia SOLID | Ariana Muñoz | 3 h |
-| #13 | Requisitos de calidad | Laura Reyes | 3 h |
-| #14 | Revisión de diagramas y ADR | Ana Paula López | 2 h |
-| #15 | Dashboard interno/externo | Ariana Muñoz | 3 h |
-| #16 | Versionamiento y trazabilidad | Ana Paula López | 2 h |
-| #17 | Revisión integral | Laura Reyes | 2 h |
-| #18 | Presentación de flujo | Ariana Muñoz | 3 h |
-| #19 | Informe final y cierre | Ana Paula López | 2 h |
-
-Los responsables son dueños de cada entrega, no ejecutores únicos. Las revisiones y retrospectivas de los cuatro sprints quedaron registradas en sus documentos de control.
+**Política de evidencia:** no registrar reuniones, firmas, gastos ni aprobaciones que no hayan ocurrido. Las menciones anteriores de «revisión aprobada» en textos heredados se consideran por verificar hasta contar con soporte verificable.
