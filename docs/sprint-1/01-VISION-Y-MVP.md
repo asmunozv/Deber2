@@ -1,7 +1,10 @@
 # Sprint 1 — Visión de producto, interesados y MVP
 
+> **Estado verificado (auditoría 23/11/2026):** archivo de diseño disponible. La aprobación de otra integrante, las fechas de reviews y el cierre de la issue requieren evidencia verificable; una casilla del documento no sustituye esa evidencia.
+
+
 **Proyecto:** Smart Inventory · **Asignatura:** Diseño de Sistemas (USFQ) · **Issue:** [#1](https://github.com/asmunozv/Deber2/issues/1)  
-**Versión:** 1.0 · **Estado:** terminado (revisión registrada) · **Fecha de aprobación:** 21 de noviembre de 2026
+**Versión:** 1.0 · **Estado:** artefacto redactado; validación documental pendiente
 
 ## 1. Problema y oportunidad
 Una operación que recibe productos por lote y los almacena en múltiples ubicaciones necesita saber qué existencias están disponibles, dónde se encuentran y cuándo vencen. Cuando catálogo, inventario, reposición y despacho se administran de manera aislada, aparecen duplicidad de registros, quiebres de stock, pérdidas por caducidad, reservas superiores a lo disponible y poca trazabilidad del despacho.
