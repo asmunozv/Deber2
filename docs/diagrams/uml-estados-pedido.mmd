@@ -1,0 +1,23 @@
+stateDiagram-v2
+    %% ============================================================
+    %% Máquina de estados — Pedido (propiedad de Fulfillment)
+    %% ============================================================
+    [*] --> BORRADOR: crear pedido
+
+    BORRADOR --> EN_RESERVA: solicitar reserva FEFO
+    EN_RESERVA --> RESERVADO: reserva confirmada
+    EN_RESERVA --> SIN_STOCK: reserva rechazada
+    BORRADOR --> CANCELADO: cancelar
+
+    SIN_STOCK --> EN_RESERVA: reintentar reserva
+    RESERVADO --> EN_PREPARACION: preparar (picking)
+    RESERVADO --> CANCELADO: cancelar (libera reserva)
+
+    EN_PREPARACION --> LISTO_DESPACHO: confirmar salida
+    EN_PREPARACION --> CANCELADO: cancelar
+
+    LISTO_DESPACHO --> EN_RUTA: asignar recurso (Flota)
+    EN_RUTA --> ENTREGADO: registrar entrega
+
+    ENTREGADO --> [*]
+    CANCELADO --> [*]

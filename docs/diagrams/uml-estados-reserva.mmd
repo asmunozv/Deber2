@@ -1,0 +1,21 @@
+stateDiagram-v2
+    %% ============================================================
+    %% Máquina de estados — Reserva / compromiso de unidades
+    %% Propiedad de Inventario (referencia al pedido de Fulfillment)
+    %% ============================================================
+    [*] --> SOLICITADA: pedir reserva FEFO
+
+    SOLICITADA --> COMPROMETIDA: disponibilidad suficiente
+    SOLICITADA --> RECHAZADA: disponibilidad insuficiente
+
+    COMPROMETIDA --> CONSUMIDA: confirmar despacho (salida)
+    COMPROMETIDA --> LIBERADA: cancelar pedido antes del despacho
+
+    CONSUMIDA --> [*]
+    LIBERADA --> [*]
+    RECHAZADA --> [*]
+
+    note right of COMPROMETIDA
+        Unidades comprometidas en lotes concretos.
+        Nunca puede exceder el stock físico elegible.
+    end note

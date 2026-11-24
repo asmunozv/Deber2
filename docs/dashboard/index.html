@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Inventory — Dashboard (propuesta visual)</title>
+<style>
+  :root{
+    --bg:#0f172a; --panel:#1e293b; --panel2:#273449; --line:#334155;
+    --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --ok:#22c55e;
+    --warn:#f59e0b; --danger:#ef4444; --info:#818cf8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:system-ui,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); padding:20px;}
+  .wrap{max-width:1100px; margin:0 auto;}
+  header{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;}
+  h1{font-size:20px;}
+  .sub{color:var(--muted); font-size:13px;}
+  .tabs{display:flex; gap:8px;}
+  .tab{border:1px solid var(--line); background:var(--panel); color:var(--text); padding:8px 14px; border-radius:8px; cursor:pointer; font-size:14px;}
+  .tab.active{background:var(--accent); color:#0b1220; border-color:var(--accent); font-weight:600;}
+  .kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:16px;}
+  .kpi{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px;}
+  .kpi .label{color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.5px;}
+  .kpi .value{font-size:28px; font-weight:700; margin-top:4px;}
+  .kpi .value.ok{color:var(--ok);} .kpi .value.warn{color:var(--warn);} .kpi .value.danger{color:var(--danger);} .kpi .value.info{color:var(--info);}
+  .grid{display:grid; grid-template-columns:2fr 1fr; gap:16px;}
+  @media(max-width:760px){.grid{grid-template-columns:1fr;}}
+  .panel{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px;}
+  .panel h2{font-size:15px; margin-bottom:12px; color:var(--accent);}
+  .fresco{font-size:11px; color:var(--muted); float:right; font-weight:400;}
+  /* Planta interna: racks */
+  .planta{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
+  .zona{border:1px solid var(--line); border-radius:8px; padding:8px; background:var(--panel2); min-height:70px;}
+  .zona .t{font-size:11px; color:var(--muted); text-transform:uppercase;}
+  .rack{font-size:12px; margin-top:4px; padding:4px 6px; border-radius:6px; background:#0b1220; border-left:3px solid var(--accent);}
+  .rack.vencido{border-left-color:var(--danger);} .rack.bajo{border-left-color:var(--warn);}
+  .amr{display:inline-block; background:var(--info); color:#0b1220; font-size:11px; padding:2px 6px; border-radius:4px; margin:4px 2px 0 0;}
+  /* Planta externa: muelles y camiones */
+  .patio{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
+  .muelle{border:1px solid var(--line); border-radius:8px; padding:8px; background:var(--panel2); text-align:center;}
+  .muelle .num{font-weight:700;} .muelle .estado{font-size:11px;}
+  .libre{color:var(--ok);} .ocupado{color:var(--warn);} .espera{color:var(--info);}
+  /* Alertas y flujo */
+  .alerta{display:flex; justify-content:space-between; gap:8px; padding:8px 10px; border-radius:8px; margin-bottom:8px; background:#0b1220; border:1px solid var(--line); font-size:13px;}
+  .tag{padding:2px 8px; border-radius:20px; font-size:11px; font-weight:600;}
+  .tag.danger{background:var(--danger); color:#0b1220;} .tag.warn{background:var(--warn); color:#0b1220;} .tag.ok{background:var(--ok); color:#0b1220;}
+  .paso{display:flex; gap:8px; align-items:center; margin-bottom:10px; font-size:13px;}
+  .dot{width:10px; height:10px; border-radius:50%; background:var(--muted);}
+  .dot.on{background:var(--accent);} .dot.done{background:var(--ok);}
+  .legend{font-size:11px; color:var(--muted); margin-top:12px;}
+  .nota{background:#0b1220; border:1px dashed var(--line); border-radius:8px; padding:10px; font-size:12px; color:var(--muted); margin-bottom:16px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Smart Inventory — Dashboard</h1>
+      <div class="sub">Propuesta visual · datos ilustrativos · no conectado a servicios reales</div>
+    </div>
+    <div class="tabs">
+      <button class="tab active" id="tabInt">Planta interna</button>
+      <button class="tab" id="tabExt">Planta externa</button>
+    </div>
+  </header>
+
+  <div class="nota">
+    El dashboard es una <strong>interfaz y vista de consulta</strong>; no es la fuente de verdad del stock. Las actualizaciones usan una
+    <strong>proyección de lectura</strong> (consistencia eventual). Las acciones (aprobar sugerencia, reservar) se dirigen a la capacidad responsable.
+  </div>
+
+  <!-- KPIs compartidos -->
+  <div class="kpis">
+    <div class="kpi"><div class="label">Stock total (unidades)</div><div class="value ok">12 480</div></div>
+    <div class="kpi"><div class="label">Alertas activas</div><div class="value warn">7</div></div>
+    <div class="kpi"><div class="label">Pedidos en preparación</div><div class="value info">14</div></div>
+    <div class="kpi"><div class="label">Pedidos en ruta</div><div class="value">9</div></div>
+  </div>
+
+  <div class="grid">
+    <!-- VISTA PRINCIPAL -->
+    <div class="panel">
+      <h2 id="vistaTitle">Planta interna — racks, lotes y AMR <span class="fresco">última lectura: hace 4 s</span></h2>
+
+      <div id="vistaInterna">
+        <div class="planta">
+          <div class="zona"><div class="t">Recepción</div><div class="rack">Lote A-101 · 240 u</div><div class="rack bajo">Lote B-201 · 30 u</div></div>
+          <div class="zona"><div class="t">Zona A · Rack 1</div><div class="rack">SKU 1012 · 480 u</div><div class="rack">SKU 1012 · 210 u</div></div>
+          <div class="zona"><div class="t">Zona A · Rack 2</div><div class="rack vencido">SKU 1031 · vence hoy</div><div class="rack">SKU 1044 · 620 u</div></div>
+          <div class="zona"><div class="t">Zona B · Picking</div><div class="rack">SKU 1055 · 150 u</div><span class="amr">AMR-3</span><span class="amr">AMR-7</span></div>
+        </div>
+        <div class="legend">■ borde azul = stock normal · ■ naranja = bajo mínimo · ■ rojo = lote próximo a vencer/bloqueado · AMR = robot de picking.</div>
+      </div>
+
+      <div id="vistaExterna" style="display:none;">
+        <div class="patio">
+          <div class="muelle"><div class="num">Muelle 1</div><div class="estado libre">Libre</div></div>
+          <div class="muelle"><div class="num">Muelle 2</div><div class="estado ocupado">Camión TR-04</div></div>
+          <div class="muelle"><div class="num">Muelle 3</div><div class="estado espera">En espera</div></div>
+          <div class="muelle"><div class="num">Patio</div><div class="estado libre">2 plazas libres</div></div>
+          <div class="muelle"><div class="num">Acceso</div><div class="estado espera">TR-08 entrando</div></div>
+          <div class="muelle"><div class="num">Zona espera</div><div class="estado">TR-02, TR-06</div></div>
+        </div>
+        <div class="legend">Camiones y muelles de la planta externa. La asignación de recursos vive en Flota; el dashboard solo la muestra.</div>
+      </div>
+    </div>
+
+    <!-- PANEL DERECHO: alertas + flujo -->
+    <div>
+      <div class="panel">
+        <h2>Alertas</h2>
+        <div class="alerta"><span>SKU 1055 bajo mínimo</span><span class="tag warn">Reponer</span></div>
+        <div class="alerta"><span>SKU 1031 próximo a vencer</span><span class="tag danger">Caducidad</span></div>
+        <div class="alerta"><span>Pedido #482 sin recurso asignado</span><span class="tag warn">Flota</span></div>
+        <div class="alerta"><span>Recepción #7112 pendiente de ubicación</span><span class="tag ok">Atención</span></div>
+      </div>
+
+      <div class="panel">
+        <h2>Flujo de pedidos</h2>
+        <div class="paso"><span class="dot done"></span> Recepción #7101 confirmada</div>
+        <div class="paso"><span class="dot done"></span> Reserva FEFO #480 (2 lotes)</div>
+        <div class="paso"><span class="dot on"></span> Preparación #480 — AMR-7</div>
+        <div class="paso"><span class="dot"></span> Despacho #479 — asignar muelle</div>
+        <div class="paso"><span class="dot"></span> Entrega #478 — en ruta</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const tInt=document.getElementById('tabInt'), tExt=document.getElementById('tabExt');
+  const vInt=document.getElementById('vistaInterna'), vExt=document.getElementById('vistaExterna');
+  const title=document.getElementById('vistaTitle');
+  function show(which){
+    const internal = which==='int';
+    vInt.style.display = internal?'block':'none';
+    vExt.style.display = internal?'none':'block';
+    tInt.classList.toggle('active', internal);
+    tExt.classList.toggle('active', !internal);
+    title.innerHTML = internal
+      ? 'Planta interna — racks, lotes y AMR <span class="fresco">última lectura: hace 4 s</span>'
+      : 'Planta externa — camiones, muelles y patio <span class="fresco">última lectura: hace 6 s</span>';
+  }
+  tInt.onclick=()=>show('int');
+  tExt.onclick=()=>show('ext');
+</script>
+</body>
+</html>
